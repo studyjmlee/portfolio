@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+@import "mixin";
+
+/* layout 정의 [S] */
+.flex{
+    &-row{
+        &-cen{
+            &-cen{
+                @include flex(row,cen,cen);
+            }
+
+            &-str{
+                @include flex(row,cen,str);
+            }
+        }
+
+        &-bet{
+            &-cen{
+                @include flex(row,bet,cen);
+            }
+
+            &-str{
+                @include flex(row,bet,str);
+            }
+        }
+
+        &-str{
+            &-cen{
+                @include flex(row,str,cen);
+            }
+
+            &-str{
+                @include flex(row,str,str);
+            }
+        }
+    }
+
+    &-col{
+        &-cen{
+            &-cen{
+                @include flex(col,cen,cen);
+            }
+
+            &-str{
+                @include flex(col,cen,str);
+            }
+        }
+
+        &-bet{
+            &-cen{
+                @include flex(col,bet,cen);
+            }
+
+            &-str{
+                @include flex(col,bet,str);
+            }
+        }
+
+        &-str{
+            &-cen{
+                @include flex(col,str,cen);
+            }
+
+            &-str{
+                @include flex(col,str,str);
+            }
+        }
+    }
+}
+
+/* layout 정의 [E] */
+
+/* section 정의 [S] */
+
+
+.section{
+    @include set-color($Beige, $Black);
+    @include set-size(100%, $Height100);
+        &.type2{
+            @include set-color($Beige, $Black);
+        }
+}
+
+
+/* section 정의 [E] */
+
+/* button 정의 [S] */
+.button{
+    @include font(16px,$Normal,1);
+    @include set-color($Black,$White);
+    padding: 10px;
+    &-theme{
+        @include font(16px,$Normal,1);
+        @include set-color($Black,$White);
+        padding: 10px;
+    }
+}
+
+.hamBtn{
+    display: inline-block;
+    &>span{
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 3px;
+        background-color: $Black;
+        transition: all 0.5s ease;
+    }
+    &.active>span{
+        &:nth-child(1){
+            transform: rotate(-45deg) translate(-3px, 6px);
+        }
+        &:nth-child(2){
+            opacity: 0;
+        }
+        &:nth-child(3){
+            transform: rotate(45deg) translate(-3px, -6px);
+        }
+    }
+}
+    
+/* button 정의 [E] */
+
+/* font 정의 [S] */
+
+h{
+    &1{
+        @include font(70px,$Bold,1.3);
+    }
+
+    &2{
+        @include font(50px,$Bold,1.3);
+    }
+
+    &3{
+        @include font(30px,$Bold,1.3);
+    }
+
+    &4{
+        @include font(20px,$Bold,1.3);
+    }
+}
+
+p{
+    @include font(18px,$Normal,1.2);
+}
+
+/* font 정의 [E] */
+
+/* light / dark 모드 정의 [S] */
+
+html[data-theme="dark"] {
+    & .section{
+        @include set-size(100%, $Height100);
+        @include set-color($Black, $White);
+        &.type2{
+            @include set-color($Black, $White);
+        }
+    }
+
+    & .button{
+        @include font(16px,$Normal,1);
+        @include set-color($Black,$White);
+        padding: 10px;
+        &-theme{
+            @include font(16px,$Normal,1);
+            @include set-color($Beige,$Black);
+            padding: 10px;
+        }
+    }
+}
+
+ 
+
+
+/* light / dark 모드 정의 [E] */

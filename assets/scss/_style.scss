@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+@import "mixin";
+
+/* section 01 [S] */
+
+/* section 01 [E] */
+
+/* footer [S] */
+
+.footer{
+    @include flex(row,cen,cen);
+    height: 70px;
+    @include set-color($Indigo, $Beige);
+}
+/* footer [E] */
