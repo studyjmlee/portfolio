@@ -48,6 +48,11 @@ time, mark, audio, video {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }
+
+html{
+    font-size: 62.25%;
+    scroll-behavior: smooth;
+}
 li::-webkit-scrollbar{
     display: none;
 }
@@ -73,4 +78,8 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+a{
+    text-decoration: none;
 }

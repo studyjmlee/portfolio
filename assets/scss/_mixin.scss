@@ -4,6 +4,7 @@ $Beige: #EFEDCB;
 $Black: #181818;
 $White: #fafafa;
 $Indigo : #1A343F;
+$BlackOpa: rgba(0,0,0,0.6);
 $Height100 : 100vh;
 $Bold : 700;
 $Normal : 500;
@@ -18,7 +19,6 @@ $Light: 100;
     width: $width;
     height: $height;
 }
-
 	
 @mixin blind {
     position: absolute;
@@ -48,6 +48,7 @@ $Light: 100;
   }
 
 @mixin flex($dir: 'row', $justify: 'cen' ,$align: 'cen') {
+    display: flex;
     @if ($dir=='row'){
         flex-direction: row;
     }
@@ -56,30 +57,31 @@ $Light: 100;
         flex-direction: column;
     }
 
-    @if ($justify:'cen') {
+    @if ($justify=='cen') {
         justify-content: center;
     }
 
-    @else if ($justify: 'bet') {
+    @else if ($justify== 'bet') {
         justify-content: space-between;
     }
 
-    @else if ($justify: 'str') {
+    @else if ($justify=='str') {
         justify-content: flex-start;
     }
 
-    @if ($align: 'cen') {
+    @if ($align== 'cen') {
         align-items: center;
     }
 
-    @else if ($align: 'str'){
+    @else if ($align== 'str'){
         align-items: flex-start;
     }
 }
 
-@mixin font($size, $weight ,$lineH) {
+@mixin font($size, $weight ,$lineH, $color) {
 
     font-size: $size;
     line-height: $lineH;
     font-weight: $weight;
+    color: $color;
 }
