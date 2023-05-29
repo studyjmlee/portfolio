@@ -308,5 +308,24 @@ html[data-theme=dark] .button-theme {
     bottom: 34px;
   }
 }
+@keyframes smoke {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  20%, 60% {
+    transform: translate(1px, 0);
+  }
+  40%, 80% {
+    transform: translate(-1px, 0);
+  }
+}
+@keyframes lighting {
+  0%, 10% {
+    opacity: 0.75;
+  }
+  20%, 100% {
+    opacity: 0.5;
+  }
+}
 
 /*# sourceMappingURL=common.css.map */

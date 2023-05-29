@@ -1,7 +1,129 @@
 /* section 01 [S] */
+.intro-img-wrap {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+}
+.intro-img-wrap > .canvas_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70rem;
+  height: 49rem;
+}
+.intro-img-wrap > .canvas_container > #canvas {
+  width: 38rem;
+  height: 23rem;
+  pointer-events: none;
+  z-index: 0;
+  margin-left: 25%;
+  margin-top: 12%;
+}
+@media all and (max-width: 767px) {
+  .intro-img-wrap > .canvas_container > #canvas {
+    width: 19rem;
+    height: 11.5rem;
+    margin-left: 24.5%;
+  }
+}
+.intro-img-wrap > .canvas_container > .outside {
+  position: absolute;
+  top: 40%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: skyblue;
+  transition: 0.4s;
+  width: 38rem;
+  height: 23rem;
+}
+@media all and (max-width: 767px) {
+  .intro-img-wrap > .canvas_container > .outside {
+    width: 19rem;
+    height: 11.5rem;
+  }
+}
+@media all and (max-width: 767px) {
+  .intro-img-wrap > .canvas_container {
+    width: 35rem;
+    height: 24.5rem;
+  }
+}
+.intro-img-wrap > #cat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+.intro-img-wrap > #cat .smoke {
+  animation: smoke 3s ease-in-out forwards infinite;
+}
+@media all and (max-width: 767px) {
+  .intro-img-wrap > #cat {
+    width: 35rem;
+    height: 24.5rem;
+  }
+}
+@media all and (max-width: 1199px) {
+  .intro-img-wrap {
+    top: calc(40% + 200px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* intro text wrap */
+.intro-text-wrap {
+  position: absolute;
+  top: 47%;
+  left: calc(35% + 550px);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.intro-text-wrap > h2 {
+  font-size: 7rem;
+  line-height: 1;
+  font-weight: 300;
+  color: #181818;
+}
+@media all and (max-width: 767px) {
+  .intro-text-wrap > h2 {
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 300;
+    color: #181818;
+  }
+}
+.intro-text-wrap > h2 .emphas {
+  font-size: 7rem;
+  line-height: 1;
+  font-weight: 500;
+  color: #181818;
+}
+@media all and (max-width: 767px) {
+  .intro-text-wrap > h2 .emphas {
+    font-size: 4rem;
+    line-height: 1;
+    font-weight: 500;
+    color: #181818;
+  }
+}
+@media all and (max-width: 1199px) {
+  .intro-text-wrap {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
+}
+
 /* section 01 [E] */
 /* footer [S] */
 .footer {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;

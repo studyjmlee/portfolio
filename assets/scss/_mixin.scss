@@ -85,3 +85,15 @@ $Light: 100;
     font-weight: $weight;
     color: $color;
 }
+
+@mixin mobile{
+    @media all and (max-width: 767px){ 
+        @content;
+    }
+  }
+  
+@mixin tablet{
+   @media all and (min-width: 768px) and (max-width: 1023px){
+        @content;
+    }
+}
