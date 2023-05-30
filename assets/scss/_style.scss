@@ -3,99 +3,146 @@
 @import "mixin";
 
 /* section 01 [S] */
-  .intro-img-wrap{
-    position: absolute;
-    top: 50%;
-    left: 35%;
-    &>.canvas_container {
+  .intro{
+    overflow: hidden;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  position: relative;
+    &>.intro-img-wrap{
         position: absolute;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        @include set-size(70rem,49rem);
-        &>#canvas {
-            @include set-size(38rem,23rem);
-              pointer-events: none;
-              z-index: 0;
-              margin-left: 25%;
-              margin-top: 12%;
+        left: 35%;
+        &>.canvas_container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            @include set-size(70rem,49rem);
+            &>#canvas {
+                @include set-size(38rem,23rem);
+                  pointer-events: none;
+                  z-index: 0;
+                  margin-left: 25%;
+                  margin-top: 12%;
+                @include mobile{
+                    @include set-size(19rem,11.5rem);
+                    margin-left: 24.5%;
+                }
+              }
+            &>.outside{
+                position: absolute;
+                top: 41%;
+                left: 52%;
+                transform: translate(-50%,-50%);
+                z-index: 1;
+                background-color: skyblue;
+                transition: 1.4s;
+                @include set-size(38rem,23rem);
+                @include mobile{
+                    @include set-size(19rem,11.5rem);
+                }
+            }
             @include mobile{
-                @include set-size(19rem,11.5rem);
-                margin-left: 24.5%;
+                @include set-size(35rem,24.5rem);
+            }
+        }
+        &>#cat {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            transform: translate(-50%,-50%);
+            & .smoke {
+                animation: smoke 3s ease-in-out forwards infinite;
+            }
+            @include mobile{
+                @include set-size(35rem,24.5rem);
+            }
+            & .svg-cat{
+                transition: 1.4s;
             }
           }
-        &>.outside{
-            position: absolute;
-            top: 40%;
-            left: 52%;
-            transform: translate(-50%,-50%);
-            z-index: 1;
-            background-color: skyblue;
-            transition: 0.4s;
-            @include set-size(38rem,23rem);
-            @include mobile{
-                @include set-size(19rem,11.5rem);
-            }
-        }
-        @include mobile{
-            @include set-size(35rem,24.5rem);
-        }
-    }
-    &>#cat {
+          @media all and (max-width:1199px) {
+            top: calc(40% + 20rem);
+          left: 50%;
+          transform: translate(-50%,-50%);
+          }
+      }
+      
+      &>.intro-text-wrap{
         position: absolute;
-        top: 50%;
-        left: 50%;
-        z-index: 1;
-        transform: translate(-50%,-50%);
-        & .smoke {
-            animation: smoke 3s ease-in-out forwards infinite;
-        }
-        @include mobile{
-            @include set-size(35rem,24.5rem);
-        }
-      }
-      @media all and (max-width:1199px) {
-        top: calc(40% + 200px);
-      left: 50%;
-      transform: translate(-50%,-50%);
-      }
-  }
-  
-  /* intro text wrap */
-  .intro-text-wrap{
-    position: absolute;
-    top: 47%;
-    left: calc(35% + 550px);
-    text-align: center;
-    transform: translate(-50%,-50%);
-    &>h2{
-        @include font(7rem,300,1,$Black);
-        @include mobile{
-            @include font(4rem,300,1,$Black);
-        }
-        & .emphas{
-            @include font(7rem,500,1,$Black);
-            @include mobile{
-                @include font(4rem,500,1,$Black);
-            }
-        }
-      }
-      @media all and (max-width:1199px){
-        position: absolute;
-        top: 30%;
-        left: 50%;
+        top: 47%;
+        left: calc(35% + 55rem);
         text-align: center;
         transform: translate(-50%,-50%);
+        &>h2{
+            @include font(7rem,300,1,$Black);
+            @include mobile{
+                @include font(4rem,300,1,$Black);
+            }
+            & .emphas{
+                @include font(7rem,500,1,$Black);
+                @include mobile{
+                    @include font(4rem,500,1,$Black);
+                }
+            }
+          }
+          @media all and (max-width:1199px){
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%,-50%);
+        }
+      }
+      
+  }
+
+  .section-wrap.type2{
+    &>.intro{
+        & .svg-cat{
+            fill: #181818;
+        }
+        & .intro-img-wrap > .canvas_container > .outside{
+            background-color: $Indigo;
+        }
     }
   }
 
 /* section 01 [E] */
 
+/* section 02 [S] */
+.about{
+    @include flex(row,bet,cen);
+    &>.about-contents{
+        &>.about-profile{
+            @include flex(col,str,cen);
+            &>img{
+                @include set-size(25rem,25rem);
+                margin-bottom: 2rem;
+                border-radius: 50%
+            }
+            &>dl{
+                &>dt{
+                    @include font(3.2rem,700,1,$Black);
+                    margin-bottom: 1.5rem;
+                }
+                &>dd{
+                    &+dd{
+                        margin-top: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+/* section 02 [E] */
+
 /* footer [S] */
 
 .footer{
     @include flex(row,cen,cen);
-    height: 70px;
+    height: 7rem;
     @include set-color($Indigo, $Beige);
 }
 /* footer [E] */

@@ -1,10 +1,16 @@
 /* section 01 [S] */
-.intro-img-wrap {
+.intro {
+  overflow: hidden;
+  perspective: 1000;
+  -webkit-perspective: 1000;
+  position: relative;
+}
+.intro > .intro-img-wrap {
   position: absolute;
   top: 50%;
   left: 35%;
 }
-.intro-img-wrap > .canvas_container {
+.intro > .intro-img-wrap > .canvas_container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12,7 +18,7 @@
   width: 70rem;
   height: 49rem;
 }
-.intro-img-wrap > .canvas_container > #canvas {
+.intro > .intro-img-wrap > .canvas_container > #canvas {
   width: 38rem;
   height: 23rem;
   pointer-events: none;
@@ -21,89 +27,90 @@
   margin-top: 12%;
 }
 @media all and (max-width: 767px) {
-  .intro-img-wrap > .canvas_container > #canvas {
+  .intro > .intro-img-wrap > .canvas_container > #canvas {
     width: 19rem;
     height: 11.5rem;
     margin-left: 24.5%;
   }
 }
-.intro-img-wrap > .canvas_container > .outside {
+.intro > .intro-img-wrap > .canvas_container > .outside {
   position: absolute;
-  top: 40%;
+  top: 41%;
   left: 52%;
   transform: translate(-50%, -50%);
   z-index: 1;
   background-color: skyblue;
-  transition: 0.4s;
+  transition: 1.4s;
   width: 38rem;
   height: 23rem;
 }
 @media all and (max-width: 767px) {
-  .intro-img-wrap > .canvas_container > .outside {
+  .intro > .intro-img-wrap > .canvas_container > .outside {
     width: 19rem;
     height: 11.5rem;
   }
 }
 @media all and (max-width: 767px) {
-  .intro-img-wrap > .canvas_container {
+  .intro > .intro-img-wrap > .canvas_container {
     width: 35rem;
     height: 24.5rem;
   }
 }
-.intro-img-wrap > #cat {
+.intro > .intro-img-wrap > #cat {
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 1;
   transform: translate(-50%, -50%);
 }
-.intro-img-wrap > #cat .smoke {
+.intro > .intro-img-wrap > #cat .smoke {
   animation: smoke 3s ease-in-out forwards infinite;
 }
 @media all and (max-width: 767px) {
-  .intro-img-wrap > #cat {
+  .intro > .intro-img-wrap > #cat {
     width: 35rem;
     height: 24.5rem;
   }
 }
+.intro > .intro-img-wrap > #cat .svg-cat {
+  transition: 1.4s;
+}
 @media all and (max-width: 1199px) {
-  .intro-img-wrap {
-    top: calc(40% + 200px);
+  .intro > .intro-img-wrap {
+    top: calc(40% + 20rem);
     left: 50%;
     transform: translate(-50%, -50%);
   }
 }
-
-/* intro text wrap */
-.intro-text-wrap {
+.intro > .intro-text-wrap {
   position: absolute;
   top: 47%;
-  left: calc(35% + 550px);
+  left: calc(35% + 55rem);
   text-align: center;
   transform: translate(-50%, -50%);
 }
-.intro-text-wrap > h2 {
+.intro > .intro-text-wrap > h2 {
   font-size: 7rem;
   line-height: 1;
   font-weight: 300;
   color: #181818;
 }
 @media all and (max-width: 767px) {
-  .intro-text-wrap > h2 {
+  .intro > .intro-text-wrap > h2 {
     font-size: 4rem;
     line-height: 1;
     font-weight: 300;
     color: #181818;
   }
 }
-.intro-text-wrap > h2 .emphas {
+.intro > .intro-text-wrap > h2 .emphas {
   font-size: 7rem;
   line-height: 1;
   font-weight: 500;
   color: #181818;
 }
 @media all and (max-width: 767px) {
-  .intro-text-wrap > h2 .emphas {
+  .intro > .intro-text-wrap > h2 .emphas {
     font-size: 4rem;
     line-height: 1;
     font-weight: 500;
@@ -111,7 +118,7 @@
   }
 }
 @media all and (max-width: 1199px) {
-  .intro-text-wrap {
+  .intro > .intro-text-wrap {
     position: absolute;
     top: 30%;
     left: 50%;
@@ -120,15 +127,53 @@
   }
 }
 
+.section-wrap.type2 > .intro .svg-cat {
+  fill: #181818;
+}
+.section-wrap.type2 > .intro .intro-img-wrap > .canvas_container > .outside {
+  background-color: #1A343F;
+}
+
 /* section 01 [E] */
+/* section 02 [S] */
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.about > .about-contents > .about-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.about > .about-contents > .about-profile > img {
+  width: 25rem;
+  height: 25rem;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+}
+.about > .about-contents > .about-profile > dl > dt {
+  font-size: 3.2rem;
+  line-height: 1;
+  font-weight: 700;
+  color: #181818;
+  margin-bottom: 1.5rem;
+}
+.about > .about-contents > .about-profile > dl > dd + dd {
+  margin-top: 0.8rem;
+}
+
+/* section 02 [E] */
 /* footer [S] */
 .footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 70px;
-  color: #EFEDCB;
+  height: 7rem;
+  color: #FBF6EB;
   background-color: #1A343F;
 }
 
