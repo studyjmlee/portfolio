@@ -81,8 +81,8 @@ $Light: 100;
 @mixin font($size, $weight ,$lineH, $color) {
 
     font-size: $size;
-    line-height: $lineH;
     font-weight: $weight;
+    line-height: $lineH;
     color: $color;
 }
 

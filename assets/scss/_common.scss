@@ -4,6 +4,44 @@
 html{
     
 }
+
+@font-face {
+    font-family: "NotoSansKR";
+    font-style: "thin";
+    font-weight: 100;
+    
+    src: local("NotoSansKR"), url("../font/NotoSansKR-Thin.otf") format("otf")
+}
+
+@font-face {
+    font-family: "NotoSansKR";
+    font-style: "light";
+    font-weight: 300;
+    
+    src: local("NotoSansKR"), url("../font/NotoSansKR-Light.otf") format("otf")
+}
+
+@font-face {
+    font-family: "NotoSansKR";
+    font-style: "normal";
+    font-weight: 400;
+    
+    src: local("NotoSansKR"), url("../font/NotoSansKR-Regular.otf") format("otf")
+}
+@font-face {
+    font-family: "NotoSansKR";
+    font-style: "bold";
+    font-weight: 700;
+    
+    src: local("NotoSansKR"), url("../font/NotoSansKR-Bold.otf") format("otf")
+}
+@font-face {
+    font-family: "NotoSansKR-Black";
+    font-style: "bold";
+    font-weight: 900;
+    
+    src: local("NotoSansKR-Black"), url("../font/NotoSansKR-Black.otf") format("otf")
+}
 /* layout 정의 [S] */
 
 .flex{
@@ -138,17 +176,17 @@ html{
 /* section 정의 [S] */
 
 
-.section-wrap{
-    &>.section{
+
+    .section{
         @include set-color($Beige, $Black);
         @include set-size(100%, $Height100);
         padding: 10rem;
         transition: 1.4s;
+        overflow: hidden;
     }
-    &.type2>.section{
+    .type2>.section{
         @include set-color($Black, $Black);
     }
-}
 
 
 /* section 정의 [E] */

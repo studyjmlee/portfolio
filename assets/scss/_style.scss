@@ -112,27 +112,83 @@
 /* section 01 [E] */
 
 /* section 02 [S] */
-.about{
-    @include flex(row,bet,cen);
-    &>.about-contents{
-        &>.about-profile{
-            @include flex(col,str,cen);
-            &>img{
-                @include set-size(25rem,25rem);
-                margin-bottom: 2rem;
-                border-radius: 50%
-            }
-            &>dl{
-                &>dt{
-                    @include font(3.2rem,700,1,$Black);
-                    margin-bottom: 1.5rem;
-                }
-                &>dd{
-                    &+dd{
-                        margin-top: 0.8rem;
+section.about{
+    padding: 0;
+    background-color: #fff;
+    width: auto;
+    & .slideContainer{
+        overflow: hidden;
+        width: 200%;
+        height: 100%;
+        & .about-visual{
+            padding: 10rem;
+            float: left;
+            box-sizing: border-box;
+            width: 50%;
+            height: 100%;
+            background-color: #fff;
+            @include flex(col,bet,str);
+            height: 100%;
+            position: relative;
+            & .visual-letter-wrap{
+                & .letter{
+                    @include font(17rem,900,1,$Black);
+                    transition: all  0.6s ease;
+                    display: inline-block;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    &.letter-left.active{
+                        transform: translateX(0%);
+                        left: 0;
+                    }
+                    &.letter-center.active{
+
+                    }
+                    &.letter-right.active{
+                        transform: translateX(-100%);
+                        left: 100%;
                     }
                 }
             }
+        & .visual-info{
+            &>dt{
+                @include font(6rem,700,1,$Black);
+            }
+            &>dd{
+                @include font(4rem,500,1.2,$Black);
+                margin-top: 3rem;
+            }
+        }
+
+        & .visual-img-contents{
+            & .visual-img1{
+                position: absolute;
+                top: 0;
+                right: 10rem;
+                display: block;
+                width: 80rem;
+            }
+            & .visual-img2{
+                position: absolute;
+                top: 0;
+                left: 10rem;
+                display: block;
+                width: 40rem;
+            }
+        }
+        }
+        & .about-profile{
+            float: left;
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            padding: 10rem;
+        }
+        &::after{
+            content: '';
+            display: block;
+            clear: both;
         }
     }
 }
