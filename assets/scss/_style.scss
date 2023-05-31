@@ -4,10 +4,10 @@
 
 /* section 01 [S] */
   .intro{
+  position: relative;
     overflow: hidden;
   perspective: 1000;
   -webkit-perspective: 1000;
-  position: relative;
     &>.intro-img-wrap{
         position: absolute;
         top: 50%;
@@ -113,84 +113,158 @@
 
 /* section 02 [S] */
 section.about{
+    width: auto;
     padding: 0;
     background-color: #fff;
-    width: auto;
     & .slideContainer{
         overflow: hidden;
-        width: 200%;
-        height: 100%;
+        @include set-size(200%,100%);
         & .about-visual{
-            padding: 10rem;
-            float: left;
-            box-sizing: border-box;
-            width: 50%;
-            height: 100%;
-            background-color: #fff;
-            @include flex(col,bet,str);
-            height: 100%;
             position: relative;
-            & .visual-letter-wrap{
-                & .letter{
-                    @include font(17rem,900,1,$Black);
-                    transition: all  0.6s ease;
-                    display: inline-block;
-                    position: relative;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    &.letter-left.active{
-                        transform: translateX(0%);
-                        left: 0;
-                    }
-                    &.letter-center.active{
-
-                    }
-                    &.letter-right.active{
-                        transform: translateX(-100%);
-                        left: 100%;
+            float: left;
+            
+            padding: 5rem 10rem;
+            box-sizing: border-box;
+            background-color: #fff;
+            @include set-size(50%,100%);
+            @include flex(col,bet,str);
+            & .visual-wrap{
+                @include flex(col,bet,str);
+                @include set-size(100%,100%);
+                & .visual-letter-wrap{
+                    & .letter{
+                        @include font(17rem,900,1,$Black);
+                        display: inline-block;
+                        position: relative;
+                        left: 50%;
+                        transition: all  0.6s ease;
+                        transform: translateX(-50%);
+                        &.letter-left.active{
+                            left: 0;
+                            transform: translateX(0%);
+                        }
+                        &.letter-center.active{
+    
+                        }
+                        &.letter-right.active{
+                            left: 100%;
+                            transform: translateX(-100%);
+                        }
                     }
                 }
+            & .visual-info{
+                &>dt{
+                    @include font(6rem,700,1,$Black);
+                }
+                &>dd{
+                    @include font(4rem,500,1.2,$Black);
+                    margin-top: 3rem;
+                }
             }
-        & .visual-info{
-            &>dt{
-                @include font(6rem,700,1,$Black);
             }
-            &>dd{
-                @include font(4rem,500,1.2,$Black);
-                margin-top: 3rem;
-            }
-        }
+            
 
         & .visual-img-contents{
             & .visual-img1{
+                display: block;
                 position: absolute;
                 top: 0;
                 right: 10rem;
-                display: block;
                 width: 80rem;
             }
             & .visual-img2{
+                display: block;
                 position: absolute;
                 top: 0;
                 left: 10rem;
-                display: block;
                 width: 40rem;
             }
         }
         }
         & .about-profile{
             float: left;
-            width: 50%;
-            height: 100%;
-            background-color: red;
-            padding: 10rem;
+            
+            padding: 5rem 10rem;
+            overflow: hidden;
+            @include set-size(50%, 100%);
+            
+            & .profile-wrap{
+                height: calc(100% - 21.8rem);
+                margin-top: 14rem;
+                @include flex(col,bet,str);
+                & .profile-summary{
+                @include flex(row,bet,cen);
+                justify-content: space-around;
+                flex-wrap: wrap;
+                row-gap: 5rem;
+                    & .profile-detail{
+                        width: 40%;
+                        & .profile-list{
+                            margin-top: 3rem;
+                            &>li{
+                                @include flex(row,str,cen);
+                                margin-top: 1rem;
+                                & .profile-date{
+                                    @include font(1.8rem,300,1.3,#989898);
+                                    width: 16rem;
+                                }
+            
+                                & .profile-txt{
+                                    @include font(1.8rem,300,1.3,$Black);
+                                    word-break: keep-all;
+                                }
+            
+                                &.bold{
+                                    & .profile-txt{
+                                        @include font(1.8rem,700,1.3,$Black);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                & .profile-skill{
+                    width: 100%;
+                    @include flex(row,bet,cen);
+                    & .skill-wrap{
+                        &~.skill-wrap{
+                            margin-top: 3rem;
+                        }
+                        &>h3{
+                            text-align: center;
+                        }
+                        & .icon_wrap{
+                            @include flex(row,str,cen);
+                            position: relative;
+                            margin-top: 3rem;
+                            /* animation: marquee 30s linear infinite;
+                            &:hover{
+                                animation-play-state: paused;
+                            } */
+                            & li{
+                                &~li{
+                                    margin-left: 3rem; 
+                                }
+                                & img{
+                                    width: 7rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         &::after{
-            content: '';
             display: block;
             clear: both;
+            content: '';
         }
+        
     }
+
+
+
 }
 /* section 02 [E] */
 

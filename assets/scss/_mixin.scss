@@ -24,19 +24,19 @@ $Light: 100;
     position: absolute;
     width: 1px;
     height: 1px;
-    margin: -1px;
     padding: 0;
-    overflow: hidden;
+    margin: -1px;
     border: 0;
     white-space: nowrap;
+    overflow: hidden;
     clip: rect(0, 0, 0, 0);
   }
 
 @mixin ellipsis($lines: 1) {
     @if ($lines==1) {
+      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap;
     }
     @else {
       display: -webkit-box;
@@ -79,11 +79,11 @@ $Light: 100;
 }
 
 @mixin font($size, $weight ,$lineH, $color) {
+    color: $color;
+    font-weight: $weight;
 
     font-size: $size;
-    font-weight: $weight;
     line-height: $lineH;
-    color: $color;
 }
 
 @mixin mobile{

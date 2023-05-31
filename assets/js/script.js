@@ -61,7 +61,7 @@ $(document).ready(function () {
   
   .fromTo('.visual-img1', 0.15, {y: "100vh"},{y: "-100%"})
   .fromTo('.visual-img2',0.15,{y: "100vh"},{y: "-100%"})
-/*   .to(".slideContainer", 0.1, { x: "-0%" }) */
+   .to(".slideContainer", 0.1, { x: "-0%" })
    .to(".slideContainer", 0.1, { x: "-25%" })
    .to(".slideContainer", 0.1, { x: "-50%" })
    .to(".slideContainer", 0.1, { x: "-50%" })
@@ -71,13 +71,15 @@ $(document).ready(function () {
     duration: "500%",
     triggerHook: "onLeave",
   })
-  .addIndicators()
   .setPin(".about")
   .setTween(tween1)
   .addTo(controller)
   
 
   /* about-visual [E] */
+
+  /* about-marquee */
+
 
 
   $(window).resize(function(){

@@ -52,7 +52,7 @@ time, mark, audio, video {
 html{
     font-size: 0.520833vw;
     /* font-size: 62.25%; */
-    /* scroll-behavior: smooth; */
+    scroll-behavior: smooth;
 }
 li::-webkit-scrollbar{
     display: none;
