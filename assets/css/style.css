@@ -215,10 +215,12 @@ section.about .slideContainer .about-visual .visual-img-contents .visual-img2 {
 }
 section.about .slideContainer .about-profile {
   float: left;
+  background-color: #fff;
   padding: 5rem 10rem;
   overflow: hidden;
   width: 50%;
   height: 100%;
+  transition: 1.4s;
 }
 section.about .slideContainer .about-profile .profile-wrap {
   height: calc(100% - 21.8rem);
@@ -308,6 +310,15 @@ section.about .slideContainer::after {
 }
 
 /* section 02 [E] */
+/* section 03 [S] */
+.portfolio .portfolio-visual {
+  background-color: #fff;
+}
+.portfolio .portfolio-contents {
+  background-color: #fff;
+}
+
+/* section 03 [E] */
 /* footer [S] */
 .footer {
   display: flex;
@@ -320,5 +331,20 @@ section.about .slideContainer::after {
 }
 
 /* footer [E] */
+/* type2 [S] */
+.section-wrap.type2 .section.about .slideContainer .about-profile {
+  background-color: #181818;
+  transition: 1.4s;
+}
+.section-wrap.type2 .portfolio-visual {
+  background-color: #181818;
+  transition: 1.4s;
+}
+.section-wrap.type2 .portfolio-contents {
+  background-color: #181818;
+  transition: 1.4s;
+}
+
+/* type2 [E] */
 
 /*# sourceMappingURL=style.css.map */

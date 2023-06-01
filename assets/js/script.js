@@ -80,6 +80,35 @@ $(document).ready(function () {
 
   /* about-marquee */
 
+  /* portfolio [S] */
+  var controller3 = new ScrollMagic.Controller();
+
+  var wipeAnimation3 = new TimelineMax()
+    // animate to second
+    /* .to(".slideContainer", 1, { x: "-0%" })
+    .to(".slideContainer", 1, { z: 0 })
+    .to(".slideContainer", 1, { x: "-25%" })
+    .to(".slideContainer", 1, { z: 0 })
+    .to(".slideContainer", 1, { x: "-50%" })
+    .to(".slideContainer", 1, { z: 0 })
+    .to(".slideContainer", 1, { x: "-75%" })
+    .to(".slideContainer", 1, { z: 0 })
+
+    .to(".slideContainer", 1, { x: "-75%" })
+    .to(".slideContainer", 1, { z: 0 });
+ */
+  var scene = new ScrollMagic.Scene({
+    triggerElement: ".profile-skill",
+    triggerHook: "0",
+    duration:  "1000%" , //이 값이 클 수록 천천히 덮어씀
+  })
+
+    .setClassToggle(".section-wrap", "type2") //트리거가 시작되면 클래스 추가
+    .setPin(".section02")// 트리거에 닿으면 고정시켜줌
+    .setTween(wipeAnimation3)
+    .addTo(controller3);
+  /* portfolio [E] */
+
 
 
   $(window).resize(function(){

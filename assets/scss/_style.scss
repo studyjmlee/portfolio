@@ -183,11 +183,11 @@ section.about{
         }
         & .about-profile{
             float: left;
-            
+            background-color: #fff;
             padding: 5rem 10rem;
             overflow: hidden;
             @include set-size(50%, 100%);
-            
+            transition: 1.4s;
             & .profile-wrap{
                 height: calc(100% - 21.8rem);
                 margin-top: 14rem;
@@ -266,7 +266,25 @@ section.about{
 
 
 }
+
+
 /* section 02 [E] */
+
+/* section 03 [S] */
+.portfolio{
+    & .portfolio-visual{
+        background-color: #fff;
+    }
+
+    & .portfolio-contents{
+        background-color: #fff;
+    }
+
+    
+}
+
+
+/* section 03 [E] */
 
 /* footer [S] */
 
@@ -276,3 +294,26 @@ section.about{
     @include set-color($Indigo, $Beige);
 }
 /* footer [E] */
+
+/* type2 [S] */
+.section-wrap.type2 {
+    & .section.about{
+        & .slideContainer{
+            & .about-profile{
+                background-color: $Black;
+                transition: 1.4s;
+            }
+        }
+    }
+
+    & .portfolio-visual{
+        background-color: $Black;
+        transition: 1.4s;
+    }
+
+    & .portfolio-contents{
+        background-color: $Black;
+        transition: 1.4s;
+    }
+}
+/* type2 [E] */

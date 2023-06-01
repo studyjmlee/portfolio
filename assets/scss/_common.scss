@@ -191,14 +191,14 @@ html{
 
 
     .section{
-        @include set-color($Beige, $Black);
+        /* @include set-color($Beige, $Black); */
         @include set-size(100%, $Height100);
         padding: 10rem;
         transition: 1.4s;
         overflow: hidden;
     }
     .type2>.section{
-        @include set-color($Black, $Black);
+        @include set-color($Black, $White);
     }
 
 
