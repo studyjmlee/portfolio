@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 $Beige: #FBF6EB;
-$Black: #181818;
-$White: #fafafa;
+$Black: #000000;
+$White: #ffffff;
 $Indigo : #1A343F;
 $BlackOpa: rgba(0,0,0,0.6);
 $Height100 : 100vh;
@@ -81,7 +81,6 @@ $Light: 100;
 @mixin font($size, $weight ,$lineH, $color) {
     color: $color;
     font-weight: $weight;
-
     font-size: $size;
     line-height: $lineH;
 }

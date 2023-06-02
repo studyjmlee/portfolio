@@ -194,13 +194,8 @@ html{
         /* @include set-color($Beige, $Black); */
         @include set-size(100%, $Height100);
         padding: 10rem;
-        transition: 1.4s;
         overflow: hidden;
     }
-    .type2>.section{
-        @include set-color($Black, $White);
-    }
-
 
 /* section 정의 [E] */
 
@@ -272,11 +267,12 @@ h{
     }
 
     &3{
-        @include font(3rem,$Bold,1.3,$Black);
+        @include font(6rem,$Bold,1.3,$Black);
+    
     }
 
     &4{
-        @include font(2rem,$Bold,1.3,$Black);
+        @include font(3rem,$Bold,1.3,$Black);
     }
 }
 
@@ -354,4 +350,22 @@ html[data-theme="dark"] {
 	0% { left: 0; }
   100% { left: -100%; }
 	}
-    
+
+    @keyframes stroke {
+        0%   {
+            stroke:$White;
+            stroke-width: 3px;
+            stroke-dashoffset: 326px;
+        }
+        70% {
+            fill: transparent;
+        }
+        98% {
+            stroke:$White;
+            stroke-width: 3px;
+        }
+        100% {
+            stroke:$White;
+            stroke-dashoffset: 0px;
+        }
+    }

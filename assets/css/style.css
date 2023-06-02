@@ -1,3 +1,8 @@
+.section-wrap {
+  background-color: #fff;
+  transition: 1.4s;
+}
+
 /* section 01 [S] */
 .intro {
   position: relative;
@@ -90,28 +95,28 @@
   transform: translate(-50%, -50%);
 }
 .intro > .intro-text-wrap > h2 {
-  color: #181818;
+  color: #000000;
   font-weight: 300;
   font-size: 7rem;
   line-height: 1;
 }
 @media all and (max-width: 767px) {
   .intro > .intro-text-wrap > h2 {
-    color: #181818;
+    color: #000000;
     font-weight: 300;
     font-size: 4rem;
     line-height: 1;
   }
 }
 .intro > .intro-text-wrap > h2 .emphas {
-  color: #181818;
+  color: #000000;
   font-weight: 500;
   font-size: 7rem;
   line-height: 1;
 }
 @media all and (max-width: 767px) {
   .intro > .intro-text-wrap > h2 .emphas {
-    color: #181818;
+    color: #000000;
     font-weight: 500;
     font-size: 4rem;
     line-height: 1;
@@ -139,7 +144,6 @@
 section.about {
   width: auto;
   padding: 0;
-  background-color: #fff;
 }
 section.about .slideContainer {
   overflow: hidden;
@@ -151,7 +155,6 @@ section.about .slideContainer .about-visual {
   float: left;
   padding: 5rem 10rem;
   box-sizing: border-box;
-  background-color: #fff;
   width: 50%;
   height: 100%;
   display: flex;
@@ -168,7 +171,7 @@ section.about .slideContainer .about-visual .visual-wrap {
   height: 100%;
 }
 section.about .slideContainer .about-visual .visual-wrap .visual-letter-wrap .letter {
-  color: #181818;
+  color: #000000;
   font-weight: 900;
   font-size: 17rem;
   line-height: 1;
@@ -187,13 +190,13 @@ section.about .slideContainer .about-visual .visual-wrap .visual-letter-wrap .le
   transform: translateX(-100%);
 }
 section.about .slideContainer .about-visual .visual-wrap .visual-info > dt {
-  color: #181818;
+  color: #000000;
   font-weight: 700;
   font-size: 6rem;
   line-height: 1;
 }
 section.about .slideContainer .about-visual .visual-wrap .visual-info > dd {
-  color: #181818;
+  color: #000000;
   font-weight: 500;
   font-size: 4rem;
   line-height: 1.2;
@@ -215,12 +218,10 @@ section.about .slideContainer .about-visual .visual-img-contents .visual-img2 {
 }
 section.about .slideContainer .about-profile {
   float: left;
-  background-color: #fff;
   padding: 5rem 10rem;
   overflow: hidden;
   width: 50%;
   height: 100%;
-  transition: 1.4s;
 }
 section.about .slideContainer .about-profile .profile-wrap {
   height: calc(100% - 21.8rem);
@@ -260,14 +261,14 @@ section.about .slideContainer .about-profile .profile-wrap .profile-summary .pro
   width: 16rem;
 }
 section.about .slideContainer .about-profile .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-txt {
-  color: #181818;
+  color: #000000;
   font-weight: 300;
   font-size: 1.8rem;
   line-height: 1.3;
   word-break: keep-all;
 }
 section.about .slideContainer .about-profile .profile-wrap .profile-summary .profile-detail .profile-list > li.bold .profile-txt {
-  color: #181818;
+  color: #000000;
   font-weight: 700;
   font-size: 1.8rem;
   line-height: 1.3;
@@ -311,13 +312,38 @@ section.about .slideContainer::after {
 
 /* section 02 [E] */
 /* section 03 [S] */
-.portfolio .portfolio-visual {
-  background-color: #fff;
+section.portfolio {
+  width: auto;
+  padding: 0;
 }
-.portfolio .portfolio-contents {
-  background-color: #fff;
+section.portfolio .slideContainer {
+  overflow: hidden;
+  width: 200%;
+  height: 100%;
 }
-
+section.portfolio .slideContainer .portfolio-visual {
+  position: relative;
+  float: left;
+  padding: 5rem 10rem;
+  box-sizing: border-box;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+section.portfolio .slideContainer .portfolio-visual .letter {
+  color: #000000;
+  font-weight: 700;
+  font-size: 14rem;
+  line-height: 1.3;
+  transition: 1.4s;
+}
 /* section 03 [E] */
 /* footer [S] */
 .footer {
@@ -332,19 +358,14 @@ section.about .slideContainer::after {
 
 /* footer [E] */
 /* type2 [S] */
-.section-wrap.type2 .section.about .slideContainer .about-profile {
-  background-color: #181818;
+.section-wrap.type2 {
+  background-color: #000000;
   transition: 1.4s;
 }
-.section-wrap.type2 .portfolio-visual {
-  background-color: #181818;
+.section-wrap.type2 section.portfolio .portfolio-visual .letter {
+  color: #ffffff;
   transition: 1.4s;
 }
-.section-wrap.type2 .portfolio-contents {
-  background-color: #181818;
-  transition: 1.4s;
-}
-
 /* type2 [E] */
 
 /*# sourceMappingURL=style.css.map */
