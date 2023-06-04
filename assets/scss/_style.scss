@@ -15,6 +15,11 @@ section.intro{
             @include flex(col,bet,str);
             @include set-size(100%,100%);
                 & .visual-letter-wrap{
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
                     & .letter{
                         @include font(17rem,900,1,$Black);
                         display: inline-block;
@@ -123,15 +128,15 @@ section.profile{
                 }
             }
         }
-        & .visual-img-contents{
-            & .visual-img1{
+        & .profile-img-contents{
+            & .profile-img1{
                 display: block;
                 position: absolute;
                 top: 0;
                 right: 10rem;
                 width: 80rem;
             }
-            & .visual-img2{
+            & .profile-img2{
                 display: block;
                 position: absolute;
                 top: 0;
@@ -147,9 +152,12 @@ section.portfolio{
     width: auto;
     padding: 0;
     & .slideContainer{
+        width: 200%;
         overflow: hidden;
         @include set-size(200%,100%);
         & .portfolio-visual{
+            float: left;
+            width: 50%;
             display: flex;
             position: relative;
             float: left;
@@ -161,16 +169,58 @@ section.portfolio{
             @include set-size(50%,100%);
             @include flex(col,bet,str);                    
             & .letter{
-                @include font(14rem,$Bold,1.3,$Black);
-                transition: 1.4s;
+                @include font(13rem,$Bold,1.3,$Black);
+                font-family: 'Hahmlet';
+                @include textEffect(1);
             }
 
         }
+
+        & .portfolio-contents{
+            float: left;
+            @include set-size(50%,100%);
+            @include flex(col,space-between,str);
+            & .portfolio-btn-wrap{
+                @include flex(row,str,cen);
+                column-gap: 3rem;
+                & .portfolio-btn{
+                    padding: 1.5rem;
+                    @include font(2.5rem,$Normal,1,$Black);
+                    background-color: $White;
+                    border-radius: 3rem;
+                    min-width: 12.8rem;
+                    text-align: center;
+                    cursor: pointer;
+                    &.on{
+                        color: $White;
+                        background-color: $skyBlue;
+
+                    }
+                }
+            }
+            & .portfolio-list-wrap{
+                margin-top: 6rem;
+                @include flex(row,str,str);
+                flex-wrap: wrap;
+                gap: 3rem;
+                height: calc(100% - 11.5rem);
+                & .portfolio-list-item{
+                    width: calc((100% - 9rem) / 4);
+                    max-height: calc((100% - 14.5rem) / 2);
+                    & figure{
+                        height: 100%;
+                        & img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    
+                }
+            }
+        }
     }
 
-    & .portfolio-contents{
-
-    }
+    
 
     
 }
@@ -192,7 +242,6 @@ section.portfolio{
 .section-wrap.type2 {
     background-color: $Black;
     transition: background-color 1.4s;
-
     & section{
         background-color: $Black;
         /* box-shadow:0em 0 0.7em $White; */
@@ -201,7 +250,8 @@ section.portfolio{
             & .portfolio-visual{
                 & .letter{
                     color: $White;
-                    transition: 1.4s;
+                    transition: color 1.4s;
+                    @include textEffect(0);
                 }
             }
         

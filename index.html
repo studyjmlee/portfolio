@@ -29,6 +29,10 @@
 
     <!-- 비 단풍 효과 -->
     <script src="./assets/js/lib/snowfall.jquery.js"></script>
+
+    <!-- portfolio 정렬 -->
+    <script src="./assets/js/lib/isotope.pkgd.min.js"></script>
+
 </head>
 
 <body>
@@ -49,9 +53,9 @@
         <section class="section intro pincontainer" id="intro">
                 <article class="intro-visual">
                         <div class="visual-letter-wrap">
-                            <div class="letter letter-left">POSITIVE</div>
-                            <div class="letter letter-center">RESPONSIBILITY</div>
-                            <div class="letter letter-right">CURIOUS</div>
+                            <div class="letter letter-left">PUBLISHER</div>
+                            <div class="letter letter-center">LEE JI MIN</div>
+                            <div class="letter letter-right">PORTFOLIO</div>
                         </div>
                         <dl class="visual-info">
                             <dt>이지민</dt>
@@ -127,9 +131,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="visual-img-contents">
-                    <img class="visual-img visual-img1" src="./assets/images/my_picture.jpg" alt="my img1">
-                    <img class="visual-img visual-img2" src="./assets/images/my_picture2.jpg" alt="my img2">
+                <div class="profile-img-contents">
+                    <img class="profile-img profile-img1" src="./assets/images/my_picture.jpg" alt="my img1">
+                    <img class="profile-img profile-img2" src="./assets/images/my_picture2.jpg" alt="my img2">
                 </div>
             </article>
         </section>
@@ -142,6 +146,52 @@
 
                     </div>
                     <h3 class="letter">PUBLISHING WORKS</h3>
+                </article>
+                <article class="portfolio-contents">
+                    <ul class="portfolio-btn-wrap">
+                        <li class="portfolio-btn on" data-filter="*">All</li>
+                        <li class="portfolio-btn" data-filter=".year-second">2년차</li>
+                        <li class="portfolio-btn" data-filter=".year-first">신입</li>
+                        <li class="portfolio-btn" data-filter=".year-before">신입 이전</li>
+                    </ul>
+                    <ul class="portfolio-list-wrap">
+                        <li class="portfolio-list-item year-second year-first">
+                            <figure>
+                                <img src="./assets/images/portfolio1.png" alt="portfolio1" id="portfolio1">
+                                <span class="portfolio-list-item-hover"></span>
+                            </figure>
+                        </li>
+                        <li class="portfolio-list-item year-second">
+                            <figure>
+                                <img src="./assets/images/portfolio1.png" alt="portfolio1"  id="portfolio2">
+                                <span class="portfolio-list-item-hover"></span>
+                            </figure>
+                        </li>
+                        <li class="portfolio-list-item year-second year-first">
+                            <figure>
+                                <img src="./assets/images/portfolio1.png" alt="portfolio1">
+                                <span class="portfolio-list-item-hover"></span>
+                            </figure>
+                        </li>
+                        <li class="portfolio-list-item year-second year-first year-before">
+                            <figure>
+                                <img src="./assets/images/portfolio1.png" alt="portfolio1">
+                                <span class="portfolio-list-item-hover"></span>
+                            </figure>
+                        </li>
+                        <li class="portfolio-list-item year-second year-first">
+                            <figure>
+                                <img src="./assets/images/portfolio1.png" alt="portfolio1">
+                                <span class="portfolio-list-item-hover"></span>
+                            </figure>
+                        </li>
+                        <li class="portfolio-list-item year-second year-first">
+                            <figure>
+                                <img src="./assets/images/portfolio1.png" alt="portfolio1">
+                                <span class="portfolio-list-item-hover"></span>
+                            </figure>
+                        </li>
+                    </ul>
                 </article>
             </div>
         </section>

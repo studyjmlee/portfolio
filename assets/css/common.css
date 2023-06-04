@@ -3,31 +3,61 @@
   font-weight: 100;
   font-family: "NotoSansKR";
   font-style: "thin";
-  src: local("NotoSansKR"), url("../font/NotoSansKR-Thin.otf") format("otf");
+  src: local("NotoSansKR"), url("../font/NotoSansKR-Thin.otf") format("opentype");
 }
 @font-face {
   font-weight: 300;
   font-family: "NotoSansKR";
   font-style: "light";
-  src: local("NotoSansKR"), url("../font/NotoSansKR-Light.otf") format("otf");
+  src: local("NotoSansKR"), url("../font/NotoSansKR-Light.otf") format("opentype");
 }
 @font-face {
   font-weight: 400;
   font-family: "NotoSansKR";
   font-style: "normal";
-  src: local("NotoSansKR"), url("../font/NotoSansKR-Regular.otf") format("otf");
+  src: local("NotoSansKR"), url("../font/NotoSansKR-Regular.otf") format("opentype");
 }
 @font-face {
   font-weight: 700;
   font-family: "NotoSansKR";
   font-style: "bold";
-  src: local("NotoSansKR"), url("../font/NotoSansKR-Bold.otf") format("otf");
+  src: local("NotoSansKR"), url("../font/NotoSansKR-Bold.otf") format("opentype");
 }
 @font-face {
   font-weight: 900;
   font-family: "NotoSansKR-Black";
   font-style: "bold";
-  src: local("NotoSansKR-Black"), url("../font/NotoSansKR-Black.otf") format("otf");
+  src: local("NotoSansKR-Black"), url("../font/NotoSansKR-Black.otf") format("opentype");
+}
+@font-face {
+  font-weight: 100;
+  font-family: "Hahmlet";
+  font-style: "thin";
+  src: local("Hahmlet"), url("../font/Hahmlet-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-weight: 300;
+  font-family: "Hahmlet";
+  font-style: "light";
+  src: local("Hahmlet"), url("../font/Hahmlet-Light.ttf") format("truetype");
+}
+@font-face {
+  font-weight: 400;
+  font-family: "Hahmlet";
+  font-style: "normal";
+  src: local("Hahmlet"), url("../font/Hahmlet-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-weight: 700;
+  font-family: "Hahmlet";
+  font-style: "bold";
+  src: local("Hahmlet"), url("../font/Hahmlet-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-weight: 900;
+  font-family: "Hahmlet";
+  font-style: "black";
+  src: local("Hahmlet"), url("../font/Hahmlet-Black.ttf") format("truetype");
 }
 /* layout 정의 [S] */
 .flex-row-cen-cen {
@@ -201,6 +231,10 @@
 }
 .section article {
   padding: 5rem 10rem;
+}
+.section *::selection {
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 /* section 정의 [E] */

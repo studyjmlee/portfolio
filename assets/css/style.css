@@ -17,6 +17,13 @@ section.intro .intro-visual {
   width: 100%;
   height: 100%;
 }
+section.intro .intro-visual .visual-letter-wrap {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
 section.intro .intro-visual .visual-letter-wrap .letter {
   color: #000000;
   font-weight: 900;
@@ -137,14 +144,14 @@ section.profile .profile-article .profile-wrap .profile-skill .skill-wrap .icon_
 section.profile .profile-article .profile-wrap .profile-skill .skill-wrap .icon_wrap li img {
   width: 7rem;
 }
-section.profile .profile-article .visual-img-contents .visual-img1 {
+section.profile .profile-article .profile-img-contents .profile-img1 {
   display: block;
   position: absolute;
   top: 0;
   right: 10rem;
   width: 80rem;
 }
-section.profile .profile-article .visual-img-contents .visual-img2 {
+section.profile .profile-article .profile-img-contents .profile-img2 {
   display: block;
   position: absolute;
   top: 0;
@@ -158,11 +165,14 @@ section.portfolio {
   padding: 0;
 }
 section.portfolio .slideContainer {
+  width: 200%;
   overflow: hidden;
   width: 200%;
   height: 100%;
 }
 section.portfolio .slideContainer .portfolio-visual {
+  float: left;
+  width: 50%;
   display: flex;
   position: relative;
   float: left;
@@ -180,10 +190,74 @@ section.portfolio .slideContainer .portfolio-visual {
 section.portfolio .slideContainer .portfolio-visual .letter {
   color: #000000;
   font-weight: 700;
-  font-size: 14rem;
+  font-size: 13rem;
   line-height: 1.3;
-  transition: 1.4s;
+  font-family: "Hahmlet";
+  transform: translate(0, 0) rotate(0.001deg);
+  -ms-transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
+  transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
 }
+section.portfolio .slideContainer .portfolio-contents {
+  float: left;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 3rem;
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
+  padding: 1.5rem;
+  color: #000000;
+  font-weight: 500;
+  font-size: 2.5rem;
+  line-height: 1;
+  background-color: #ffffff;
+  border-radius: 3rem;
+  min-width: 12.8rem;
+  text-align: center;
+  cursor: pointer;
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn.on {
+  color: #ffffff;
+  background-color: #b3d4fc;
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 3rem;
+  height: calc(100% - 11.5rem);
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item {
+  width: calc((100% - 9rem) / 4);
+  max-height: calc((100% - 14.5rem) / 2);
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item figure {
+  height: 100%;
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item figure img {
+  width: 100%;
+  height: 100%;
+}
+
 /* section 03 [E] */
 /* footer [S] */
 .footer {
@@ -209,7 +283,15 @@ section.portfolio .slideContainer .portfolio-visual .letter {
 }
 .section-wrap.type2 section.portfolio .portfolio-visual .letter {
   color: #ffffff;
-  transition: 1.4s;
+  transition: color 1.4s;
+  opacity: 1;
+  -webkit-transform: translate(0, 0) rotate(0.001deg);
+  -ms-transform: translate(0, 0) rotate(0.001deg);
+  transform: translate(0, 0) rotate(0.001deg);
+  -webkit-transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
+  transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
+  transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
+  transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
 }
 /* type2 [E] */
 

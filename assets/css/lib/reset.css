@@ -42,9 +42,10 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font-family: 'NotoSansKR';
+    /* font-family: 'Hahmlet'; */
 	vertical-align: baseline;
     box-sizing: border-box;
-    user-select: none;
+    /* user-select: none; */
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
 }

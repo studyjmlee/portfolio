@@ -12,7 +12,6 @@ $(document).ready(function () {
   };
   $.fall("flake",".outside",3,10,120,1,5);
 
-
   /* letter [S] */
   var controller = new ScrollMagic.Controller();
 
@@ -76,8 +75,8 @@ $(document).ready(function () {
   
   var tween2 = new TimelineMax()
   
-  .fromTo('.visual-img1', 0.5, {y: "110vh"},{y: "-120%"})
-  .fromTo('.visual-img2',0.5,{y: "110vh"},{y: "-120%"})
+  .fromTo('.profile-img1', 0.5, {y: "140vh"},{y: "-120%"})
+  .fromTo('.profile-img2',0.5,{y: "110vh"},{y: "-120%"})
 /*    .to(".profile", 0.1, { y: "-0%" })
    .to(".profile", 0.1, { y: "-50%" })
    .to(".profile", 0.1, { y: "-75%" })
@@ -98,43 +97,67 @@ $(document).ready(function () {
   /* about-marquee */
 
   /* portfolio [S] */
-  var controller3 = new ScrollMagic.Controller();
+/*   var controller3 = new ScrollMagic.Controller();
 
   var scene = new ScrollMagic.Scene({
     triggerElement: ".trigger-portfolio",
     triggerHook: "0",
-    duration:  "1000%" , //이 값이 클 수록 천천히 덮어씀
+    duration:  "1000%" , 
   })
 
-    .setClassToggle(".section-wrap", "type2") //트리거가 시작되면 클래스 추가
-    .setPin(".section02")// 트리거에 닿으면 고정시켜줌
-    .addTo(controller3);
+    .setClassToggle(".section-wrap", "type2") 
+    .setPin(".section02")
+    .addTo(controller3); */
 
 
     var controller4 = new ScrollMagic.Controller();
   
     var tween4 = new TimelineMax()
 
-/*      .to(".slideContainer-portfolio", 0.1, { x: "-0%" })
+     .to(".slideContainer-portfolio", 0.1, { x: "-0%" })
      .to(".slideContainer-portfolio", 0.1, { x: "-25%" })
      .to(".slideContainer-portfolio", 0.1, { x: "-50%" })
      .to(".slideContainer-portfolio", 0.1, { x: "-50%" })
-     */
+    
     var scene = new ScrollMagic.Scene({
       triggerElement: ".portfolio",
       duration: "500%",
       triggerHook: "onLeave",
     })
+    .setClassToggle(".section-wrap", "type2")
     .setPin(".portfolio")
     .setTween(tween4)
     .addTo(controller4)
+    
+
+    
+
+/* $(window).on('load',function(){
+    $obj=$('.portfolio-list-wrap').isotope({
+      isFitWidth: true
+    });
+});
+
+    $('.portfolio-btn-wrap').on( 'click', 'li', function() {
+        var filterValue = $(this).attr('data-filter');
+        $('.portfolio-list-wrap').isotope({ filter: filterValue });
+        $(this).siblings("li").removeClass('on');
+        $(this).addClass('on');
+      });
+ */
   /* portfolio [E] */
 
 
 
-  $(window).resize(function(){
-    $('.outside').snowfall('clear');
-    $.fall("flake",".outside",3,10,120,1,5);
-  });
+  
+});
+
+$(window).on('scroll',function(){
+  
+});
+
+$(window).resize(function(){
+  $('.outside').snowfall('clear');
+  $.fall("flake",".outside",3,10,120,1,5);
 });
 
