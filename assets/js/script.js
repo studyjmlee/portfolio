@@ -18,7 +18,7 @@ $(document).ready(function () {
 
   
   var scene = new ScrollMagic.Scene({
-    triggerElement: ".emphas",
+    triggerElement: ".intro",
     /* duration: ".trigger2", */
     triggerHook: "0",
     /* duration: 3000, */
@@ -31,7 +31,7 @@ $(document).ready(function () {
 
   
   var scene = new ScrollMagic.Scene({
-    triggerElement: ".emphas",
+    triggerElement: ".intro",
     /* duration: ".trigger2", */
     triggerHook: "0",
     /* duration: 3000, */
@@ -39,11 +39,12 @@ $(document).ready(function () {
 
   .setClassToggle(".letter-center", "active")
   .addTo(controller)
-  var controller = new ScrollMagic.Controller();
 
+
+  var controller = new ScrollMagic.Controller();
   
   var scene = new ScrollMagic.Scene({
-    triggerElement: ".emphas",
+    triggerElement: ".intro",
     /* duration: ".trigger2", */
     triggerHook: "0",
     /* duration: 3000, */
@@ -53,26 +54,42 @@ $(document).ready(function () {
   .addTo(controller)
   /* letter [E] */
 
-  /* about-visual [S] */
-
+  /* intro-scroll [S] */
   var controller = new ScrollMagic.Controller();
   
   var tween1 = new TimelineMax()
   
-  .fromTo('.visual-img1', 0.15, {y: "100vh"},{y: "-100%"})
-  .fromTo('.visual-img2',0.15,{y: "100vh"},{y: "-100%"})
-   .to(".slideContainer-about", 0.1, { x: "-0%" })
-   .to(".slideContainer-about", 0.1, { x: "-25%" })
-   .to(".slideContainer-about", 0.1, { x: "-50%" })
-   .to(".slideContainer-about", 0.1, { x: "-50%" })
+  var scene = new ScrollMagic.Scene({
+    triggerElement: ".intro",
+    triggerHook: 'onLeave',
+    duration: "100%"
+    
+  })
+  .setPin(".intro",{pushFollowers: false})
+  .setTween(tween1)
+  .addTo(controller)
+  /* intro-scroll [E] */
+
+  /* about-visual [S] */
+
+  var controller = new ScrollMagic.Controller();
+  
+  var tween2 = new TimelineMax()
+  
+  .fromTo('.visual-img1', 0.5, {y: "110vh"},{y: "-120%"})
+  .fromTo('.visual-img2',0.5,{y: "110vh"},{y: "-120%"})
+/*    .to(".profile", 0.1, { y: "-0%" })
+   .to(".profile", 0.1, { y: "-50%" })
+   .to(".profile", 0.1, { y: "-75%" })
+   .to(".profile", 0.1, { y: "-100%" }) */
   
   var scene = new ScrollMagic.Scene({
-    triggerElement: ".about",
+    triggerElement: ".profile",
     duration: "500%",
     triggerHook: "onLeave",
   })
-  .setPin(".about")
-  .setTween(tween1)
+  .setPin(".profile")
+  .setTween(tween2)
   .addTo(controller)
   
 

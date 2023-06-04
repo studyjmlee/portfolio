@@ -194,8 +194,13 @@
   /* @include set-color($Beige, $Black); */
   width: 100%;
   height: 100vh;
-  padding: 10rem;
+  background-color: #fff;
   overflow: hidden;
+  box-shadow: 0em 0 0.7em black;
+  transition: background-color 1.4s;
+}
+.section article {
+  padding: 5rem 10rem;
 }
 
 /* section 정의 [E] */
@@ -374,6 +379,24 @@ html[data-theme=dark] .button-theme {
   }
   100% {
     left: -100%;
+  }
+}
+@keyframes stroke {
+  0% {
+    stroke: #ffffff;
+    stroke-width: 3px;
+    stroke-dashoffset: 326px;
+  }
+  70% {
+    fill: transparent;
+  }
+  98% {
+    stroke: #ffffff;
+    stroke-width: 3px;
+  }
+  100% {
+    stroke: #ffffff;
+    stroke-dashoffset: 0px;
   }
 }
 

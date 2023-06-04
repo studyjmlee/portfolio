@@ -193,8 +193,13 @@ html{
     .section{
         /* @include set-color($Beige, $Black); */
         @include set-size(100%, $Height100);
-        padding: 10rem;
+        background-color: #fff;
         overflow: hidden;
+        box-shadow:0em 0 0.7em black;
+        transition: background-color 1.4s;
+        & article{
+            padding: 5rem 10rem;
+        }
     }
 
 /* section 정의 [E] */

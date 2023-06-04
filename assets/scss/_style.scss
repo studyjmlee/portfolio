@@ -6,136 +6,14 @@
     background-color: #fff;
     transition: 1.4s;
 }
-
-/* section 01 [S] */
-  .intro{
-  position: relative;
-    overflow: hidden;
-  perspective: 1000;
-  -webkit-perspective: 1000;
-    &>.intro-img-wrap{
-        position: absolute;
-        top: 50%;
-        left: 35%;
-        &>.canvas_container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            @include set-size(70rem,49rem);
-            &>#canvas {
-                @include set-size(38rem,23rem);
-                  pointer-events: none;
-                  z-index: 0;
-                  margin-left: 25%;
-                  margin-top: 12%;
-                @include mobile{
-                    @include set-size(19rem,11.5rem);
-                    margin-left: 24.5%;
-                }
-              }
-            &>.outside{
-                position: absolute;
-                top: 41%;
-                left: 52%;
-                transform: translate(-50%,-50%);
-                z-index: 1;
-                background-color: skyblue;
-                transition: 1.4s;
-                @include set-size(38rem,23rem);
-                @include mobile{
-                    @include set-size(19rem,11.5rem);
-                }
-            }
-            @include mobile{
-                @include set-size(35rem,24.5rem);
-            }
-        }
-        &>#cat {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            z-index: 1;
-            transform: translate(-50%,-50%);
-            & .smoke {
-                animation: smoke 3s ease-in-out forwards infinite;
-            }
-            @include mobile{
-                @include set-size(35rem,24.5rem);
-            }
-            & .svg-cat{
-                transition: 1.4s;
-            }
-          }
-          @media all and (max-width:1199px) {
-            top: calc(40% + 20rem);
-          left: 50%;
-          transform: translate(-50%,-50%);
-          }
-      }
-      
-      &>.intro-text-wrap{
-        position: absolute;
-        top: 47%;
-        left: calc(35% + 55rem);
-        text-align: center;
-        transform: translate(-50%,-50%);
-        &>h2{
-            @include font(7rem,300,1,$Black);
-            @include mobile{
-                @include font(4rem,300,1,$Black);
-            }
-            & .emphas{
-                @include font(7rem,500,1,$Black);
-                @include mobile{
-                    @include font(4rem,500,1,$Black);
-                }
-            }
-          }
-          @media all and (max-width:1199px){
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            text-align: center;
-            transform: translate(-50%,-50%);
-        }
-      }
-      
-  }
-
-  .section-wrap.type2{
-    &>.intro{
-        & .svg-cat{
-            fill: #181818;
-        }
-        & .intro-img-wrap > .canvas_container > .outside{
-            background-color: $Indigo;
-        }
-    }
-  }
-
-/* section 01 [E] */
-
-/* section 02 [S] */
-section.about{
-    width: auto;
-    padding: 0;
-
-    & .slideContainer{
+    /* section 02 [S] */
+section.intro{
         overflow: hidden;
-        @include set-size(200%,100%);
-        & .about-visual{
+        & .intro-visual{
             position: relative;
-            float: left;
-            
-            padding: 5rem 10rem;
             box-sizing: border-box;
-            
-            @include set-size(50%,100%);
             @include flex(col,bet,str);
-            & .visual-wrap{
-                @include flex(col,bet,str);
-                @include set-size(100%,100%);
+            @include set-size(100%,100%);
                 & .visual-letter-wrap{
                     & .letter{
                         @include font(17rem,900,1,$Black);
@@ -166,9 +44,85 @@ section.about{
                     margin-top: 3rem;
                 }
             }
+            
+        }
+        
+
+}
+
+
+/* section 02 [E] */
+
+section.profile{
+    & .profile-article{
+        overflow: hidden;
+        @include set-size(100%, 100%);
+        & .profile-wrap{
+            height: calc(100% - 21.8rem);
+            margin-top: 14rem;
+            @include flex(col,bet,str);
+            & .profile-summary{
+            @include flex(row,bet,cen);
+            justify-content: space-around;
+            flex-wrap: wrap;
+            row-gap: 5rem;
+                & .profile-detail{
+                    width: 40%;
+                    & .profile-list{
+                        margin-top: 3rem;
+                        &>li{
+                            @include flex(row,str,cen);
+                            margin-top: 1rem;
+                            & .profile-date{
+                                @include font(1.8rem,300,1.3,#989898);
+                                width: 16rem;
+                            }
+        
+                            & .profile-txt{
+                                @include font(1.8rem,300,1.3,$Black);
+                                word-break: keep-all;
+                            }
+        
+                            &.bold{
+                                & .profile-txt{
+                                    @include font(1.8rem,700,1.3,$Black);
+                                }
+                            }
+                        }
+                    }
+                }
             }
             
-
+            & .profile-skill{
+                width: 100%;
+                @include flex(row,bet,cen);
+                & .skill-wrap{
+                    &~.skill-wrap{
+                        margin-top: 3rem;
+                    }
+                    &>h3{
+                        text-align: center;
+                    }
+                    & .icon_wrap{
+                        @include flex(row,str,cen);
+                        position: relative;
+                        margin-top: 3rem;
+                        /* animation: marquee 30s linear infinite;
+                        &:hover{
+                            animation-play-state: paused;
+                        } */
+                        & li{
+                            &~li{
+                                margin-left: 3rem; 
+                            }
+                            & img{
+                                width: 7rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         & .visual-img-contents{
             & .visual-img1{
                 display: block;
@@ -185,93 +139,8 @@ section.about{
                 width: 40rem;
             }
         }
-        }
-        & .about-profile{
-            float: left;
-            padding: 5rem 10rem;
-            overflow: hidden;
-            @include set-size(50%, 100%);
-            & .profile-wrap{
-                height: calc(100% - 21.8rem);
-                margin-top: 14rem;
-                @include flex(col,bet,str);
-                & .profile-summary{
-                @include flex(row,bet,cen);
-                justify-content: space-around;
-                flex-wrap: wrap;
-                row-gap: 5rem;
-                    & .profile-detail{
-                        width: 40%;
-                        & .profile-list{
-                            margin-top: 3rem;
-                            &>li{
-                                @include flex(row,str,cen);
-                                margin-top: 1rem;
-                                & .profile-date{
-                                    @include font(1.8rem,300,1.3,#989898);
-                                    width: 16rem;
-                                }
-            
-                                & .profile-txt{
-                                    @include font(1.8rem,300,1.3,$Black);
-                                    word-break: keep-all;
-                                }
-            
-                                &.bold{
-                                    & .profile-txt{
-                                        @include font(1.8rem,700,1.3,$Black);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                
-                & .profile-skill{
-                    width: 100%;
-                    @include flex(row,bet,cen);
-                    & .skill-wrap{
-                        &~.skill-wrap{
-                            margin-top: 3rem;
-                        }
-                        &>h3{
-                            text-align: center;
-                        }
-                        & .icon_wrap{
-                            @include flex(row,str,cen);
-                            position: relative;
-                            margin-top: 3rem;
-                            /* animation: marquee 30s linear infinite;
-                            &:hover{
-                                animation-play-state: paused;
-                            } */
-                            & li{
-                                &~li{
-                                    margin-left: 3rem; 
-                                }
-                                & img{
-                                    width: 7rem;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        &::after{
-            display: block;
-            clear: both;
-            content: '';
-        }
-        
     }
-
-
-
 }
-
-
-/* section 02 [E] */
 
 /* section 03 [S] */
 section.portfolio{
@@ -281,16 +150,16 @@ section.portfolio{
         overflow: hidden;
         @include set-size(200%,100%);
         & .portfolio-visual{
+            display: flex;
             position: relative;
             float: left;
-            padding: 5rem 10rem;
+            
             box-sizing: border-box;
-            @include set-size(50%,100%);
-            @include flex(col,bet,str);
-            display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            align-items: flex-end;                    
+            align-items: flex-end;
+            @include set-size(50%,100%);
+            @include flex(col,bet,str);                    
             & .letter{
                 @include font(14rem,$Bold,1.3,$Black);
                 transition: 1.4s;
@@ -306,8 +175,9 @@ section.portfolio{
     
 }
 
-
 /* section 03 [E] */
+
+
 
 /* footer [S] */
 
@@ -321,38 +191,27 @@ section.portfolio{
 /* type2 [S] */
 .section-wrap.type2 {
     background-color: $Black;
-    transition: 1.4s;
-    & .section.about{
-        & .slideContainer{
-            & .about-profile{
-              
+    transition: background-color 1.4s;
+
+    & section{
+        background-color: $Black;
+        /* box-shadow:0em 0 0.7em $White; */
+        transition: 1.4s;
+        &.portfolio{
+            & .portfolio-visual{
+                & .letter{
+                    color: $White;
+                    transition: 1.4s;
+                }
             }
-        }
-    }
-
-    & .section.about{
-        & .portfolio-visual{
-
-        }
-    
-        & .portfolio-contents{
-     
-        }
-    }
-    
-    section.portfolio{
-        & .portfolio-visual{
-            & .letter{
-                color: $White;
-                transition: 1.4s;
-            }
-        }
-    
-        & .portfolio-contents{
-
-        }
-    
         
+            & .portfolio-contents{
+    
+            }
+        
+            
+        }
     }
+    
 }
 /* type2 [E] */
