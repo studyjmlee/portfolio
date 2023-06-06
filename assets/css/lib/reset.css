@@ -85,3 +85,18 @@ table {
 a{
     text-decoration: none;
 }
+
+input[type="radio"] {
+    display: none;
+}
+
+button{
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    vertical-align: top;
+}

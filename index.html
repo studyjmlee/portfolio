@@ -52,7 +52,7 @@
     <div class="section-wrap">
         <section class="section intro pincontainer" id="intro">
                 <article class="intro-visual">
-                        <div class="visual-letter-wrap">
+                        <div class="visual-letter-wrap active">
                             <div class="letter letter-left">PUBLISHER</div>
                             <div class="letter letter-center">LEE JI MIN</div>
                             <div class="letter letter-right">PORTFOLIO</div>
@@ -149,46 +149,71 @@
                 </article>
                 <article class="portfolio-contents">
                     <ul class="portfolio-btn-wrap">
-                        <li class="portfolio-btn on" data-filter="*">All</li>
-                        <li class="portfolio-btn" data-filter=".year-second">2년차</li>
-                        <li class="portfolio-btn" data-filter=".year-first">신입</li>
-                        <li class="portfolio-btn" data-filter=".year-before">신입 이전</li>
+                        <li class="portfolio-btn on"><input type="radio" id="portfolio-radio1" name="portfolio-radio" value="all" checked><label for="portfolio-radio1">전체</label></li>
+                        <li class="portfolio-btn"><input type="radio" id="portfolio-radio2" name="portfolio-radio" value="year-second"><label for="portfolio-radio2">2년차</label></li>
+                        <li class="portfolio-btn"><input type="radio" id="portfolio-radio3" name="portfolio-radio" value="year-first"><label for="portfolio-radio3">신입</label></li>
                     </ul>
                     <ul class="portfolio-list-wrap">
-                        <li class="portfolio-list-item year-second year-first">
+                        <li class="portfolio-list-item year-first" data-src="ecorbit">
                             <figure>
-                                <img src="./assets/images/portfolio1.png" alt="portfolio1" id="portfolio1">
-                                <span class="portfolio-list-item-hover"></span>
+                                <img src="./assets/images/portfolio_ecorbit.png" alt="ecorbit">
+                                <div class="portfolio-list-item-hover">
+                                    에코비트 구축
+                                </div>
                             </figure>
                         </li>
-                        <li class="portfolio-list-item year-second">
+                        <li class="portfolio-list-item year-second year-first" data-src="ehyundai">
                             <figure>
-                                <img src="./assets/images/portfolio1.png" alt="portfolio1"  id="portfolio2">
-                                <span class="portfolio-list-item-hover"></span>
+                                <img src="./assets/images/portfolio_ehyundai.png" alt="ehyundai">
+                                <div class="portfolio-list-item-hover">현대백화점 E현대 운영 업무</div>
                             </figure>
                         </li>
-                        <li class="portfolio-list-item year-second year-first">
+                        <li class="portfolio-list-item year-second year-first" data-src="group">
                             <figure>
-                                <img src="./assets/images/portfolio1.png" alt="portfolio1">
-                                <span class="portfolio-list-item-hover"></span>
+                                <img src="./assets/images/portfolio_group.png" alt="group">
+                                <div class="portfolio-list-item-hover">현대백화점 그룹사 페이지 운영 업무</div>
                             </figure>
                         </li>
-                        <li class="portfolio-list-item year-second year-first year-before">
+                        <li class="portfolio-list-item year-second year-first" data-src="moka">
                             <figure>
-                                <img src="./assets/images/portfolio1.png" alt="portfolio1">
-                                <span class="portfolio-list-item-hover"></span>
+                                <img src="./assets/images/portfolio_moka.png" alt="moka">
+                                <div class="portfolio-list-item-hover">현대백화점 어린이책 미술관 운영 업무</div>
                             </figure>
                         </li>
-                        <li class="portfolio-list-item year-second year-first">
+                        <li class="portfolio-list-item year-second" data-src="moka_renewal">
                             <figure>
-                                <img src="./assets/images/portfolio1.png" alt="portfolio1">
-                                <span class="portfolio-list-item-hover"></span>
+                                <img src="./assets/images/portfolio_moka_renewal.png" alt="moka_renewal">
+                                <div class="portfolio-list-item-hover">현대백화점 어린이책 미술관 영문 페이지 리뉴얼</div>
                             </figure>
                         </li>
-                        <li class="portfolio-list-item year-second year-first">
+                        <li class="portfolio-list-item year-second year-first" data-src="seoul">
                             <figure>
-                                <img src="./assets/images/portfolio1.png" alt="portfolio1">
-                                <span class="portfolio-list-item-hover"></span>
+                                <img src="./assets/images/portfolio_seoul.png" alt="seoul">
+                                <div class="portfolio-list-item-hover">더현대 서울 운영 업무</div>
+                            </figure>
+                        </li>
+                        <li class="portfolio-list-item year-second" data-src="daegu">
+                            <figure>
+                                <img src="./assets/images/portfolio_daegu.png" alt="daegu">
+                                <div class="portfolio-list-item-hover">더현대 대구 운영 업무</div>
+                            </figure>
+                        </li>
+                        <li class="portfolio-list-item year-second year-first" data-src="sc">
+                            <figure>
+                                <img src="./assets/images/portfolio_sc.png" alt="sc">
+                                <div class="portfolio-list-item-hover">현대백화점 사회복지재단 페이지 운영 업무</div>
+                            </figure>
+                        </li>
+                        <li class="portfolio-list-item year-first" data-src="kgc">
+                            <figure>
+                                <img src="./assets/images/portfolio_kgc.png" alt="kgc">
+                                <div class="portfolio-list-item-hover">kgc 인삼공사 페이지 운영 업무</div>
+                            </figure>
+                        </li>
+                        <li class="portfolio-list-item year-first" data-src="healthcare">
+                            <figure>
+                                <img src="./assets/images/portfolio_healthcare.png" alt="healthcare">
+                                <div class="portfolio-list-item-hover">삼성 헬스케어 운영 업무</div>
                             </figure>
                         </li>
                     </ul>
@@ -198,6 +223,30 @@
         <section class="section contact" id="contact">
     
         </section>
+    </div>
+    <div class="layer-wrap">
+        <div class="layer-dimd"></div>
+        <div class="layer-contents" data-layer="ecorbit">
+            <button class="layer-close"><i class="fas fa-times"></i></button>
+            <h3 class="layer-header">에코비트 구축</h3>
+            <figure class="layer-img">
+                <img src="./assets/images/portfolio_ecorbit.png" alt="ecorbit">
+            </figure>
+            <a class="layer-link btn" href="http://www.ecorbit.com" target="_blank">사이트 바로가기</a>
+            <dl>
+                <dt>작업기간</dt>
+                <dd>2022.04 ~ 2022.05</dd>
+                <dt>기여도</dt>
+                <dd>50%</dd>
+                <dt>사용 툴</dt>
+                <dd>Bitbucket / GitHub / Figma / PhotoShop</dd>
+                <dt>사용 언어</dt>
+                <dd>HTML5 / CSS3 / JavaScript / JQuery</dd>
+                <dt>플러그인</dt>
+                <dd>fullPage / ScrollMagic / GSAP / AOS / Swiper</dd>
+            </dl>
+            <p class="layer-txt">실무에서의 첫 구축 프로젝트였습니다.<br>투자정보, 미디어센터 페이지를 맡아서 제작하였습니다. 스크립트를 통해 scroll 인터랙션 / 유튜브 썸네일 불러오기 / data 속성을 통한 iframe 불러오기 / 더보기 버튼 기능을 구현하였습니다.</p>
+        </div>
     </div>
         
     

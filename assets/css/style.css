@@ -1,3 +1,8 @@
+body.prevent-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
 .section-wrap {
   background-color: #fff;
   transition: 1.4s;
@@ -25,35 +30,35 @@ section.intro .intro-visual .visual-letter-wrap {
   align-items: flex-start;
 }
 section.intro .intro-visual .visual-letter-wrap .letter {
-  color: #000000;
-  font-weight: 900;
   font-size: 17rem;
+  font-weight: 900;
   line-height: 1;
+  color: #000000;
   display: inline-block;
   position: relative;
   left: 50%;
   transition: all 0.6s ease;
   transform: translateX(-50%);
 }
-section.intro .intro-visual .visual-letter-wrap .letter.letter-left.active {
+section.intro .intro-visual .visual-letter-wrap.active .letter.letter-left {
   left: 0;
   transform: translateX(0%);
 }
-section.intro .intro-visual .visual-letter-wrap .letter.letter-right.active {
+section.intro .intro-visual .visual-letter-wrap.active .letter.letter-right {
   left: 100%;
   transform: translateX(-100%);
 }
 section.intro .intro-visual .visual-info > dt {
-  color: #000000;
-  font-weight: 700;
   font-size: 6rem;
+  font-weight: 700;
   line-height: 1;
+  color: #000000;
 }
 section.intro .intro-visual .visual-info > dd {
-  color: #000000;
-  font-weight: 500;
   font-size: 4rem;
+  font-weight: 500;
   line-height: 1.2;
+  color: #000000;
   margin-top: 3rem;
 }
 
@@ -94,24 +99,24 @@ section.profile .profile-article .profile-wrap .profile-summary .profile-detail 
   margin-top: 1rem;
 }
 section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-date {
-  color: #989898;
-  font-weight: 300;
   font-size: 1.8rem;
+  font-weight: 300;
   line-height: 1.3;
+  color: #989898;
   width: 16rem;
 }
 section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-txt {
-  color: #000000;
-  font-weight: 300;
   font-size: 1.8rem;
+  font-weight: 300;
   line-height: 1.3;
+  color: #000000;
   word-break: keep-all;
 }
 section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li.bold .profile-txt {
-  color: #000000;
-  font-weight: 700;
   font-size: 1.8rem;
+  font-weight: 700;
   line-height: 1.3;
+  color: #000000;
 }
 section.profile .profile-article .profile-wrap .profile-skill {
   width: 100%;
@@ -162,36 +167,31 @@ section.profile .profile-article .profile-img-contents .profile-img2 {
 /* section 03 [S] */
 section.portfolio {
   width: auto;
+  height: auto;
   padding: 0;
 }
 section.portfolio .slideContainer {
   width: 200%;
   overflow: hidden;
   width: 200%;
-  height: 100%;
+  height: 100vh;
 }
 section.portfolio .slideContainer .portfolio-visual {
-  float: left;
-  width: 50%;
-  display: flex;
   position: relative;
   float: left;
   box-sizing: border-box;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-end;
   width: 50%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-start;
 }
 section.portfolio .slideContainer .portfolio-visual .letter {
-  color: #000000;
-  font-weight: 700;
   font-size: 13rem;
+  font-weight: 700;
   line-height: 1.3;
+  color: #000000;
   font-family: "Hahmlet";
   transform: translate(0, 0) rotate(0.001deg);
   -ms-transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
@@ -208,10 +208,11 @@ section.portfolio .slideContainer .portfolio-visual .letter {
 section.portfolio .slideContainer .portfolio-contents {
   float: left;
   width: 50%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  min-height: 100vh;
 }
 section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap {
   display: flex;
@@ -220,42 +221,82 @@ section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap {
   align-items: center;
   column-gap: 3rem;
 }
-section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
+section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn input[type=radio] ~ label {
+  display: block;
   padding: 1.5rem;
-  color: #000000;
-  font-weight: 500;
-  font-size: 2.5rem;
-  line-height: 1;
+  text-align: center;
   background-color: #ffffff;
   border-radius: 3rem;
   min-width: 12.8rem;
-  text-align: center;
   cursor: pointer;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #000000;
 }
-section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn.on {
+section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn input[type=radio]:checked ~ label {
   color: #ffffff;
   background-color: #b3d4fc;
 }
 section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap {
+  width: 100%;
   margin-top: 6rem;
+  flex-wrap: wrap;
+  gap: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 3rem;
-  height: calc(100% - 11.5rem);
+  align-items: center;
 }
 section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item {
   width: calc((100% - 9rem) / 4);
-  max-height: calc((100% - 14.5rem) / 2);
+  aspect-ratio: 1900/969;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
 }
 section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item figure {
-  height: 100%;
-}
-section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item figure img {
   width: 100%;
   height: 100%;
+  position: relative;
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item figure img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: 0.25s;
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item figure .portfolio-list-item-hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  transition: 0.25s;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #ffffff;
+  opacity: 0;
+  word-break: keep-all;
+  padding: 4rem;
+  z-index: 2;
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item:hover figure img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item:hover .portfolio-list-item-hover {
+  opacity: 1;
 }
 
 /* section 03 [E] */
@@ -271,6 +312,100 @@ section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .port
 }
 
 /* footer [E] */
+/* layer [S] */
+.layer-wrap {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  display: none;
+}
+.layer-wrap .layer-dimd {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.layer-wrap.active {
+  display: block;
+}
+.layer-wrap .layer-contents {
+  width: 80%;
+  height: 90%;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  overflow: auto;
+  display: none;
+  padding: 5rem;
+}
+.layer-wrap .layer-contents.active {
+  display: block;
+}
+.layer-wrap .layer-contents .layer-img {
+  width: 100%;
+  margin-top: 3rem;
+}
+.layer-wrap .layer-contents .layer-img img {
+  width: 100%;
+}
+.layer-wrap .layer-contents .layer-close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.layer-wrap .layer-contents .layer-header {
+  text-align: center;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000000;
+}
+.layer-wrap .layer-contents .layer-link {
+  margin-top: 2rem;
+}
+.layer-wrap .layer-contents dl {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.layer-wrap .layer-contents dl dt {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000000;
+  margin-right: 0.5rem;
+}
+.layer-wrap .layer-contents dl dd {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #000000;
+  padding-right: 0.5rem;
+}
+.layer-wrap .layer-contents dl dd ~ dt {
+  padding-left: 0.5rem;
+  border-left: 1px solid #000000;
+}
+.layer-wrap .layer-contents dl dd:last-of-type {
+  padding-right: 0;
+}
+.layer-wrap .layer-contents .layer-txt {
+  margin-top: 3rem;
+}
+
+/* layer [E] */
 /* type2 [S] */
 .section-wrap.type2 {
   background-color: #000000;

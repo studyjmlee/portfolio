@@ -12,46 +12,11 @@ $(document).ready(function () {
   };
   $.fall("flake",".outside",3,10,120,1,5);
 
-  /* letter [S] */
-  var controller = new ScrollMagic.Controller();
-
-  
-  var scene = new ScrollMagic.Scene({
-    triggerElement: ".intro",
-    /* duration: ".trigger2", */
-    triggerHook: "0",
-    /* duration: 3000, */
-  })
-  .setClassToggle(".letter-left", "active")
-    
-  .addTo(controller)
-
-  var controller = new ScrollMagic.Controller();
-
-  
-  var scene = new ScrollMagic.Scene({
-    triggerElement: ".intro",
-    /* duration: ".trigger2", */
-    triggerHook: "0",
-    /* duration: 3000, */
-  })
-
-  .setClassToggle(".letter-center", "active")
-  .addTo(controller)
-
-
-  var controller = new ScrollMagic.Controller();
-  
-  var scene = new ScrollMagic.Scene({
-    triggerElement: ".intro",
-    /* duration: ".trigger2", */
-    triggerHook: "0",
-    /* duration: 3000, */
-  })
-
-  .setClassToggle(".letter-right", "active") 
-  .addTo(controller)
-  /* letter [E] */
+  function layerClose(){
+      $(".layer-wrap").fadeOut(400);
+      $(".layer-wrap").find(`.layer-contents`).removeClass("active");
+      $("body").removeClass("prevent-scroll");
+  }
 
   /* intro-scroll [S] */
   var controller = new ScrollMagic.Controller();
@@ -64,6 +29,7 @@ $(document).ready(function () {
     duration: "100%"
     
   })
+/*   .setClassToggle(".visual-letter-wrap", "active") */ 
   .setPin(".intro",{pushFollowers: false})
   .setTween(tween1)
   .addTo(controller)
@@ -132,23 +98,39 @@ $(document).ready(function () {
 
     
 
-/* $(window).on('load',function(){
-    $obj=$('.portfolio-list-wrap').isotope({
-      isFitWidth: true
-    });
-});
 
     $('.portfolio-btn-wrap').on( 'click', 'li', function() {
-        var filterValue = $(this).attr('data-filter');
-        $('.portfolio-list-wrap').isotope({ filter: filterValue });
         $(this).siblings("li").removeClass('on');
         $(this).addClass('on');
       });
- */
+
+    $("input[name='portfolio-radio']").change(function(){
+      var value=$(this).val();
+      if(value=='all'){
+        $(".portfolio-list-wrap").find(".portfolio-list-item").show();
+      }
+      else{
+        $(".portfolio-list-wrap").find(".portfolio-list-item").not(`.${value}`).hide();
+        $(".portfolio-list-wrap").find(`.${value}`).show();
+      }
+      
+    });
   /* portfolio [E] */
 
+    $(".portfolio-list-item").click(function(){
+      var val=$(this).data("src");
+    $(".layer-wrap").find(`.layer-contents[data-layer='${val}']`).addClass("active");
+    $(".layer-wrap").fadeIn(400);
+      $("body").addClass("prevent-scroll");
+    });
 
+    $(".layer-dimd").click(function(){
+      layerClose();
+    });
 
+    $(".layer-close").click(function(){
+      layerClose();
+    });
   
 });
 

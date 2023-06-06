@@ -101,6 +101,10 @@ $Light: 100;
         justify-content: flex-start;
     }
 
+    @else if ($justify=='end') {
+        justify-content: flex-end;
+    }
+
     @if ($align== 'cen') {
         align-items: center;
     }
@@ -108,13 +112,17 @@ $Light: 100;
     @else if ($align== 'str'){
         align-items: flex-start;
     }
+
+    @else if ($align== 'end'){
+        align-items: flex-end;
+    }
 }
 
 @mixin font($size, $weight ,$lineH, $color) {
-    color: $color;
-    font-weight: $weight;
     font-size: $size;
+    font-weight: $weight;
     line-height: $lineH;
+    color: $color;
 }
 
 @mixin mobile{

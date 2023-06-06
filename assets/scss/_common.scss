@@ -247,10 +247,16 @@ html{
 /* section 정의 [E] */
 
 /* button 정의 [S] */
-.button{
-    @include font(1.6rem,$Normal,1,$White);
-    @include set-color($Black,$White);
+.btn{
+    display: inline-block;
     padding: 1rem;
+    text-align: center;
+    background-color: $White;
+    border-radius: 3rem;
+    border: 1px solid $Black;
+    min-width: 12.8rem;
+    cursor: pointer;
+    @include font(2rem,$Normal,1,$Black);
     &-theme{
         @include font(1.6rem,$Normal,1,$White);
         @include set-color($Black,$White);
