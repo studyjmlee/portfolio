@@ -244,6 +244,9 @@ html{
             background: $skyBlue;
             text-shadow: none;
         }
+        &.fixed{
+            top: 0!important;
+        }
     }
 
 /* section 정의 [E] */

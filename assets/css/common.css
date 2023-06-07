@@ -236,6 +236,9 @@
   background: #b3d4fc;
   text-shadow: none;
 }
+.section.fixed {
+  top: 0 !important;
+}
 
 /* section 정의 [E] */
 /* button 정의 [S] */
