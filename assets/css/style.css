@@ -3,6 +3,18 @@ body.prevent-scroll {
   overflow: hidden;
 }
 
+*::-webkit-scrollbar {
+  width: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  transition: 0.4s;
+}
+*::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  transition: 0.4s;
+}
+
 .section-wrap {
   background-color: #fff;
   transition: 1.4s;
@@ -351,6 +363,7 @@ section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .port
 .layer-wrap .layer-contents .layer-img {
   width: 100%;
   margin-top: 3rem;
+  border: 1px solid #000000;
 }
 .layer-wrap .layer-contents .layer-img img {
   width: 100%;
@@ -370,7 +383,8 @@ section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .port
   color: #000000;
 }
 .layer-wrap .layer-contents .layer-link {
-  margin-top: 2rem;
+  margin: 2rem auto 0;
+  width: 16rem;
 }
 .layer-wrap .layer-contents dl {
   display: flex;
@@ -403,6 +417,7 @@ section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .port
 }
 .layer-wrap .layer-contents .layer-txt {
   margin-top: 3rem;
+  word-break: keep-all;
 }
 
 /* layer [E] */

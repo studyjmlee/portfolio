@@ -248,7 +248,7 @@ html{
 
 /* button 정의 [S] */
 .btn{
-    display: inline-block;
+    display: block;
     padding: 1rem;
     text-align: center;
     background-color: $White;
@@ -261,6 +261,10 @@ html{
         @include font(1.6rem,$Normal,1,$White);
         @include set-color($Black,$White);
         padding: 1rem;
+    }
+
+    &.disable{
+        background-color: #999;
     }
 }
 

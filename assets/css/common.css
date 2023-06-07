@@ -240,7 +240,7 @@
 /* section 정의 [E] */
 /* button 정의 [S] */
 .btn {
-  display: inline-block;
+  display: block;
   padding: 1rem;
   text-align: center;
   background-color: #ffffff;
@@ -261,6 +261,9 @@
   color: #ffffff;
   background-color: #000000;
   padding: 1rem;
+}
+.btn.disable {
+  background-color: #999;
 }
 
 .button-ham {

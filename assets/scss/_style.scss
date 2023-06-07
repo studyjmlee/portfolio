@@ -2,10 +2,30 @@
 
 @import "mixin";
 
-body.prevent-scroll{
-    height: 100%;
-    overflow: hidden;
+body{
+    &.prevent-scroll{
+        height: 100%;
+        overflow: hidden;
+    }
 }
+
+*{
+    &::-webkit-scrollbar {
+        width: 10px;
+      }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $Black;
+        transition: 0.4s;
+      }
+    
+    &::-webkit-scrollbar-track {
+        background-color: $White;
+        transition: 0.4s;
+    }
+}
+
+    
 
 .section-wrap{
     background-color: #fff;
@@ -320,6 +340,7 @@ section.portfolio{
         & .layer-img{
             width: 100%;
             margin-top: 3rem;
+            border: 1px solid $Black;
             & img{
                 width: 100%;
             }
@@ -339,7 +360,8 @@ section.portfolio{
         }
 
         & .layer-link{
-            margin-top: 2rem;
+            margin: 2rem auto 0;
+            width: 16rem;
         }
 
         & dl{
@@ -368,6 +390,7 @@ section.portfolio{
 
         & .layer-txt{
             margin-top: 3rem;
+            word-break: keep-all;
         }
     }
 }
