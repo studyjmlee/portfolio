@@ -6,7 +6,6 @@ $White: #ffffff;
 $Indigo : #1A343F;
 $skyBlue: #b3d4fc;
 $BlackOpa: rgba(0,0,0,0.6);
-$Height100 : 100vh;
 $Bold : 700;
 $Normal : 500;
 $Light: 100;
@@ -103,6 +102,10 @@ $Light: 100;
 
     @else if ($justify=='end') {
         justify-content: flex-end;
+    }
+
+    @else if ($justify=='aro') {
+        justify-content: space-around;
     }
 
     @if ($align== 'cen') {

@@ -75,6 +75,9 @@ section.intro .intro-visual .visual-info > dd {
 }
 
 /* section 02 [E] */
+section.profile {
+  box-shadow: 0em 0 0.7em black;
+}
 section.profile .profile-article {
   overflow: hidden;
   width: 100%;
@@ -185,8 +188,9 @@ section.portfolio {
 section.portfolio .slideContainer {
   width: 200%;
   overflow: hidden;
-  width: 200%;
   height: 100vh;
+  width: 200%;
+  height: calc(var(--vh, 1vh) * 100);
 }
 section.portfolio .slideContainer .portfolio-visual {
   position: relative;
@@ -205,17 +209,6 @@ section.portfolio .slideContainer .portfolio-visual .letter {
   line-height: 1.3;
   color: #000000;
   font-family: "Hahmlet";
-  transform: translate(0, 0) rotate(0.001deg);
-  -ms-transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
-  transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
-  -webkit-transform: translate(0, 100%);
-  -ms-transform: translate(0, 100%);
-  transform: translate(0, 100%);
-  -webkit-transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-  opacity: 0;
 }
 section.portfolio .slideContainer .portfolio-contents {
   float: left;
@@ -225,6 +218,7 @@ section.portfolio .slideContainer .portfolio-contents {
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap {
   display: flex;
@@ -312,8 +306,52 @@ section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .port
 }
 
 /* section 03 [E] */
+/* section 04 [S] */
+section.contact {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+section.contact .contact-txt {
+  transform: translate(0, 0) rotate(0.001deg);
+  -ms-transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
+  transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
+  -webkit-transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0;
+}
+section.contact .contact-txt.active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0) rotate(0.001deg);
+  -ms-transform: translate(0, 0) rotate(0.001deg);
+  transform: translate(0, 0) rotate(0.001deg);
+  -webkit-transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
+  transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
+  transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
+  transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
+}
+section.contact .contact-privacy-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+/* section 04 [E] */
 /* footer [S] */
-.footer {
+footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -322,12 +360,20 @@ section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .port
   color: #FBF6EB;
   background-color: #1A343F;
 }
+footer address {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+  font-style: normal;
+}
 
 /* footer [E] */
 /* layer [S] */
 .layer-wrap {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
   position: fixed;
   top: 0;
   left: 0;
@@ -434,14 +480,6 @@ section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .port
 .section-wrap.type2 section.portfolio .portfolio-visual .letter {
   color: #ffffff;
   transition: color 1.4s;
-  opacity: 1;
-  -webkit-transform: translate(0, 0) rotate(0.001deg);
-  -ms-transform: translate(0, 0) rotate(0.001deg);
-  transform: translate(0, 0) rotate(0.001deg);
-  -webkit-transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
-  transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
-  transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
-  transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
 }
 /* type2 [E] */
 

@@ -1,16 +1,12 @@
 $(document).ready(function () {
-    /* 눈 내리는 이펙트 관련  */
-    $.fall = function (object, place, minsz, maxsz,fCount, minsp, maxsp) {
-      $(place).snowfall({
-          image: "./assets/images/" + object + ".png",
-          minSize: minsz,
-          maxSize: maxsz,
-          flakeCount: fCount,
-          minSpeed: minsp,
-          maxSpeed: maxsp,
-      });
-  };
-  $.fall("flake",".outside",3,10,120,1,5);
+  /* vh */
+  
+  let vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+  window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+})
 
   function layerClose(){
       $(".layer-wrap").fadeOut(400);
@@ -18,7 +14,16 @@ $(document).ready(function () {
       $("body").removeClass("prevent-scroll");
   }
 
+  function scrollM(){
+    
+  }
+
+  
+
   /* intro-scroll [S] */
+
+  const wi = window.innerHeight;
+
   var controller = new ScrollMagic.Controller();
   
   var tween1 = new TimelineMax()
@@ -26,7 +31,7 @@ $(document).ready(function () {
   var scene = new ScrollMagic.Scene({
     triggerElement: ".intro",
     triggerHook: 'onLeave',
-    duration: "100%"
+    duration: wi * 3
     
   })
 /*   .setClassToggle(".visual-letter-wrap", "active") */ 
@@ -50,7 +55,7 @@ $(document).ready(function () {
   
   var scene = new ScrollMagic.Scene({
     triggerElement: ".profile",
-    duration: "500%",
+    duration: wi * 5,
     triggerHook: "onLeave",
   })
   .setPin(".profile")
@@ -86,16 +91,28 @@ $(document).ready(function () {
      .to(".slideContainer-portfolio", 0.1, { x: "-50%" })
     
     var scene = new ScrollMagic.Scene({
-      triggerElement: ".portfolio",
-      duration: "500%",
+      triggerElement: ".type2-trigger",
+      duration: wi * 5,
       triggerHook: "onLeave",
     })
     .setClassToggle(".section-wrap", "type2")
     .setPin(".portfolio")
     .setTween(tween4)
     .addTo(controller4)
-    
 
+    var controller5 = new ScrollMagic.Controller();
+  
+    var tween5 = new TimelineMax()
+    
+    var scene = new ScrollMagic.Scene({
+      triggerElement: ".contact",
+      duration: wi * 5,
+      triggerHook: "onLeave",
+    })
+    .setClassToggle(".contact-txt", "active")
+    .setTween(tween5)
+    .addTo(controller5)
+    
     
 
 
@@ -139,7 +156,13 @@ $(window).on('scroll',function(){
 });
 
 $(window).resize(function(){
-  $('.outside').snowfall('clear');
-  $.fall("flake",".outside",3,10,120,1,5);
+  /* vh */
+  
+  let vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+  window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01
+  document.documentElement.style.setProperty('--vh', `${vh}px`)
+})
 });
 
