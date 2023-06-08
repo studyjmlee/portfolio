@@ -14,10 +14,10 @@ function introScroll() {
     duration: wi * 3,
   })
     .setPin(".intro", { pushFollowers: false })
-    .on("enter", function(e) { 
+    .on("enter", function (e) {
       $(".intro").addClass("fixed");
     })
-    .on("leave", function(e) { 
+    .on("leave", function (e) {
       $(".intro").removeClass("fixed");
     })
     .setTween(tween1)
@@ -36,10 +36,10 @@ function aboutScroll() {
     triggerHook: "onLeave",
   })
     .setPin(".profile")
-    .on("enter", function(e) { 
+    .on("enter", function (e) {
       $(".profile").addClass("fixed");
     })
-    .on("leave", function(e) { 
+    .on("leave", function (e) {
       $(".profile").removeClass("fixed");
     })
     .setTween(tween2)
@@ -59,29 +59,36 @@ function portScroll1() {
     duration: wi * 5,
     triggerHook: "onLeave",
   })
-    .setClassToggle(".section-wrap", "type2")
     .setPin(".portfolio")
-    .on("enter", function(e) { 
+    .on("enter", function (e) {
       $(".portfolio").addClass("fixed");
     })
-    .on("leave", function(e) { 
+    .on("leave", function (e) {
       $(".portfolio").removeClass("fixed");
     })
     .setTween(tween4)
     .addTo(controller4);
 }
 
-function contactScroll(winScroll){
+function contactScroll(winScroll) {
   var contact = $(".contact").offset().top;
-  if(winScroll>=contact-200){
+  if (winScroll >= contact - 200) {
     $(".contact-txt").addClass("active");
-  }
-
-  else{
+  } else {
     $(".contact-txt").removeClass("active");
   }
 }
 
+function portScroll2(winScroll) {
+  var port = $(".type2-trigger");
+  var sectionWrap = $(".section-wrap");
+  var portOffset = port.offset().top;
+  if (winScroll >= portOffset - 200) {
+    sectionWrap.addClass("type2");
+  } else {
+    sectionWrap.removeClass("type2");
+  }
+}
 
 function vhresize() {
   let vh = window.innerHeight * 0.01;
@@ -93,10 +100,12 @@ function vhresize() {
 }
 
 $(document).ready(function () {
+  var nowS = $(document).scrollTop();
   vhresize();
   introScroll();
   aboutScroll();
   portScroll1();
+  portScroll2(nowS);
 
   /* portfolio 버튼 */
   $(".portfolio-btn-wrap").on("click", "li", function () {
@@ -137,8 +146,9 @@ $(document).ready(function () {
 });
 
 $(window).on("scroll", function () {
-  var nowS=$(document).scrollTop();
+  var nowS = $(document).scrollTop();
   contactScroll(nowS);
+  portScroll2(nowS);
 });
 
 $(window).resize(function () {

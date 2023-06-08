@@ -8,79 +8,91 @@ html{
 @font-face {
     font-weight: 100;
     font-family: "NotoSansKR";
-    font-style: "thin";
-    
     src: local("NotoSansKR"), url("../font/NotoSansKR-Thin.otf") format("opentype");
 }
 
 @font-face {
     font-weight: 300;
     font-family: "NotoSansKR";
-    font-style: "light";
-    
     src: local("NotoSansKR"), url("../font/NotoSansKR-Light.otf") format("opentype");
 }
 
 @font-face {
     font-weight: 400;
     font-family: "NotoSansKR";
-    font-style: "normal";
-    
     src: local("NotoSansKR"), url("../font/NotoSansKR-Regular.otf") format("opentype");
 }
 @font-face {
     font-weight: 700;
     font-family: "NotoSansKR";
-    font-style: "bold";
-    
     src: local("NotoSansKR"), url("../font/NotoSansKR-Bold.otf") format("opentype");
 }
 @font-face {
     font-weight: 900;
     font-family: "NotoSansKR-Black";
-    font-style: "bold";
-    
     src: local("NotoSansKR-Black"), url("../font/NotoSansKR-Black.otf") format("opentype");
 }
 
 @font-face {
     font-weight: 100;
     font-family: "Hahmlet";
-    font-style: "thin";
-    
     src: local("Hahmlet"), url("../font/Hahmlet-Thin.ttf") format("truetype");
 }
 
 @font-face {
     font-weight: 300;
     font-family: "Hahmlet";
-    font-style: "light";
-    
     src: local("Hahmlet"), url("../font/Hahmlet-Light.ttf") format("truetype");
 }
 
 @font-face {
     font-weight: 400;
     font-family: "Hahmlet";
-    font-style: "normal";
-    
     src: local("Hahmlet"), url("../font/Hahmlet-Regular.ttf") format("truetype");
 }
 @font-face {
     font-weight: 700;
     font-family: "Hahmlet";
-    font-style: "bold";
-    
     src: local("Hahmlet"), url("../font/Hahmlet-Bold.ttf") format("truetype");
 }
 @font-face {
     font-weight: 900;
     font-family: "Hahmlet";
-    font-style: "black";
-    
     src: local("Hahmlet"), url("../font/Hahmlet-Black.ttf") format("truetype");
 }
 /* layout 정의 [S] */
+
+br{ 
+    &.br-mo{
+        @include mobile{
+            display: block
+        }
+    }
+    
+
+    &.br-tab{
+        @include tablet{
+            display: block;
+        }
+    }
+    
+
+    &.br-tabR{
+        @include tabletRow{
+            display: block;
+        }
+    }
+    display: block;
+    @include tabletRow{
+        display: none;
+    }
+    @include tablet{
+        display: none;
+    }
+    @include mobile{
+        display: none;
+    }
+}
 
 .flex{
     &-row{
@@ -151,6 +163,12 @@ html{
 .dot-list li{
     position: relative;
     padding-left: 1.7rem;
+    @include tablet{
+        padding-left: 2.7rem;
+    }
+    @include mobile{
+        padding-left: 9.5rem;
+    }
     &::before{
     display: block;
     position: absolute;
@@ -159,9 +177,33 @@ html{
     font-size: 1.8rem;
     line-height: 1.3;
         content: "-";
+        @include tabletRow{
+            font-size: 2.8rem;
+        }
+        @include tablet{
+            font-size: 4.5rem;
+            line-height: 1.4;
+        }
+        @include mobile{
+            font-size: 12rem;
+            line-height: 1.4;
+        }
     }
 }
 /* layout 정의 [E] */
+
+html{
+    font-size: 0.520833vw;
+    /* font-size: 62.25%; */
+    scroll-behavior: smooth;
+
+    @include tablet{
+        font-size: 0.6vw;
+    }
+    @include mobile{
+        font-size: 0.266666666666667vw;
+    }
+}
 
 /* header 정의 [S] */
 .header-wrap{
@@ -231,14 +273,23 @@ html{
     .section{
         /* @include set-color($Beige, $Black); */
         height: 100vh;
-        @include set-size(100%, calc(var(--vh, 1vh) * 100));
         
         background-color: #fff;
         overflow: hidden;
         
         transition: background-color 1.4s;
+        @include set-size(100%, calc(var(--vh, 1vh) * 100));
         & article{
             padding: 5rem 10rem;
+            @include tabletRow{
+                padding: 10rem 10rem;
+            }
+            @include tablet{
+                padding: 15rem 10rem;
+            }
+            @include mobile{
+                padding: 30rem 20rem;
+            }
         }
         & *::selection{
             background: $skyBlue;
@@ -255,19 +306,31 @@ html{
 .btn{
     display: block;
     padding: 1rem;
+    border: 1px solid $Black;
     text-align: center;
     background-color: $White;
     border-radius: 3rem;
-    border: 1px solid $Black;
     min-width: 12.8rem;
     cursor: pointer;
     @include font(2rem,$Normal,1,$Black);
-    &-theme{
-        @include font(1.6rem,$Normal,1,$White);
-        @include set-color($Black,$White);
-        padding: 1rem;
+    @include tabletRow {
+        padding: 2rem;
+        font-size: 2.5rem;
+        min-width: 20rem;
+        border-radius: 4rem;
     }
-
+    @include tablet {
+        padding: 3rem;
+        font-size: 4.5rem;
+        min-width: 45rem;
+        border-radius: 6rem;
+    }
+    @include mobile {
+        padding: 9rem;
+        font-size: 13rem;
+        min-width: 45rem;
+        border-radius: 16rem;
+}
     &.disable{
         background-color: #999;
     }
@@ -326,15 +389,32 @@ h{
 
     &2{
         @include font(6rem,$Bold,1.3,$Black);
+        @include tabletRow{
+            @include font(9rem,$Bold,1.3,$Black);
+        }
+        @include tablet{
+            @include font(12rem,$Bold,1.3,$Black);
+        }
+        @include mobile{
+            @include font(33rem,$Bold,1,$Black);
+        }
     }
 
     &3{
-        @include font(6rem,$Bold,1.3,$Black);
-    
+        @include font(3rem,$Bold,1.3,$Black);
+        @include tabletRow{
+            @include font(4rem,$Bold,1.3,$Black);
+        }
+        @include tablet{
+            @include font(6rem,$Bold,1.3,$Black);
+        }
+        @include mobile{
+            @include font(14rem,$Bold,1.3,$Black);
+        }
     }
 
     &4{
-        @include font(3rem,$Bold,1.3,$Black);
+        
     }
 }
 
@@ -343,36 +423,6 @@ p,dt,dd{
 }
 
 /* font 정의 [E] */
-
-/* light / dark 모드 정의 [S] */
-
-html[data-theme="dark"] {
-    & .section{
-        height: 100vh;
-        @include set-size(100%, calc(var(--vh, 1vh) * 100));
-        
-        @include set-color($Black, $White);
-        &.type2{
-            @include set-color($Black, $White);
-        }
-    }
-
-    & .button{
-        @include font(1.6rem,$Normal,1,$White);
-        @include set-color($Black,$White);
-        padding: 1rem;
-        &-theme{
-            @include font(1.6rem,$Normal,1,$Black);
-            @include set-color($Beige,$Black);
-            padding: 1rem;
-        }
-    }
-}
-
- 
-
-
-/* light / dark 모드 정의 [E] */
 
 /* animation */
 @-webkit-keyframes jump {

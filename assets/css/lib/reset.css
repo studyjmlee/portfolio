@@ -50,11 +50,7 @@ time, mark, audio, video {
     scrollbar-width: none; /* Firefox */
 }
 
-html{
-    font-size: 0.520833vw;
-    /* font-size: 62.25%; */
-    scroll-behavior: smooth;
-}
+
 
 :root {
     --vh: 100%;
