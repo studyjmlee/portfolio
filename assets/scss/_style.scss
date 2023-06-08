@@ -324,11 +324,13 @@ section.portfolio{
 
         & .portfolio-contents{
             float: left;
-            padding: 30rem 40rem;
             min-height: 100vh;
             min-height: calc(var(--vh, 1vh) * 100);
             @include set-size(50%,100%);
             @include flex(col,space-between,str);
+            @include mobile{
+                padding: 30rem 40rem;
+            }
             & .portfolio-btn-wrap{
                 @include flex(row,str,cen);
                 column-gap: 3rem;
@@ -407,8 +409,6 @@ section.portfolio{
                     gap: 20rem;
                     max-height: calc(100% - 168.5rem);
                     margin-top: 40rem;
-                    padding-left: 20rem;
-                    padding-right: 20rem;
                     margin-bottom: 100rem;
                 }
 
@@ -671,8 +671,8 @@ footer{
             }
             @include mobile{
                 top: 20rem;
-                right: 4rem;
-                font-size: 20rem;
+                right: 20rem;
+                font-size: 25rem;
             }
         }
 
@@ -684,6 +684,9 @@ footer{
             }
             @include mobile{
                 font-size: 20rem;
+                padding-left: 20rem;
+                padding-right: 20rem;
+                
             }
         }
 

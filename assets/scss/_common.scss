@@ -83,13 +83,14 @@ br{
         }
     }
     display: block;
-    @include tabletRow{
-        display: none;
-    }
+    
     @include tablet{
         display: none;
     }
     @include mobile{
+        display: none;
+    }
+    @include tabletRow{
         display: none;
     }
 }
@@ -177,9 +178,7 @@ br{
     font-size: 1.8rem;
     line-height: 1.3;
         content: "-";
-        @include tabletRow{
-            font-size: 2.8rem;
-        }
+        
         @include tablet{
             font-size: 4.5rem;
             line-height: 1.4;
@@ -187,6 +186,9 @@ br{
         @include mobile{
             font-size: 12rem;
             line-height: 1.4;
+        }
+        @include tabletRow{
+            font-size: 2.8rem;
         }
     }
 }
@@ -202,6 +204,9 @@ html{
     }
     @include mobile{
         font-size: 0.266666666666667vw;
+    }
+    @media (orientation: landscape) and (max-width: 767px){
+        font-size: 0.5vw;
     }
 }
 
@@ -281,14 +286,15 @@ html{
         @include set-size(100%, calc(var(--vh, 1vh) * 100));
         & article{
             padding: 5rem 10rem;
-            @include tabletRow{
-                padding: 10rem 10rem;
-            }
+            
             @include tablet{
                 padding: 15rem 10rem;
             }
             @include mobile{
                 padding: 30rem 20rem;
+            }
+            @include tabletRow{
+                padding: 10rem 10rem;
             }
         }
         & *::selection{
@@ -313,12 +319,7 @@ html{
     min-width: 12.8rem;
     cursor: pointer;
     @include font(2rem,$Normal,1,$Black);
-    @include tabletRow {
-        padding: 2rem;
-        font-size: 2.5rem;
-        min-width: 20rem;
-        border-radius: 4rem;
-    }
+    
     @include tablet {
         padding: 3rem;
         font-size: 4.5rem;
@@ -330,7 +331,13 @@ html{
         font-size: 13rem;
         min-width: 45rem;
         border-radius: 16rem;
-}
+    }
+    @include tabletRow {
+        padding: 2rem;
+        font-size: 2.5rem;
+        min-width: 20rem;
+        border-radius: 4rem;
+    }
     &.disable{
         background-color: #999;
     }
@@ -389,27 +396,29 @@ h{
 
     &2{
         @include font(6rem,$Bold,1.3,$Black);
-        @include tabletRow{
-            @include font(9rem,$Bold,1.3,$Black);
-        }
+        
         @include tablet{
             @include font(12rem,$Bold,1.3,$Black);
         }
         @include mobile{
             @include font(33rem,$Bold,1,$Black);
         }
+        @include tabletRow{
+            @include font(9rem,$Bold,1.3,$Black);
+        }
     }
 
     &3{
         @include font(3rem,$Bold,1.3,$Black);
-        @include tabletRow{
-            @include font(4rem,$Bold,1.3,$Black);
-        }
+        
         @include tablet{
             @include font(6rem,$Bold,1.3,$Black);
         }
         @include mobile{
             @include font(14rem,$Bold,1.3,$Black);
+        }
+        @include tabletRow{
+            @include font(4rem,$Bold,1.3,$Black);
         }
     }
 

@@ -53,32 +53,42 @@
 br {
   display: block;
 }
-@media all and (max-width: 767px) {
+@media (orientation: portrait) and (max-width: 767px) {
   br.br-mo {
     display: block;
   }
 }
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   br.br-tab {
     display: block;
   }
 }
-@media all and (min-width: 1025px) and (max-width: 1280px) {
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   br.br-tabR {
     display: block;
   }
 }
-@media all and (min-width: 1025px) and (max-width: 1280px) {
+@media (orientation: landscape) and (max-width: 767px) {
+  br.br-tabR {
+    display: block;
+  }
+}
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   br {
     display: none;
   }
 }
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (max-width: 767px) {
   br {
     display: none;
   }
 }
-@media all and (max-width: 767px) {
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
+  br {
+    display: none;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
   br {
     display: none;
   }
@@ -161,12 +171,12 @@ br {
   position: relative;
   padding-left: 1.7rem;
 }
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .dot-list li {
     padding-left: 2.7rem;
   }
 }
-@media all and (max-width: 767px) {
+@media (orientation: portrait) and (max-width: 767px) {
   .dot-list li {
     padding-left: 9.5rem;
   }
@@ -180,21 +190,26 @@ br {
   line-height: 1.3;
   content: "-";
 }
-@media all and (min-width: 1025px) and (max-width: 1280px) {
-  .dot-list li::before {
-    font-size: 2.8rem;
-  }
-}
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .dot-list li::before {
     font-size: 4.5rem;
     line-height: 1.4;
   }
 }
-@media all and (max-width: 767px) {
+@media (orientation: portrait) and (max-width: 767px) {
   .dot-list li::before {
     font-size: 12rem;
     line-height: 1.4;
+  }
+}
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
+  .dot-list li::before {
+    font-size: 2.8rem;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  .dot-list li::before {
+    font-size: 2.8rem;
   }
 }
 
@@ -204,14 +219,19 @@ html {
   /* font-size: 62.25%; */
   scroll-behavior: smooth;
 }
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   html {
     font-size: 0.6vw;
   }
 }
-@media all and (max-width: 767px) {
+@media (orientation: portrait) and (max-width: 767px) {
   html {
     font-size: 0.2666666667vw;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  html {
+    font-size: 0.5vw;
   }
 }
 
@@ -299,19 +319,24 @@ html {
 .section article {
   padding: 5rem 10rem;
 }
-@media all and (min-width: 1025px) and (max-width: 1280px) {
-  .section article {
-    padding: 10rem 10rem;
-  }
-}
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .section article {
     padding: 15rem 10rem;
   }
 }
-@media all and (max-width: 767px) {
+@media (orientation: portrait) and (max-width: 767px) {
   .section article {
     padding: 30rem 20rem;
+  }
+}
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
+  .section article {
+    padding: 10rem 10rem;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  .section article {
+    padding: 10rem 10rem;
   }
 }
 .section *::selection {
@@ -338,15 +363,7 @@ html {
   line-height: 1;
   color: #000000;
 }
-@media all and (min-width: 1025px) and (max-width: 1280px) {
-  .btn {
-    padding: 2rem;
-    font-size: 2.5rem;
-    min-width: 20rem;
-    border-radius: 4rem;
-  }
-}
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .btn {
     padding: 3rem;
     font-size: 4.5rem;
@@ -354,12 +371,28 @@ html {
     border-radius: 6rem;
   }
 }
-@media all and (max-width: 767px) {
+@media (orientation: portrait) and (max-width: 767px) {
   .btn {
     padding: 9rem;
     font-size: 13rem;
     min-width: 45rem;
     border-radius: 16rem;
+  }
+}
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
+  .btn {
+    padding: 2rem;
+    font-size: 2.5rem;
+    min-width: 20rem;
+    border-radius: 4rem;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  .btn {
+    padding: 2rem;
+    font-size: 2.5rem;
+    min-width: 20rem;
+    border-radius: 4rem;
   }
 }
 .btn.disable {
@@ -420,15 +453,7 @@ h2 {
   line-height: 1.3;
   color: #000000;
 }
-@media all and (min-width: 1025px) and (max-width: 1280px) {
-  h2 {
-    font-size: 9rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: #000000;
-  }
-}
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   h2 {
     font-size: 12rem;
     font-weight: 700;
@@ -436,11 +461,27 @@ h2 {
     color: #000000;
   }
 }
-@media all and (max-width: 767px) {
+@media (orientation: portrait) and (max-width: 767px) {
   h2 {
     font-size: 33rem;
     font-weight: 700;
     line-height: 1;
+    color: #000000;
+  }
+}
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
+  h2 {
+    font-size: 9rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #000000;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  h2 {
+    font-size: 9rem;
+    font-weight: 700;
+    line-height: 1.3;
     color: #000000;
   }
 }
@@ -450,15 +491,7 @@ h3 {
   line-height: 1.3;
   color: #000000;
 }
-@media all and (min-width: 1025px) and (max-width: 1280px) {
-  h3 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1.3;
-    color: #000000;
-  }
-}
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   h3 {
     font-size: 6rem;
     font-weight: 700;
@@ -466,9 +499,25 @@ h3 {
     color: #000000;
   }
 }
-@media all and (max-width: 767px) {
+@media (orientation: portrait) and (max-width: 767px) {
   h3 {
     font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #000000;
+  }
+}
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
+  h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #000000;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  h3 {
+    font-size: 4rem;
     font-weight: 700;
     line-height: 1.3;
     color: #000000;

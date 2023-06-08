@@ -129,21 +129,25 @@ $Light: 100;
 }
 
 @mixin mobile{
-    @media all and (max-width: 767px){ 
+    @media (orientation: portrait) and (max-width: 767px){ 
         @content;
     }
   }
   
 @mixin tablet{
-   @media all and (min-width: 768px) and (max-width: 1024px){
+   @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px){
         @content;
     }
 }
 
 @mixin tabletRow{
-    @media all and (min-width: 1025px) and (max-width: 1280px){
+    @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px){
          @content;
      }
+
+    @media (orientation: landscape) and (max-width: 767px){
+        @content;
+    }
  }
 
 @mixin pc1920{
