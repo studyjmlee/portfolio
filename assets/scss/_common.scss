@@ -63,36 +63,61 @@ html{
 /* layout 정의 [S] */
 
 br{ 
-    &.br-mo{
+    &.br-pc{
+        @include tabletRow{
+            display: none;
+        }
+        @include tablet{
+            display: none;
+        }
         @include mobile{
-            display: block
+            display: none;
+        }
+        @include pc1920{
+            display: block!important;
+        }
+    }
+    &.br-mo{
+        display: none;
+        @include tabletRow{
+            display: none;
+        }
+        @include tablet{
+            display: none;
+        }
+        @include mobile{
+            display: block!important;
         }
     }
     
 
     &.br-tab{
+        display: none;
+        @include tabletRow{
+            display: none;
+        }
         @include tablet{
-            display: block;
+            display: block!important;
+        }
+        @include mobile{
+            display: none;
         }
     }
     
 
     &.br-tabR{
+        display: none;
+        @include tablet{
+            display: none;
+        }
+        @include mobile{
+            display: none;
+        }
         @include tabletRow{
-            display: block;
+            display: block!important;
         }
     }
-    display: block;
     
-    @include tablet{
-        display: none;
-    }
-    @include mobile{
-        display: none;
-    }
-    @include tabletRow{
-        display: none;
-    }
 }
 
 .flex{

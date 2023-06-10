@@ -50,47 +50,98 @@
   src: local("Hahmlet"), url("../font/Hahmlet-Black.ttf") format("truetype");
 }
 /* layout 정의 [S] */
-br {
-  display: block;
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
+  br.br-pc {
+    display: none;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  br.br-pc {
+    display: none;
+  }
+}
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  br.br-pc {
+    display: none;
+  }
+}
+@media (orientation: portrait) and (max-width: 767px) {
+  br.br-pc {
+    display: none;
+  }
+}
+@media screen and (min-width: 1280px) {
+  br.br-pc {
+    display: block !important;
+  }
+}
+br.br-mo {
+  display: none;
+}
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
+  br.br-mo {
+    display: none;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  br.br-mo {
+    display: none;
+  }
+}
+@media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+  br.br-mo {
+    display: none;
+  }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   br.br-mo {
-    display: block;
+    display: block !important;
+  }
+}
+br.br-tab {
+  display: none;
+}
+@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
+  br.br-tab {
+    display: none;
+  }
+}
+@media (orientation: landscape) and (max-width: 767px) {
+  br.br-tab {
+    display: none;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   br.br-tab {
-    display: block;
+    display: block !important;
   }
 }
-@media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
-  br.br-tabR {
-    display: block;
+@media (orientation: portrait) and (max-width: 767px) {
+  br.br-tab {
+    display: none;
   }
 }
-@media (orientation: landscape) and (max-width: 767px) {
-  br.br-tabR {
-    display: block;
-  }
+br.br-tabR {
+  display: none;
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
-  br {
+  br.br-tabR {
     display: none;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
-  br {
+  br.br-tabR {
     display: none;
   }
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
-  br {
-    display: none;
+  br.br-tabR {
+    display: block !important;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
-  br {
-    display: none;
+  br.br-tabR {
+    display: block !important;
   }
 }
 
