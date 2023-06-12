@@ -389,7 +389,7 @@ section.portfolio{
                 gap: 3rem;
                 max-height: calc(100% - 15rem);
                 overflow: auto;
-                @include flex(row,str,cen);
+                @include flex(row,str,str);
                 @include tabletRow{
                     height: 92rem;
                     gap: 5rem;
@@ -429,9 +429,7 @@ section.portfolio{
                 & .portfolio-list-item{
                     position: relative;
                     width: calc((100% - 9rem) / 4);
-                    aspect-ratio: 1900 / 969;
                     cursor: pointer;
-                    overflow: hidden;
                     @include tabletRow{
                         width: calc((100% - 10rem) / 3);
                     }
@@ -442,30 +440,13 @@ section.portfolio{
                         width: 100%;
                     }
                     & figure{
-                        @include set-size(100%,100%);
+                        width: 100%;
+                        aspect-ratio: 1920 / 969;
                         position: relative;
+                        overflow: hidden;
                         & img{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
                             transition: 0.25s;
                             @include set-size(100%,100%);
-                        }
-                        & .portfolio-list-item-hover{
-                            @include flex(row,cen,cen);
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            padding: 4rem;
-                            background: rgba(0, 0, 0, 0.85);
-                            text-align: center;
-                            transform: translate(-50%,-50%);
-                            transition: 0.25s;
-                            opacity: 0;
-                            word-break: keep-all;
-                            z-index: 2;
-                            @include set-size(calc(100% + 2rem),calc(100% + 2rem));
-                            @include font(2rem,500,1,$White);
                         }
                     }
                     &:hover{
@@ -475,9 +456,25 @@ section.portfolio{
                                 transform: scale(1.1);
                             }
                         }
-                        & .portfolio-list-item-hover{
-                            opacity: 1;
-                        }
+                   }
+                   & .list-item-figc{
+                    @include font(1.7rem,500,1,$White);
+                    text-align: center;
+                    display: block;
+                    margin-top: 1rem;
+                    width: 100%;
+                    @include tabletRow{
+                        font-size: 2.5rem;
+                        margin-top: 1.3rem;
+                    }
+                    @include tablet{
+                        font-size: 3.2rem;
+                        margin-top: 2rem;
+                    }
+                    @include mobile{
+                        font-size: 13.7rem;
+                        margin-top: 7.7rem;
+                    }
                    }
                 }
             }
