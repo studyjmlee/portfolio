@@ -491,7 +491,7 @@ section.profile .profile-article .profile-img-contents .profile-img2 {
   position: absolute;
   top: 0;
   left: 10rem;
-  width: 80rem;
+  width: 50rem;
 }
 @media (orientation: portrait) and (max-width: 767px) {
   section.profile .profile-article .profile-img-contents .profile-img2 {
