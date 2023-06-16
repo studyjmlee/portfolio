@@ -1,7 +1,30 @@
+var body=$("body");
+var preloader=$(".preload");
+var layerWrap=$(".layer-wrap");
+var intro=$(".intro");
+var profile=$(".profile");
+var port = $(".type2-trigger");
+var sectionWrap = $(".section-wrap");
+var portfolio=$(".portfolio");
+var listWrap = $(".portfolio-list-wrap");
+var listItem = listWrap.find(".portfolio-list-item");
+var contact= $(".contact");
+var contactTxt= $(".contact-txt");
+var visualInfo = $(".visual-info");
+var letterWrap = $(".visual-letter-wrap");
+
+function preload(){
+  
+  setTimeout(function(){
+    body.removeClass("type3");
+    preloader.fadeOut(400);
+  },2000);
+}
+
 function layerClose() {
-  $(".layer-wrap").fadeOut(400);
-  $(".layer-wrap").find(`.layer-contents`).removeClass("active");
-  $("body").removeClass("prevent-scroll");
+  layerWrap.fadeOut(400);
+  layerWrap.find(`.layer-contents`).removeClass("active");
+  body.removeClass("prevent-scroll");
 }
 
 function introScroll() {
@@ -15,10 +38,10 @@ function introScroll() {
   })
     .setPin(".intro", { pushFollowers: false })
     .on("enter", function (e) {
-      $(".intro").addClass("fixed");
+      intro.addClass("fixed");
     })
     .on("leave", function (e) {
-      $(".intro").removeClass("fixed");
+      intro.removeClass("fixed");
     })
     .setTween(tween1)
     .addTo(controller1);
@@ -37,10 +60,10 @@ function aboutScroll() {
   })
     .setPin(".profile")
     .on("enter", function (e) {
-      $(".profile").addClass("fixed");
+      profile.addClass("fixed");
     })
     .on("leave", function (e) {
-      $(".profile").removeClass("fixed");
+      profile.removeClass("fixed");
     })
     .setTween(tween2)
     .addTo(controller2);
@@ -61,32 +84,41 @@ function portScroll1() {
   })
     .setPin(".portfolio")
     .on("enter", function (e) {
-      $(".portfolio").addClass("fixed");
+      portfolio.addClass("fixed");
     })
     .on("leave", function (e) {
-      $(".portfolio").removeClass("fixed");
+      portfolio.removeClass("fixed");
     })
     .setTween(tween4)
     .addTo(controller4);
 }
 
 function contactScroll(winScroll) {
-  var contact = $(".contact").offset().top;
-  if (winScroll >= contact - 200) {
-    $(".contact-txt").addClass("active");
+  var contactTop = contact.offset().top;
+  if (winScroll >= contactTop - 200) {
+    contactTxt.addClass("active");
   } else {
-    $(".contact-txt").removeClass("active");
+    contactTxt.removeClass("active");
   }
 }
 
 function portScroll2(winScroll) {
-  var port = $(".type2-trigger");
-  var sectionWrap = $(".section-wrap");
   var portOffset = port.offset().top;
   if (winScroll >= portOffset - 200) {
     sectionWrap.addClass("type2");
+    body.addClass("type2");
   } else {
     sectionWrap.removeClass("type2");
+    body.removeClass("type2");
+  }
+}
+
+function txtMove(winScroll) {
+  if (winScroll >=visualInfo.height()) {
+    letterWrap.addClass("active");
+    
+  } else {
+    letterWrap.removeClass("active");
   }
 }
 
@@ -101,11 +133,25 @@ function vhresize() {
 
 $(document).ready(function () {
   var nowS = $(document).scrollTop();
+  preload();
   vhresize();
   introScroll();
   aboutScroll();
   portScroll1();
   portScroll2(nowS);
+  /* txtMove(nowS); */
+});
+
+$(window).on("scroll", function () {
+  var nowS = $(document).scrollTop();
+  contactScroll(nowS);
+  portScroll2(nowS);
+  /* txtMove(nowS); */
+});
+
+$(window).resize(function () {
+  vhresize();
+});
 
   /* portfolio 버튼 */
   $(".portfolio-btn-wrap").on("click", "li", function () {
@@ -115,8 +161,7 @@ $(document).ready(function () {
 
   $("input[name='portfolio-radio']").change(function () {
     var value = $(this).val();
-    var listWrap = $(".portfolio-list-wrap");
-    var listItem = listWrap.find(".portfolio-list-item");
+    
     if (value == "all") {
       listItem.show();
     } else {
@@ -128,11 +173,9 @@ $(document).ready(function () {
   /* portfolio layer */
   $(".portfolio-list-item").click(function () {
     var val = $(this).data("src");
-    $(".layer-wrap")
-      .find(`.layer-contents[data-layer='${val}']`)
-      .addClass("active");
-    $(".layer-wrap").fadeIn(400);
-    $("body").addClass("prevent-scroll");
+    layerWrap.find(`.layer-contents[data-layer='${val}']`).addClass("active");
+    layerWrap.fadeIn(400);
+    body.addClass("prevent-scroll");
   });
 
   $(".layer-dimd").click(function () {
@@ -143,14 +186,3 @@ $(document).ready(function () {
     layerClose();
   });
   /* portfolio [E] */
-});
-
-$(window).on("scroll", function () {
-  var nowS = $(document).scrollTop();
-  contactScroll(nowS);
-  portScroll2(nowS);
-});
-
-$(window).resize(function () {
-  vhresize();
-});

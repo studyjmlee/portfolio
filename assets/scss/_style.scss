@@ -1,3 +1,17 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @charset "UTF-8";
 
 @import "mixin";
@@ -7,36 +21,100 @@ body{
         height: 100%;
         overflow: hidden;
     }
-}
 
-*{
     &::-webkit-scrollbar {
         width: 10px;
       }
     
     &::-webkit-scrollbar-thumb {
         background-color: $Black;
-        transition: 0.4s;
+        -webkit-transition: background-color 0.4s;
+        transition: background-color 0.4s;
       }
     
     &::-webkit-scrollbar-track {
         background-color: $White;
-        transition: 0.4s;
+        -webkit-transition: background-color 0.4s;
+        transition: background-color 0.4s;
+        
+    }    
+    
+
+    &.type2{
+        &::-webkit-scrollbar {
+            width: 10px;
+          }
+        
+        
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $White;
+            -webkit-transition: background-color 0.4s;
+            transition: background-color 0.4s;
+          }
+        
+        &::-webkit-scrollbar-track {
+            background-color: $Black;
+            -webkit-transition: background-color 0.4s;
+            transition: background-color 0.4s;
+        }
+    }
+
+    &.type3{
+        &::-webkit-scrollbar {
+            width: 10px;
+          }
+        
+        
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $White;
+            -webkit-transition: background-color 0.4s;
+            transition: background-color 0.4s;
+          }
+        
+        &::-webkit-scrollbar-track {
+            background-color: $White;
+            -webkit-transition: background-color 0.4s;
+            transition: background-color 0.4s;
+        }
     }
 }
 
+html{
     
+}
+
+*{
+    
+}
+
+.preload{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/common/Preloader.gif') no-repeat center center;
+    background-color: $White;
+    z-index: 9999;
+}
 
 .section-wrap{
     background-color: #fff;
+    -webkit-transition: 1.4s;
+    -o-transition: 1.4s;
     transition: 1.4s;
 }
-    /* section 02 [S] */
-section.intro{
+    
+
+.contents{
+    & section.intro{
         overflow: hidden;
         & .intro-visual{
             position: relative;
-            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
             padding-top: 5rem;
             @include flex(col,bet,str);
             @include set-size(100%,100%);
@@ -44,18 +122,34 @@ section.intro{
                 padding-top: 15rem;
             }
                 & .visual-letter-wrap{
+                    display: -webkit-box;
+                    display: -ms-flexbox;
                     display: flex;
                     width: 100%;
-                    flex-direction: column;
-                    flex-wrap: wrap;
-                    align-items: flex-start;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+                    -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                    -webkit-box-align: start;
+                        -ms-flex-align: start;
+                            align-items: flex-start;
                     & .letter{
                         @include font(17rem,900,1,$Black);
                         display: inline-block;
                         position: relative;
                         left: 50%;
-                        transition: all  0.6s ease;
-                        transform: translateX(-50%);
+                        -webkit-transform: translateX(-50%);
+                            -ms-transform: translateX(-50%);
+                                transform: translateX(-50%);
+                        -webkit-transition: transform  0.6s ease, left 0.6s ease;
+                        -o-transition: transform  0.6s ease, left 0.6s ease;
+                        -webkit-transition: left 0.6s ease, -webkit-transform  0.6s ease;
+                        transition: left 0.6s ease, -webkit-transform  0.6s ease;
+                        transition: transform  0.6s ease, left 0.6s ease;
+                        transition: transform  0.6s ease, left 0.6s ease, -webkit-transform  0.6s ease;
+                        
                         @include tabletRow{
                             @include font(19rem,900,1.2,$Black);
                         }
@@ -70,14 +164,18 @@ section.intro{
                     &.active .letter{
                         &.letter-left{
                             left: 0;
-                            transform: translateX(0%);
+                            -webkit-transform: translateX(0%);
+                                -ms-transform: translateX(0%);
+                                    transform: translateX(0%);
                         }
                         &.letter-center{
     
                         }
                         &.letter-right{
                             left: 100%;
-                            transform: translateX(-100%);
+                            -webkit-transform: translateX(-100%);
+                                -ms-transform: translateX(-100%);
+                                    transform: translateX(-100%);
                         }
                     }
                 }
@@ -97,7 +195,7 @@ section.intro{
                 &>dd{
                     @include font(4rem,500,1.2,$Black);
                     margin-top: 3rem;
-                    word-break: keep-all;
+                    word-break: kee,pleft transform;
                     @include tabletRow{
                         @include font(5rem,500,1.3,$Black);
                         margin-top: 4.5rem;
@@ -116,461 +214,484 @@ section.intro{
         }
         
 
-}
-
+    }
+    /* section 02 [S] */
+    section.profile{
+        -webkit-box-shadow:0em 0 0.7em black;
+                box-shadow:0em 0 0.7em black;
+        & .profile-article{
+            overflow: hidden;
+            @include set-size(100%, 100%);
+            & .profile-wrap{
+                height: calc(100% - 21.8rem);
+                margin-top: 14rem;
+                @include flex(col,bet,str);
+                @include tabletRow{
+                    height: calc(100% - 30rem);
+                    margin-top: 16rem;
+                }
+                @include tablet{
+                    height: calc(100% - 31rem);
+                }
+                @include mobile{
+                    height: calc(100% - 47rem);
+                }
+                & .profile-summary{
+                @include flex(row,bet,str);
+                -ms-flex-pack: distribute;
+                    justify-content: space-around;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                row-gap: 5rem;
+                @include tabletRow{
+                    row-gap: 8rem;
+                }
+                @include tablet{
+                    @include flex(col,bet,str);
+                    width: 100%;
+                    row-gap: 8rem;
+                }
+                @include mobile{
+                    @include flex(col,bet,str);
+                    width: 100%;
+                    row-gap: 15rem;
+                }
+                    & .profile-detail{
+                        width: 40%;
+                        @include tablet{
+                            width: 100%;
+                        }
+                        @include mobile{
+                            width: 100%;
+                        }
+                        & .profile-list{
+                            margin-top: 3rem;
+                            @include tabletRow{
+                                margin-top: 4rem; 
+                            }
+                            @include mobile{
+                                margin-top: 6rem; 
+                            }
+                            &>li{
+                                @include flex(row,str,cen);
+                                margin-top: 2rem;
+                                @include tabletRow{
+                                    margin-top: 1.2rem; 
+                                }
+                                & .profile-date{
+                                    @include font(1.8rem,300,1.3,#989898);
+                                    width: 16rem;
+                                    @include tabletRow{
+                                        @include font(2.8rem,300,1.3,#989898);
+                                        width: 28rem;
+                                    }
+                                    @include tablet{
+                                        @include font(4.5rem,300,1.4,#989898);
+                                        width: 45rem;
+                                    }
+                                    @include mobile{
+                                        @include font(12rem,300,1.4,#989898);
+                                        width: 120rem;
+                                    }
+                                }
+            
+                                & .profile-txt{
+                                    @include font(1.8rem,300,1.3,$Black);
+                                    word-break: kee,pleft transform;
+                                    @include tabletRow{
+                                        @include font(2.8rem,300,1.3,$Black);
+                                    }
+                                    @include tablet{
+                                        @include font(4.5rem,300,1.4,$Black);
+                                    }
+                                    @include mobile{
+                                        @include font(12rem,300,1.4,$Black);
+                                    }
+                                }
+            
+                                &.bold{
+                                    & .profile-txt{
+                                        @include font(1.8rem,700,1.3,$Black);
+                                        @include tabletRow{
+                                            @include font(2.8rem,700,1.3,$Black);
+                                        }
+                                        @include tablet{
+                                            @include font(4.5rem,700,1.4,$Black);
+                                        }
+                                        @include mobile{
+                                            @include font(12rem,700,1.4,$Black);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                & .profile-skill{
+                    width: 100%;
+                    @include flex(row,bet,cen);
+                    @include mobile{
+                        @include flex(col,aro,str);
+                        row-gap: 8rem;
+                    }
+                    & .skill-wrap{
+                        @include mobile{
+                            width: 100%;
+                        }
+                        & .icon_wrap{
+                            @include flex(row,str,cen);
+                            position: relative;
+                            margin-top: 3rem;
+                            @include mobile{
+                                -webkit-column-gap: 11rem;
+                                   -moz-column-gap: 11rem;
+                                        column-gap: 11rem;
+                                margin-top: 8rem;
+                            }
+                            & li{
+                                &~li{
+                                    margin-left: 3rem; 
+                                }
+                                & img{
+                                    width: 7rem;
+                                    @include mobile{
+                                        width: 35rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            & .profile-img-contents{
+                & .profile-img1{
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 10rem;
+                    width: 105rem;
+                    @include mobile{
+                        right: 20rem;
+                        width: 315rem;
+                    }
+                }
+                & .profile-img2{
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 10rem;
+                    width: 50rem;
+                    @include mobile{
+                        right: 20rem;
+                        width: 240rem;
+                    }
+                }
+            }
+        }
+    }
 
 /* section 02 [E] */
 
-section.profile{
-    box-shadow:0em 0 0.7em black;
-    & .profile-article{
-        overflow: hidden;
-        @include set-size(100%, 100%);
-        & .profile-wrap{
-            height: calc(100% - 21.8rem);
-            margin-top: 14rem;
-            @include flex(col,bet,str);
-            @include tabletRow{
-                height: calc(100% - 30rem);
-                margin-top: 16rem;
-            }
-            @include tablet{
-                height: calc(100% - 31rem);
-            }
-            @include mobile{
-                height: calc(100% - 47rem);
-            }
-            & .profile-summary{
-            @include flex(row,bet,str);
-            justify-content: space-around;
-            flex-wrap: wrap;
-            row-gap: 5rem;
-            @include tabletRow{
-                row-gap: 8rem;
-            }
-            @include tablet{
-                @include flex(col,bet,str);
-                width: 100%;
-                row-gap: 8rem;
-            }
-            @include mobile{
-                @include flex(col,bet,str);
-                width: 100%;
-                row-gap: 15rem;
-            }
-                & .profile-detail{
-                    width: 40%;
+    /* section 03 [S] */
+    & section.portfolio{
+        @include set-size(auto,auto);
+        padding: 0;
+        & .slideContainer{
+            width: 200%;
+            height: 100vh;
+            overflow: hidden;
+            @include set-size(200%,calc(var(--vh, 1vh) * 100));
+            & .portfolio-visual{
+                position: relative;
+                float: left;
+                -webkit-box-sizing: border-box;
+                        box-sizing: border-box;
+                @include set-size(50%,100%);
+                @include flex(col,end,str);                    
+                & .letter{
+                    @include font(13rem,$Bold,1.3,$Black);
+                    font-family: 'Hahmlet';
+                    @include tabletRow{
+                        font-size: 14rem;
+                    }
                     @include tablet{
-                        width: 100%;
+                        font-size: 20rem;
                     }
                     @include mobile{
-                        width: 100%;
+                        font-size: 45rem;
                     }
-                    & .profile-list{
-                        margin-top: 3rem;
-                        @include tabletRow{
-                            margin-top: 4rem; 
-                        }
-                        @include mobile{
-                            margin-top: 6rem; 
-                        }
-                        &>li{
-                            @include flex(row,str,cen);
-                            margin-top: 2rem;
+                }
+
+            }
+
+            & .portfolio-contents{
+                float: left;
+                min-height: 100vh;
+                min-height: calc(var(--vh, 1vh) * 100);
+                @include set-size(50%,100%);
+                @include flex(col,space-between,str);
+                @include mobile{
+                    padding: 30rem 40rem;
+                }
+                & .portfolio-btn-wrap{
+                    @include flex(row,str,cen);
+                    -webkit-column-gap: 3rem;
+                       -moz-column-gap: 3rem;
+                            column-gap: 3rem;
+                    @include tabletRow{
+                        -webkit-column-gap: 4rem;
+                           -moz-column-gap: 4rem;
+                                column-gap: 4rem;
+                    }
+                    @include tablet{
+                        -webkit-column-gap: 6rem;
+                           -moz-column-gap: 6rem;
+                                column-gap: 6rem;
+                    }
+                    @include mobile{
+                        -webkit-column-gap: 15rem;
+                           -moz-column-gap: 15rem;
+                                column-gap: 15rem;
+                    }
+                    & .portfolio-btn{
+                        & input[type="radio"]{
+                            & ~ label {
+                            display: block;
+                            padding: 1.5rem;
+                            text-align: center;
+                            background-color: $White;
+                            border-radius: 3rem;
+                            min-width: 12.8rem;
+                            cursor: pointer;
+                            @include font(2.5rem,$Normal,1,$Black);
                             @include tabletRow{
-                                margin-top: 1.2rem; 
+                                padding: 2rem;
+                                font-size: 3.5rem;
+                                border-radius: 4rem;
+                                min-width: 16rem;
                             }
-                            & .profile-date{
-                                @include font(1.8rem,300,1.3,#989898);
-                                width: 16rem;
-                                @include tabletRow{
-                                    @include font(2.8rem,300,1.3,#989898);
-                                    width: 28rem;
-                                }
-                                @include tablet{
-                                    @include font(4.5rem,300,1.4,#989898);
-                                    width: 45rem;
-                                }
-                                @include mobile{
-                                    @include font(12rem,300,1.4,#989898);
-                                    width: 120rem;
-                                }
+                            @include tablet{
+                                padding: 3rem;
+                                font-size: 4.5rem;
+                                border-radius: 5rem;
+                                min-width: 20rem;
                             }
-        
-                            & .profile-txt{
-                                @include font(1.8rem,300,1.3,$Black);
-                                word-break: keep-all;
-                                @include tabletRow{
-                                    @include font(2.8rem,300,1.3,$Black);
-                                }
-                                @include tablet{
-                                    @include font(4.5rem,300,1.4,$Black);
-                                }
-                                @include mobile{
-                                    @include font(12rem,300,1.4,$Black);
-                                }
+                            @include mobile{
+                                padding: 6.5rem;
+                                font-size: 15.5rem;
+                                border-radius: 15rem;
+                                min-width: 60rem;
                             }
-        
-                            &.bold{
-                                & .profile-txt{
-                                    @include font(1.8rem,700,1.3,$Black);
-                                    @include tabletRow{
-                                        @include font(2.8rem,700,1.3,$Black);
-                                    }
-                                    @include tablet{
-                                        @include font(4.5rem,700,1.4,$Black);
-                                    }
-                                    @include mobile{
-                                        @include font(12rem,700,1.4,$Black);
-                                    }
-                                }
                             }
+                            &:checked ~ label{
+                                color: $White;
+                                background-color: $skyBlue;
+                            } 
                         }
+                        
                     }
                 }
-            }
-            
-            & .profile-skill{
-                width: 100%;
-                @include flex(row,bet,cen);
-                @include mobile{
-                    @include flex(col,aro,str);
-                    row-gap: 8rem;
-                }
-                & .skill-wrap{
+                & .portfolio-list-wrap{
+                    width: 100%;
+                    height: 68rem;
+                    margin-top: 6rem;
+                    -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                    gap: 3rem;
+                    max-height: calc(100% - 15rem);
+                    overflow: auto;
+                    @include flex(row,str,str);
+                    @include tabletRow{
+                        height: 92rem;
+                        gap: 5rem;
+                        max-height: calc(100% - 21.5rem);
+                        margin-top: 10rem;
+                    }
+
+                    @include tablet{
+                        height: 179.3rem;
+                        gap: 10rem;
+                        max-height: calc(100% - 30.5rem);
+                        margin-top: 20rem;
+                    }
+
                     @include mobile{
-                        width: 100%;
+                        height: 417rem;
+                        gap: 20rem;
+                        max-height: calc(100% - 168.5rem);
+                        margin-top: 40rem;
+                        margin-bottom: 100rem;
                     }
-                    & .icon_wrap{
-                        @include flex(row,str,cen);
-                        position: relative;
-                        margin-top: 3rem;
-                        @include mobile{
-                            column-gap: 11rem;
-                            margin-top: 8rem;
-                        }
-                        & li{
-                            &~li{
-                                margin-left: 3rem; 
-                            }
-                            & img{
-                                width: 7rem;
-                                @include mobile{
-                                    width: 35rem;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        & .profile-img-contents{
-            & .profile-img1{
-                display: block;
-                position: absolute;
-                top: 0;
-                right: 10rem;
-                width: 105rem;
-                @include mobile{
-                    right: 20rem;
-                    width: 315rem;
-                }
-            }
-            & .profile-img2{
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 10rem;
-                width: 50rem;
-                @include mobile{
-                    right: 20rem;
-                    width: 240rem;
-                }
-            }
-        }
-    }
-}
 
-/* section 03 [S] */
-section.portfolio{
-    @include set-size(auto,auto);
-    padding: 0;
-    & .slideContainer{
-        width: 200%;
-        height: 100vh;
-        overflow: hidden;
-        @include set-size(200%,calc(var(--vh, 1vh) * 100));
-        & .portfolio-visual{
-            position: relative;
-            float: left;
-            box-sizing: border-box;
-            @include set-size(50%,100%);
-            @include flex(col,end,str);                    
-            & .letter{
-                @include font(13rem,$Bold,1.3,$Black);
-                font-family: 'Hahmlet';
-                @include tabletRow{
-                    font-size: 14rem;
-                }
-                @include tablet{
-                    font-size: 20rem;
-                }
-                @include mobile{
-                    font-size: 45rem;
-                }
-            }
-
-        }
-
-        & .portfolio-contents{
-            float: left;
-            min-height: 100vh;
-            min-height: calc(var(--vh, 1vh) * 100);
-            @include set-size(50%,100%);
-            @include flex(col,space-between,str);
-            @include mobile{
-                padding: 30rem 40rem;
-            }
-            & .portfolio-btn-wrap{
-                @include flex(row,str,cen);
-                column-gap: 3rem;
-                @include tabletRow{
-                    column-gap: 4rem;
-                }
-                @include tablet{
-                    column-gap: 6rem;
-                }
-                @include mobile{
-                    column-gap: 15rem;
-                }
-                & .portfolio-btn{
-                    & input[type="radio"]{
-                        & ~ label {
-                        display: block;
-                        padding: 1.5rem;
-                        text-align: center;
-                        background-color: $White;
-                        border-radius: 3rem;
-                        min-width: 12.8rem;
-                        cursor: pointer;
-                        @include font(2.5rem,$Normal,1,$Black);
-                        @include tabletRow{
-                            padding: 2rem;
-                            font-size: 3.5rem;
-                            border-radius: 4rem;
-                            min-width: 16rem;
-                        }
-                        @include tablet{
-                            padding: 3rem;
-                            font-size: 4.5rem;
-                            border-radius: 5rem;
-                            min-width: 20rem;
-                        }
-                        @include mobile{
-                            padding: 6.5rem;
-                            font-size: 15.5rem;
-                            border-radius: 15rem;
-                            min-width: 60rem;
-                        }
-                        }
-                        &:checked ~ label{
-                            color: $White;
-                            background-color: $skyBlue;
-                        } 
+                    &::-webkit-scrollbar {
+                        width: 10px;
                     }
                     
-                }
-            }
-            & .portfolio-list-wrap{
-                width: 100%;
-                height: 68rem;
-                margin-top: 6rem;
-                flex-wrap: wrap;
-                gap: 3rem;
-                max-height: calc(100% - 15rem);
-                overflow: auto;
-                @include flex(row,str,str);
-                @include tabletRow{
-                    height: 92rem;
-                    gap: 5rem;
-                    max-height: calc(100% - 21.5rem);
-                    margin-top: 10rem;
-                }
-
-                @include tablet{
-                    height: 179.3rem;
-                    gap: 10rem;
-                    max-height: calc(100% - 30.5rem);
-                    margin-top: 20rem;
-                }
-
-                @include mobile{
-                    height: 417rem;
-                    gap: 20rem;
-                    max-height: calc(100% - 168.5rem);
-                    margin-top: 40rem;
-                    margin-bottom: 100rem;
-                }
-
-                &::-webkit-scrollbar {
-                    width: 10px;
-                  }
-                
-                &::-webkit-scrollbar-thumb {
-                    background-color: crimson;
-                    transition: 0.4s;
-                  }
-                
-                &::-webkit-scrollbar-track {
-                    background-color: $White;
-                    transition: 0.4s;
-                }
-
-                & .portfolio-list-item{
-                    position: relative;
-                    width: calc((100% - 9rem) / 4);
-                    cursor: pointer;
-                    @include tabletRow{
-                        width: calc((100% - 10rem) / 3);
+                    &::-webkit-scrollbar-thumb {
+                        background-color: $skyBlue;
+                        -webkit-transition: 0.4s;
+                        transition: 0.4s;
                     }
-                    @include tablet{
-                        width: calc((100% - 10rem) / 2);
+                    
+                    &::-webkit-scrollbar-track {
+                        -webkit-transition: 0.4s;
+                        transition: 0.4s;
                     }
-                    @include mobile{
-                        width: 100%;
-                    }
-                    & figure{
-                        width: 100%;
-                        aspect-ratio: 1920 / 969;
+
+                    & .portfolio-list-item{
                         position: relative;
-                        overflow: hidden;
-                        & img{
-                            transition: 0.25s;
-                            @include set-size(100%,100%);
+                        width: calc((100% - 9rem) / 4);
+                        cursor: pointer;
+                        @include tabletRow{
+                            width: calc((100% - 10rem) / 3);
                         }
-                    }
-                    &:hover{
-                        & figure {
+                        @include tablet{
+                            width: calc((100% - 10rem) / 2);
+                        }
+                        @include mobile{
+                            width: 100%;
+                        }
+                        & figure{
+                            position: relative;
+                            width: 100%;
+                            aspect-ratio: 1920 / 969;
+                            overflow: hidden;
                             & img{
-                                -webkit-transform: scale(1.1);
-                                transform: scale(1.1);
+                                -webkit-transition: 0.25s;
+                                -o-transition: 0.25s;
+                                transition: 0.25s;
+                                @include set-size(100%,100%);
                             }
                         }
-                   }
-                   & .list-item-figc{
-                    @include font(1.7rem,500,1,$White);
-                    text-align: center;
-                    display: block;
-                    margin-top: 1rem;
-                    width: 100%;
-                    @include tabletRow{
-                        font-size: 2.5rem;
-                        margin-top: 1.3rem;
+                        &:hover{
+                            & figure {
+                                & img{
+                                    -webkit-transform: scale(1.1);
+                                    -ms-transform: scale(1.1);
+                                        transform: scale(1.1);
+                                }
+                            }
                     }
-                    @include tablet{
-                        font-size: 3.2rem;
-                        margin-top: 2rem;
+                    & .list-item-figc{
+                        @include font(1.7rem,700,1,$White);
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        margin-top: 1rem;
+                        @include tabletRow{
+                            font-size: 2.5rem;
+                            margin-top: 1.3rem;
+                        }
+                        @include tablet{
+                            font-size: 3.2rem;
+                            margin-top: 2rem;
+                        }
+                        @include mobile{
+                            font-size: 13.7rem;
+                            margin-top: 7.7rem;
+                        }
                     }
-                    @include mobile{
-                        font-size: 13.7rem;
-                        margin-top: 7.7rem;
                     }
-                   }
                 }
             }
         }
+
+        
+
+        
     }
-
-    
-
-    
-}
-
 /* section 03 [E] */
 
-/* section 04 [S] */
-section.contact{
-    & .contact-visual{
-        position: relative;
-        @include flex(col,cen,cen);
-        @include set-size(100%,100%);
-        & .contact-txt{
-            @include textEffect(1);
-            color: $White;
-            font-family: 'Hahmlet';
-            @include tabletRow{
-                font-size: 11rem;
-            }
-            @include tablet{
-                font-size: 13rem;
-            }
-            @include mobile{
-                font-size: 30rem;
-            }
-            &.active{
-                @include textEffect(0);
-            }
-        }
-        & .contact-privacy-wrap{
-            @include flex(row,aro,end);
-            position: absolute;
-            bottom: 5rem;
-            left: 50%;
-            width: 100%;
-            transform: translateX(-50%);
-            @include tabletRow{
-                bottom: 10rem;
-            }
-            @include tablet{
-                bottom: 15rem;
-            }
-            @include mobile{
-                bottom: 30rem;
-            }
-            & h3{
+    /* section 04 [S] */
+    & section.contact{
+        & .contact-visual{
+            position: relative;
+            @include flex(col,cen,cen);
+            @include set-size(100%,100%);
+            & .contact-txt{
+                @include textEffect(1);
                 color: $White;
                 font-family: 'Hahmlet';
+                @include tabletRow{
+                    font-size: 11rem;
+                }
+                @include tablet{
+                    font-size: 13rem;
+                }
                 @include mobile{
-                    font-size: 13.5rem;
+                    font-size: 30rem;
+                }
+                &.active{
+                    @include textEffect(0);
+                }
+            }
+            & .contact-privacy-wrap{
+                @include flex(row,aro,end);
+                position: absolute;
+                bottom: 5rem;
+                left: 50%;
+                width: 100%;
+                -webkit-transform: translateX(-50%);
+                    -ms-transform: translateX(-50%);
+                        transform: translateX(-50%);
+                @include tabletRow{
+                    bottom: 10rem;
+                }
+                @include tablet{
+                    bottom: 15rem;
+                }
+                @include mobile{
+                    bottom: 30rem;
+                }
+                & h3{
+                    color: $White;
+                    font-family: 'Hahmlet';
+                    @include mobile{
+                        font-size: 13.5rem;
+                    }
                 }
             }
         }
+        
     }
-    
-}
 /* section 04 [E] */
 
+    /* footer [S] */
 
-/* footer [S] */
-
-footer{
-    @include flex(row,cen,cen);
-    height: 7rem;
-    @include set-color($Indigo, $Beige);
-    @include tabletRow{
-        height: 10rem;
-    }
-    @include tablet{
-        height: 15rem;
-    }
-    @include mobile{
-        height: 50rem;
-    }
-    & address{
-        @include font(1.7rem,400,1,$White);
-        font-style: normal;
+    & footer{
+        @include flex(row,cen,cen);
+        height: 7rem;
+        @include set-color($Indigo, $Beige);
         @include tabletRow{
-            font-size: 2.5rem;
+            height: 10rem;
         }
         @include tablet{
-            font-size: 4rem;
+            height: 15rem;
         }
         @include mobile{
-            font-size: 12rem;
+            height: 50rem;
+        }
+        & address{
+            @include font(1.7rem,400,1,$White);
+            font-style: normal;
+            @include tabletRow{
+                font-size: 2.5rem;
+            }
+            @include tablet{
+                font-size: 4rem;
+            }
+            @include mobile{
+                font-size: 12rem;
+            }
         }
     }
-}
 /* footer [E] */
+
+
+
+
+}
 
 /* layer [S] */
 .layer-wrap{
@@ -602,7 +723,9 @@ footer{
         padding: 5rem;
         max-height: 90%;
         z-index: 5;
-        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+                transform: translate(-50%,-50%);
         background-color: $White;
         overflow: auto;
         @include tabletRow{
@@ -625,12 +748,14 @@ footer{
           }
         
         &::-webkit-scrollbar-thumb {
-            background-color: crimson;
+            background-color: $skyBlue;
+            -webkit-transition: 0.4s;
             transition: 0.4s;
           }
         
         &::-webkit-scrollbar-track {
             background-color: $White;
+            -webkit-transition: 0.4s;
             transition: 0.4s;
         }
 
@@ -706,7 +831,8 @@ footer{
 
         & dl{
             @include flex(row,str,cen);
-            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
             &:first-of-type{
                 margin-top: 1.5rem;
             @include tabletRow{
@@ -752,7 +878,7 @@ footer{
 
         & .layer-txt{
             margin-top: 3rem;
-            word-break: keep-all;
+            word-break: kee,pleft transform;
             @include tabletRow{
                 @include font(2.5rem,500,1.3,$Black);
             }
@@ -772,15 +898,21 @@ footer{
 /* type2 [S] */
 .section-wrap.type2 {
     background-color: $Black;
+    -webkit-transition: background-color 1.4s;
+    -o-transition: background-color 1.4s;
     transition: background-color 1.4s;
     & section{
         background-color: $Black;
         /* box-shadow:0em 0 0.7em $White; */
+        -webkit-transition: 1.4s;
+        -o-transition: 1.4s;
         transition: 1.4s;
         &.portfolio{
             & .portfolio-visual{
                 & .letter{
                     color: $White;
+                    -webkit-transition: color 1.4s;
+                    -o-transition: color 1.4s;
                     transition: color 1.4s;
                 }
             }
