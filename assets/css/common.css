@@ -512,9 +512,11 @@ html {
   transition: background-color 1.4s;
   width: 100%;
   height: calc(var(--vh, 1vh) * 100);
+  scroll-behavior: smooth;
 }
 .section article {
   padding: 5rem 10rem;
+  scroll-behavior: smooth;
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .section article {

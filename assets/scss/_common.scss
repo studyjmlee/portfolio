@@ -326,9 +326,10 @@ html{
         
         transition: background-color 1.4s;
         @include set-size(100%, calc(var(--vh, 1vh) * 100));
+        scroll-behavior: smooth;
         & article{
             padding: 5rem 10rem;
-            
+            scroll-behavior: smooth;
             @include tablet{
                 padding: 15rem 10rem;
             }

@@ -673,6 +673,7 @@ body.type3::-webkit-scrollbar-track {
   width: auto;
   height: auto;
   padding: 0;
+  scroll-behavior: smooth;
 }
 .contents section.portfolio .slideContainer {
   width: 200%;
@@ -680,6 +681,9 @@ body.type3::-webkit-scrollbar-track {
   overflow: hidden;
   width: 200%;
   height: calc(var(--vh, 1vh) * 100);
+}
+.contents section.portfolio .slideContainer.focused {
+  transform: translate(-50%, 0%) translate3d(0px, 0px, 0px) !important;
 }
 .contents section.portfolio .slideContainer .portfolio-visual {
   position: relative;
@@ -797,7 +801,7 @@ body.type3::-webkit-scrollbar-track {
     column-gap: 15rem;
   }
 }
-.contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn input[type=radio] ~ label {
+.contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
   display: block;
   padding: 1.5rem;
   text-align: center;
@@ -811,7 +815,7 @@ body.type3::-webkit-scrollbar-track {
   color: #000000;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
-  .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn input[type=radio] ~ label {
+  .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
     padding: 2rem;
     font-size: 3.5rem;
     border-radius: 4rem;
@@ -819,7 +823,7 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
-  .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn input[type=radio] ~ label {
+  .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
     padding: 2rem;
     font-size: 3.5rem;
     border-radius: 4rem;
@@ -827,7 +831,7 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
-  .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn input[type=radio] ~ label {
+  .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
     padding: 3rem;
     font-size: 4.5rem;
     border-radius: 5rem;
@@ -835,14 +839,14 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
-  .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn input[type=radio] ~ label {
+  .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
     padding: 6.5rem;
     font-size: 15.5rem;
     border-radius: 15rem;
     min-width: 60rem;
   }
 }
-.contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn input[type=radio]:checked ~ label {
+.contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn.on {
   color: #ffffff;
   background-color: #b3d4fc;
 }
@@ -938,6 +942,10 @@ body.type3::-webkit-scrollbar-track {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item {
     width: 100%;
   }
+}
+.contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item a {
+  display: block;
+  width: 100%;
 }
 .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item figure {
   position: relative;
@@ -1238,6 +1246,9 @@ body.type3::-webkit-scrollbar-track {
 }
 .layer-wrap .layer-contents.active {
   display: block;
+}
+.layer-wrap .layer-contents:focus {
+  outline: none;
 }
 .layer-wrap .layer-contents::-webkit-scrollbar {
   width: 10px;
