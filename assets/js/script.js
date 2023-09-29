@@ -27,6 +27,7 @@ function layerClose() {
   layerWrap.fadeOut(400);
   layerWrap.find(`.layer-contents`).removeClass("active");
   body.removeClass("prevent-scroll");
+  $(".contents").attr('aria-hidden','false');
 }
 
 function introScroll() {
@@ -180,7 +181,7 @@ $(window).resize(function () {
     firstTabStop = focusableElements[0];
     lastTabStop = focusableElements[focusableElements.length - 1];
     layer.addClass("active");
-    layer.attr("aria-hidden","false");
+    $(".contents").attr("aria-hidden","false");
     layer.attr("tabindex","0").focus();
     layerWrap.fadeIn(400);
     body.addClass("prevent-scroll");
