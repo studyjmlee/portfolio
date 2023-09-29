@@ -17,8 +17,8 @@
 * Browsers: last 4 version
 */
 body.prevent-scroll {
-  height: 100%;
   overflow: hidden;
+  height: 100%;
 }
 body::-webkit-scrollbar {
   width: 10px;
@@ -64,15 +64,15 @@ body.type3::-webkit-scrollbar-track {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   width: 100%;
   height: 100%;
   background: url("../images/common/Preloader.gif") no-repeat center center;
   background-color: #ffffff;
-  z-index: 9999;
 }
 
 .section-wrap {
-  background-color: #fff;
+  background-color: #ffffff;
   -webkit-transition: 1.4s;
   -o-transition: 1.4s;
   transition: 1.4s;
@@ -93,21 +93,12 @@ body.type3::-webkit-scrollbar-track {
 }
 .contents section.intro .intro-visual {
   position: relative;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   padding-top: 5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  -webkit-box-sizing: border-box;
+  ox-sizing: border-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
   width: 100%;
   height: 100%;
@@ -118,25 +109,13 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents section.intro .intro-visual .visual-letter-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   width: 100%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
 }
 .contents section.intro .intro-visual .visual-letter-wrap .letter {
-  font-size: 17rem;
-  font-weight: 900;
-  line-height: 1;
-  color: #000000;
   display: inline-block;
   position: relative;
   left: 50%;
@@ -149,37 +128,41 @@ body.type3::-webkit-scrollbar-track {
   transition: left 0.6s ease, -webkit-transform 0.6s ease;
   transition: transform 0.6s ease, left 0.6s ease;
   transition: transform 0.6s ease, left 0.6s ease, -webkit-transform 0.6s ease;
+  font-weight: 900;
+  color: #000000;
+  line-height: 1;
+  font-size: 17rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.intro .intro-visual .visual-letter-wrap .letter {
-    font-size: 19rem;
     font-weight: 900;
-    line-height: 1.2;
     color: #000000;
+    line-height: 1.2;
+    font-size: 19rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.intro .intro-visual .visual-letter-wrap .letter {
-    font-size: 19rem;
     font-weight: 900;
-    line-height: 1.2;
     color: #000000;
+    line-height: 1.2;
+    font-size: 19rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.intro .intro-visual .visual-letter-wrap .letter {
-    font-size: 19rem;
     font-weight: 900;
-    line-height: 1.5;
     color: #000000;
+    line-height: 1.5;
+    font-size: 19rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.intro .intro-visual .visual-letter-wrap .letter {
-    font-size: 45rem;
     font-weight: 900;
-    line-height: 1.4;
     color: #000000;
+    line-height: 1.4;
+    font-size: 45rem;
   }
 }
 .contents section.intro .intro-visual .visual-letter-wrap.active .letter.letter-left {
@@ -195,85 +178,85 @@ body.type3::-webkit-scrollbar-track {
   transform: translateX(-100%);
 }
 .contents section.intro .intro-visual .visual-info > dt {
-  font-size: 6rem;
   font-weight: 700;
-  line-height: 1;
   color: #000000;
+  line-height: 1;
+  font-size: 6rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.intro .intro-visual .visual-info > dt {
-    font-size: 8rem;
     font-weight: 700;
-    line-height: 1;
     color: #000000;
+    line-height: 1;
+    font-size: 8rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.intro .intro-visual .visual-info > dt {
-    font-size: 8rem;
     font-weight: 700;
-    line-height: 1;
     color: #000000;
+    line-height: 1;
+    font-size: 8rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.intro .intro-visual .visual-info > dt {
-    font-size: 12rem;
     font-weight: 700;
-    line-height: 1;
     color: #000000;
+    line-height: 1;
+    font-size: 12rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.intro .intro-visual .visual-info > dt {
-    font-size: 34rem;
     font-weight: 700;
-    line-height: 1;
     color: #000000;
+    line-height: 1;
+    font-size: 34rem;
   }
 }
 .contents section.intro .intro-visual .visual-info > dd {
-  font-size: 4rem;
-  font-weight: 500;
-  line-height: 1.2;
-  color: #000000;
   margin-top: 3rem;
   word-break: kee, pleft transform;
+  font-weight: 500;
+  color: #000000;
+  line-height: 1.2;
+  font-size: 4rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.intro .intro-visual .visual-info > dd {
-    font-size: 5rem;
-    font-weight: 500;
-    line-height: 1.3;
-    color: #000000;
     margin-top: 4.5rem;
+    font-weight: 500;
+    color: #000000;
+    line-height: 1.3;
+    font-size: 5rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.intro .intro-visual .visual-info > dd {
-    font-size: 5rem;
-    font-weight: 500;
-    line-height: 1.3;
-    color: #000000;
     margin-top: 4.5rem;
+    font-weight: 500;
+    color: #000000;
+    line-height: 1.3;
+    font-size: 5rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.intro .intro-visual .visual-info > dd {
-    font-size: 7rem;
-    font-weight: 500;
-    line-height: 1.3;
-    color: #000000;
     margin-top: 7rem;
+    font-weight: 500;
+    color: #000000;
+    line-height: 1.3;
+    font-size: 7rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.intro .intro-visual .visual-info > dd {
-    font-size: 25rem;
-    font-weight: 500;
-    line-height: 1.3;
-    color: #000000;
     margin-top: 14rem;
+    font-weight: 500;
+    color: #000000;
+    line-height: 1.3;
+    font-size: 25rem;
   }
 }
 .contents section.profile {
@@ -288,18 +271,9 @@ body.type3::-webkit-scrollbar-track {
 .contents section.profile .profile-article .profile-wrap {
   height: calc(100% - 21.8rem);
   margin-top: 14rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
@@ -325,24 +299,11 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents section.profile .profile-article .profile-wrap .profile-summary {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   row-gap: 5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary {
@@ -356,40 +317,22 @@ body.type3::-webkit-scrollbar-track {
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
     width: 100%;
     row-gap: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
     width: 100%;
     row-gap: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 }
 .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail {
@@ -424,20 +367,9 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   margin-top: 2rem;
+  display: flex;
+  align-items: center;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li {
@@ -450,156 +382,138 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-date {
-  font-size: 1.8rem;
-  font-weight: 300;
-  line-height: 1.3;
-  color: #989898;
   width: 16rem;
+  font-weight: 300;
+  color: #989898;
+  line-height: 1.3;
+  font-size: 1.8rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-date {
-    font-size: 2.8rem;
-    font-weight: 300;
-    line-height: 1.3;
-    color: #989898;
     width: 28rem;
+    font-weight: 300;
+    color: #989898;
+    line-height: 1.3;
+    font-size: 2.8rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-date {
-    font-size: 2.8rem;
-    font-weight: 300;
-    line-height: 1.3;
-    color: #989898;
     width: 28rem;
+    font-weight: 300;
+    color: #989898;
+    line-height: 1.3;
+    font-size: 2.8rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-date {
-    font-size: 4.5rem;
-    font-weight: 300;
-    line-height: 1.4;
-    color: #989898;
     width: 45rem;
+    font-weight: 300;
+    color: #989898;
+    line-height: 1.4;
+    font-size: 4.5rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-date {
-    font-size: 12rem;
-    font-weight: 300;
-    line-height: 1.4;
-    color: #989898;
     width: 120rem;
+    font-weight: 300;
+    color: #989898;
+    line-height: 1.4;
+    font-size: 12rem;
   }
 }
 .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-txt {
-  font-size: 1.8rem;
-  font-weight: 300;
-  line-height: 1.3;
-  color: #000000;
   word-break: kee, pleft transform;
+  font-weight: 300;
+  color: #000000;
+  line-height: 1.3;
+  font-size: 1.8rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-txt {
-    font-size: 2.8rem;
     font-weight: 300;
-    line-height: 1.3;
     color: #000000;
+    line-height: 1.3;
+    font-size: 2.8rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-txt {
-    font-size: 2.8rem;
     font-weight: 300;
-    line-height: 1.3;
     color: #000000;
+    line-height: 1.3;
+    font-size: 2.8rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-txt {
-    font-size: 4.5rem;
     font-weight: 300;
-    line-height: 1.4;
     color: #000000;
+    line-height: 1.4;
+    font-size: 4.5rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li .profile-txt {
-    font-size: 12rem;
     font-weight: 300;
-    line-height: 1.4;
     color: #000000;
+    line-height: 1.4;
+    font-size: 12rem;
   }
 }
 .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li.bold .profile-txt {
-  font-size: 1.8rem;
   font-weight: 700;
-  line-height: 1.3;
   color: #000000;
+  line-height: 1.3;
+  font-size: 1.8rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li.bold .profile-txt {
-    font-size: 2.8rem;
     font-weight: 700;
-    line-height: 1.3;
     color: #000000;
+    line-height: 1.3;
+    font-size: 2.8rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li.bold .profile-txt {
-    font-size: 2.8rem;
     font-weight: 700;
-    line-height: 1.3;
     color: #000000;
+    line-height: 1.3;
+    font-size: 2.8rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li.bold .profile-txt {
-    font-size: 4.5rem;
     font-weight: 700;
-    line-height: 1.4;
     color: #000000;
+    line-height: 1.4;
+    font-size: 4.5rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.profile .profile-article .profile-wrap .profile-summary .profile-detail .profile-list > li.bold .profile-txt {
-    font-size: 12rem;
     font-weight: 700;
-    line-height: 1.4;
     color: #000000;
+    line-height: 1.4;
+    font-size: 12rem;
   }
 }
 .contents section.profile .profile-article .profile-wrap .profile-skill {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.profile .profile-article .profile-wrap .profile-skill {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: distribute;
-    justify-content: space-around;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
     row-gap: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
@@ -608,28 +522,15 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents section.profile .profile-article .profile-wrap .profile-skill .skill-wrap .icon_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   position: relative;
   margin-top: 3rem;
+  display: flex;
+  align-items: center;
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.profile .profile-article .profile-wrap .profile-skill .skill-wrap .icon_wrap {
-    -webkit-column-gap: 11rem;
-    -moz-column-gap: 11rem;
-    column-gap: 11rem;
     margin-top: 8rem;
+    column-gap: 11rem;
   }
 }
 .contents section.profile .profile-article .profile-wrap .profile-skill .skill-wrap .icon_wrap li ~ li {
@@ -670,15 +571,15 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents section.portfolio {
-  width: auto;
-  height: auto;
   padding: 0;
   scroll-behavior: smooth;
+  width: auto;
+  height: auto;
 }
 .contents section.portfolio .slideContainer {
+  overflow: hidden;
   width: 200%;
   height: 100vh;
-  overflow: hidden;
   width: 200%;
   height: calc(var(--vh, 1vh) * 100);
 }
@@ -686,32 +587,23 @@ body.type3::-webkit-scrollbar-track {
   transform: translate(-50%, 0%) translate3d(0px, 0px, 0px) !important;
 }
 .contents section.portfolio .slideContainer .portfolio-visual {
-  position: relative;
   float: left;
+  position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 50%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
   justify-content: flex-end;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
 }
 .contents section.portfolio .slideContainer .portfolio-visual .letter {
-  font-size: 13rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #000000;
   font-family: "Hahmlet";
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.3;
+  font-size: 13rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.portfolio .slideContainer .portfolio-visual .letter {
@@ -739,15 +631,8 @@ body.type3::-webkit-scrollbar-track {
   min-height: calc(var(--vh, 1vh) * 100);
   width: 50%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
 }
 @media (orientation: portrait) and (max-width: 767px) {
@@ -756,154 +641,121 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-column-gap: 3rem;
-  -moz-column-gap: 3rem;
   column-gap: 3rem;
+  display: flex;
+  align-items: center;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap {
-    -webkit-column-gap: 4rem;
-    -moz-column-gap: 4rem;
     column-gap: 4rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap {
-    -webkit-column-gap: 4rem;
-    -moz-column-gap: 4rem;
     column-gap: 4rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap {
-    -webkit-column-gap: 6rem;
-    -moz-column-gap: 6rem;
     column-gap: 6rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap {
-    -webkit-column-gap: 15rem;
-    -moz-column-gap: 15rem;
     column-gap: 15rem;
   }
 }
 .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
   display: block;
-  padding: 1.5rem;
-  text-align: center;
-  background-color: #ffffff;
-  border-radius: 3rem;
   min-width: 12.8rem;
+  padding: 1.5rem;
+  border-radius: 3rem;
+  background-color: #ffffff;
+  text-align: center;
   cursor: pointer;
-  font-size: 2.5rem;
   font-weight: 500;
-  line-height: 1;
   color: #000000;
+  line-height: 1;
+  font-size: 2.5rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
-    padding: 2rem;
-    font-size: 3.5rem;
-    border-radius: 4rem;
     min-width: 16rem;
+    padding: 2rem;
+    border-radius: 4rem;
+    font-size: 3.5rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
-    padding: 2rem;
-    font-size: 3.5rem;
-    border-radius: 4rem;
     min-width: 16rem;
+    padding: 2rem;
+    border-radius: 4rem;
+    font-size: 3.5rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
-    padding: 3rem;
-    font-size: 4.5rem;
-    border-radius: 5rem;
     min-width: 20rem;
+    padding: 3rem;
+    border-radius: 5rem;
+    font-size: 4.5rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn {
-    padding: 6.5rem;
-    font-size: 15.5rem;
-    border-radius: 15rem;
     min-width: 60rem;
+    padding: 6.5rem;
+    border-radius: 15rem;
+    font-size: 15.5rem;
   }
 }
-.contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn.on {
-  color: #ffffff;
+.contents section.portfolio .slideContainer .portfolio-contents .portfolio-btn-wrap .portfolio-btn[aria-selected=true] {
   background-color: #b3d4fc;
+  color: #ffffff;
 }
 .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap {
+  overflow: auto;
   width: 100%;
   height: 68rem;
+  max-height: calc(100% - 15rem);
   margin-top: 6rem;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   gap: 3rem;
-  max-height: calc(100% - 15rem);
-  overflow: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap {
     height: 92rem;
-    gap: 5rem;
     max-height: calc(100% - 21.5rem);
     margin-top: 10rem;
+    gap: 5rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap {
     height: 92rem;
-    gap: 5rem;
     max-height: calc(100% - 21.5rem);
     margin-top: 10rem;
+    gap: 5rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap {
     height: 179.3rem;
-    gap: 10rem;
     max-height: calc(100% - 30.5rem);
     margin-top: 20rem;
+    gap: 10rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap {
     height: 417rem;
-    gap: 20rem;
     max-height: calc(100% - 168.5rem);
     margin-top: 40rem;
     margin-bottom: 100rem;
+    gap: 20rem;
   }
 }
 .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap::-webkit-scrollbar {
@@ -947,13 +799,14 @@ body.type3::-webkit-scrollbar-track {
   display: block;
   width: 100%;
 }
-.contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item figure {
+.contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item .list-item-img {
+  display: block;
+  overflow: hidden;
   position: relative;
   width: 100%;
   aspect-ratio: 1920/969;
-  overflow: hidden;
 }
-.contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item figure img {
+.contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item .list-item-img img {
   -webkit-transition: 0.25s;
   -o-transition: 0.25s;
   transition: 0.25s;
@@ -962,57 +815,47 @@ body.type3::-webkit-scrollbar-track {
 }
 .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item:hover figure img {
   -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
 .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item .list-item-figc {
-  font-size: 1.7rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #ffffff;
   display: block;
   width: 100%;
-  text-align: center;
   margin-top: 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+  font-size: 1.7rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item .list-item-figc {
-    font-size: 2.5rem;
     margin-top: 1.3rem;
+    font-size: 2.5rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item .list-item-figc {
-    font-size: 2.5rem;
     margin-top: 1.3rem;
+    font-size: 2.5rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item .list-item-figc {
-    font-size: 3.2rem;
     margin-top: 2rem;
+    font-size: 3.2rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.portfolio .slideContainer .portfolio-contents .portfolio-list-wrap .portfolio-list-item .list-item-figc {
-    font-size: 13.7rem;
     margin-top: 7.7rem;
+    font-size: 13.7rem;
   }
 }
 .contents section.contact .contact-visual {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -1021,22 +864,22 @@ body.type3::-webkit-scrollbar-track {
   -webkit-transform: translate(0, 0) rotate(0.001deg);
   -ms-transform: translate(0, 0) rotate(0.001deg);
   transform: translate(0, 0) rotate(0.001deg);
+  -webkit-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  transform: translate(0, 100%);
   -webkit-transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
   transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
   -o-transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
   transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
   transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
-  -webkit-transform: translate(0, 100%);
-  -ms-transform: translate(0, 100%);
-  transform: translate(0, 100%);
   -webkit-transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
   transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
   -o-transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
   transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
   transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
   opacity: 0;
-  color: #ffffff;
   font-family: "Hahmlet";
+  color: #ffffff;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.contact .contact-visual .contact-txt {
@@ -1059,10 +902,10 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents section.contact .contact-visual .contact-txt.active {
-  opacity: 1;
   -webkit-transform: translate(0, 0) rotate(0.001deg);
   -ms-transform: translate(0, 0) rotate(0.001deg);
   transform: translate(0, 0) rotate(0.001deg);
+  opacity: 1;
   -webkit-transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
   transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
   -o-transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
@@ -1070,18 +913,6 @@ body.type3::-webkit-scrollbar-track {
   transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
 }
 .contents section.contact .contact-visual .contact-privacy-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
   position: absolute;
   bottom: 5rem;
   left: 50%;
@@ -1089,6 +920,9 @@ body.type3::-webkit-scrollbar-track {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents section.contact .contact-visual .contact-privacy-wrap {
@@ -1111,8 +945,8 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents section.contact .contact-visual .contact-privacy-wrap h3 {
-  color: #ffffff;
   font-family: "Hahmlet";
+  color: #ffffff;
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .contents section.contact .contact-visual .contact-privacy-wrap h3 {
@@ -1120,22 +954,12 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   height: 7rem;
-  color: #FBF6EB;
   background-color: #1A343F;
+  color: #FBF6EB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents footer {
@@ -1158,11 +982,11 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .contents footer address {
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1;
-  color: #ffffff;
   font-style: normal;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1;
+  font-size: 1.7rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .contents footer address {
@@ -1191,8 +1015,8 @@ body.type3::-webkit-scrollbar-track {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
   z-index: 4;
+  height: 100vh;
   width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
 }
@@ -1207,20 +1031,20 @@ body.type3::-webkit-scrollbar-track {
   display: block;
 }
 .layer-wrap .layer-contents {
-  width: 60%;
-  height: auto;
   display: none;
+  overflow: auto;
   position: absolute;
   top: 50%;
   left: 50%;
-  padding: 5rem;
-  max-height: 90%;
   z-index: 5;
+  max-height: 90%;
+  padding: 5rem;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background-color: #ffffff;
-  overflow: auto;
+  width: 60%;
+  height: auto;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .layer-wrap .layer-contents {
@@ -1264,9 +1088,10 @@ body.type3::-webkit-scrollbar-track {
   transition: 0.4s;
 }
 .layer-wrap .layer-contents .layer-img {
+  display: block;
   width: 100%;
-  border: 1px solid #000000;
   margin-top: 3rem;
+  border: 1px solid #000000;
 }
 .layer-wrap .layer-contents .layer-img img {
   width: 100%;
@@ -1319,10 +1144,10 @@ body.type3::-webkit-scrollbar-track {
 }
 .layer-wrap .layer-contents .layer-header {
   text-align: center;
-  font-size: 4rem;
   font-weight: 700;
-  line-height: 1;
   color: #000000;
+  line-height: 1;
+  font-size: 4rem;
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .layer-wrap .layer-contents .layer-header {
@@ -1331,9 +1156,9 @@ body.type3::-webkit-scrollbar-track {
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .layer-wrap .layer-contents .layer-header {
-    font-size: 20rem;
-    padding-left: 20rem;
     padding-right: 20rem;
+    padding-left: 20rem;
+    font-size: 20rem;
   }
 }
 .layer-wrap .layer-contents .layer-link {
@@ -1365,21 +1190,9 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .layer-wrap .layer-contents dl {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  display: flex;
+  align-items: center;
 }
 .layer-wrap .layer-contents dl:first-of-type {
   margin-top: 1.5rem;
@@ -1405,122 +1218,122 @@ body.type3::-webkit-scrollbar-track {
   }
 }
 .layer-wrap .layer-contents dl dt {
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.3;
-  color: #000000;
   margin-right: 1rem;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.3;
+  font-size: 1.5rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .layer-wrap .layer-contents dl dt {
-    font-size: 2.3rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #000000;
     margin-right: 2rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.5;
+    font-size: 2.3rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .layer-wrap .layer-contents dl dt {
-    font-size: 2.3rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #000000;
     margin-right: 2rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.5;
+    font-size: 2.3rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .layer-wrap .layer-contents dl dt {
-    font-size: 3rem;
-    font-weight: 700;
-    line-height: 1.5;
-    color: #000000;
     margin-right: 3rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.5;
+    font-size: 3rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .layer-wrap .layer-contents dl dt {
-    font-size: 11.5rem;
-    font-weight: 700;
-    line-height: 1.6;
-    color: #000000;
     margin-right: 10rem;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.6;
+    font-size: 11.5rem;
   }
 }
 .layer-wrap .layer-contents dl dd {
-  font-size: 1.5rem;
   font-weight: 300;
-  line-height: 1.3;
   color: #000000;
+  line-height: 1.3;
+  font-size: 1.5rem;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .layer-wrap .layer-contents dl dd {
-    font-size: 2.3rem;
     font-weight: 300;
-    line-height: 1.5;
     color: #000000;
+    line-height: 1.5;
+    font-size: 2.3rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .layer-wrap .layer-contents dl dd {
-    font-size: 2.3rem;
     font-weight: 300;
-    line-height: 1.5;
     color: #000000;
+    line-height: 1.5;
+    font-size: 2.3rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .layer-wrap .layer-contents dl dd {
-    font-size: 3rem;
     font-weight: 300;
-    line-height: 1.5;
     color: #000000;
+    line-height: 1.5;
+    font-size: 3rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .layer-wrap .layer-contents dl dd {
-    font-size: 11.5rem;
     font-weight: 300;
-    line-height: 1.6;
     color: #000000;
+    line-height: 1.6;
+    font-size: 11.5rem;
   }
 }
 .layer-wrap .layer-contents .layer-txt {
   margin-top: 3rem;
-  word-break: kee, pleft transform;
+  word-break: keep-all;
 }
 @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px) {
   .layer-wrap .layer-contents .layer-txt {
-    font-size: 2.5rem;
     font-weight: 500;
-    line-height: 1.3;
     color: #000000;
+    line-height: 1.3;
+    font-size: 2.5rem;
   }
 }
 @media (orientation: landscape) and (max-width: 767px) {
   .layer-wrap .layer-contents .layer-txt {
-    font-size: 2.5rem;
     font-weight: 500;
-    line-height: 1.3;
     color: #000000;
+    line-height: 1.3;
+    font-size: 2.5rem;
   }
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
   .layer-wrap .layer-contents .layer-txt {
     margin-top: 4rem;
-    font-size: 3.5rem;
     font-weight: 500;
-    line-height: 1.3;
     color: #000000;
+    line-height: 1.3;
+    font-size: 3.5rem;
   }
 }
 @media (orientation: portrait) and (max-width: 767px) {
   .layer-wrap .layer-contents .layer-txt {
     margin-top: 24rem;
-    font-size: 14rem;
     font-weight: 500;
-    line-height: 1.3;
     color: #000000;
+    line-height: 1.3;
+    font-size: 14rem;
   }
 }
 

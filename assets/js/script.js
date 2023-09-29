@@ -27,7 +27,6 @@ function layerClose() {
   layerWrap.fadeOut(400);
   layerWrap.find(`.layer-contents`).removeClass("active");
   body.removeClass("prevent-scroll");
-  $(".contents").attr('aria-hidden','false');
 }
 
 function introScroll() {
@@ -161,8 +160,8 @@ $(window).resize(function () {
 
   /* portfolio 버튼 */
   $(".portfolio-btn").click(function () {
-    $(this).parents("li").siblings("li").find(".portfolio-btn").removeClass("on");
-    $(this).addClass("on");
+    $(this).parents("li").siblings("li").find(".portfolio-btn").attr('aria-selected','false');
+    $(this).attr('aria-selected','true');
     var value = $(this).data("type");
     if (value == "all") {
       listItem.show();
@@ -181,7 +180,7 @@ $(window).resize(function () {
     firstTabStop = focusableElements[0];
     lastTabStop = focusableElements[focusableElements.length - 1];
     layer.addClass("active");
-    $(".contents").attr("aria-hidden","false");
+    $(".contents").attr("aria-hidden","true");
     layer.attr("tabindex","0").focus();
     layerWrap.fadeIn(400);
     body.addClass("prevent-scroll");
@@ -195,7 +194,7 @@ $(window).resize(function () {
     var parentsLayer=$(this).parents(".layer-contents");
     layerClose();
     var value=parentsLayer.attr("id");
-    parentsLayer.attr("aria-hidden","true");
+    $(".contents").attr("aria-hidden","false");
     $(`.layer-open[href='#${value}']`).focus();
     });
   
