@@ -3,15 +3,15 @@ var preloader=$(".preload");
 var layerWrap=$(".layer-wrap");
 var intro=$(".intro");
 var profile=$(".profile");
-var port = $(".type2-trigger");
-var sectionWrap = $(".section-wrap");
+var port = $(".scroll-trigger");
+var sectionWrap = $(".section_wrap");
 var portfolio=$(".portfolio");
-var listWrap = $(".portfolio-list-wrap");
-var listItem = listWrap.find(".portfolio-list-item");
+var listWrap = $(".list_work");
+var listItem = listWrap.find(".lst_item");
 var contact= $(".contact");
-var contactTxt= $(".contact-txt");
-var visualInfo = $(".visual-info");
-var letterWrap = $(".visual-letter-wrap");
+var contactTxt= contact.find(".tit");
+var visualInfo = $(".intro .info");
+var letterWrap = $(".letter-wrap");
 var firstTabStop = 0;
 var lastTabStop = 0;
 
@@ -53,8 +53,8 @@ function aboutScroll() {
   const wi = window.innerHeight;
   var controller2 = new ScrollMagic.Controller();
   var tween2 = new TimelineMax()
-    .fromTo(".profile-img1", 0.5, { y: "140vh" }, { y: "-120%" })
-    .fromTo(".profile-img2", 0.5, { y: "110vh" }, { y: "-120%" });
+    .fromTo(".my_img1", 0.5, { y: "140vh" }, { y: "-120%" })
+    .fromTo(".my_img2", 0.5, { y: "110vh" }, { y: "-120%" });
   var scene = new ScrollMagic.Scene({
     triggerElement: ".profile",
     duration: wi * 5,
@@ -75,11 +75,11 @@ function portScroll1() {
   const wi = window.innerHeight;
   var controller4 = new ScrollMagic.Controller();
   var tween4 = new TimelineMax()
-    /* .fromTo(".slideContainer-portfolio", 0.1, { x: "-0%" }, { x: "-50%" }); */
-    .to(".slideContainer-portfolio", 0.1, { x: "-0%" })
-    .to(".slideContainer-portfolio", 0.1, { x: "-25%" })
-    .to(".slideContainer-portfolio", 0.1, { x: "-50%" })
-    .to(".slideContainer-portfolio", 0.1, { x: "-50%" });
+    /* .fromTo(".portfolio .slideContainer", 0.1, { x: "-0%" }, { x: "-50%" }); */
+    .to(".portfolio .slideContainer", 0.1, { x: "-0%" })
+    .to(".portfolio .slideContainer", 0.1, { x: "-25%" })
+    .to(".portfolio .slideContainer", 0.1, { x: "-50%" })
+    .to(".portfolio .slideContainer", 0.1, { x: "-50%" });
   var scene = new ScrollMagic.Scene({
     triggerElement: ".portfolio",
     duration: wi * 5,
@@ -92,7 +92,7 @@ function portScroll1() {
     })
     .on("leave", function (e) {
       portfolio.removeClass("fixed");
-      $(".slideContainer-portfolio").removeClass("focused");
+      $(".portfolio .slideContainer").removeClass("focused");
     })
     .setTween(tween4)
     .addTo(controller4);
@@ -110,11 +110,11 @@ function contactScroll(winScroll) {
 function portScroll2(winScroll) {
   var portOffset = port.offset().top;
   if (winScroll >= portOffset - 200) {
-    sectionWrap.addClass("type2");
-    body.addClass("type2");
+    sectionWrap.addClass("effect");
+    body.addClass("effect");
   } else {
-    sectionWrap.removeClass("type2");
-    body.removeClass("type2");
+    sectionWrap.removeClass("effect");
+    body.removeClass("effect");
   }
 }
 
@@ -159,8 +159,8 @@ $(window).resize(function () {
 });
 
   /* portfolio 버튼 */
-  $(".portfolio-btn").click(function () {
-    $(this).parents("li").siblings("li").find(".portfolio-btn").attr('aria-selected','false');
+  $(".portfolio .btn").click(function () {
+    $(this).parents("li").siblings("li").find(".btn").attr('aria-selected','false');
     $(this).attr('aria-selected','true');
     var value = $(this).data("type");
     if (value == "all") {
@@ -172,9 +172,9 @@ $(window).resize(function () {
   });
 
   /* portfolio layer */
-  $(".layer-open").click(function () {
-    var val = $(this).attr("href");
-    var layer=layerWrap.find(`${val}`);
+  $(".btn_open_layer").click(function () {
+    var val = $(this).attr("aria-controls");
+    var layer=layerWrap.find(`#${val}`);
     var focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
     var focusableElements = layer.find(focusableElementsString);
     firstTabStop = focusableElements[0];
@@ -186,16 +186,16 @@ $(window).resize(function () {
     body.addClass("prevent-scroll");
   });
 
-  $(".layer-dimd").click(function () {
+  $(".dimd").click(function () {
     layerClose();
   });
 
-  $(".layer-close").click(function () {
+  $(".btn_close").click(function () {
     var parentsLayer=$(this).parents(".layer-contents");
     layerClose();
     var value=parentsLayer.attr("id");
     $(".contents").attr("aria-hidden","false");
-    $(`.layer-open[href='#${value}']`).focus();
+    $(`.btn_open_layer[aria-controls='#${value}']`).focus();
     });
   
     $(document).on('keydown', function (e) {
@@ -221,9 +221,9 @@ $(window).resize(function () {
       
     });
 
-  $(".portfolio-btn").focus(function () {
-    $(".slideContainer-portfolio").addClass("focused");
+  $(".portfolio .btn").focus(function () {
+    $(".portfolio .slideContainer").addClass("focused");
 	});
 
-  $(".portfolio-visual").find(".letter").attr("tabindex","0");
+  $(".portfolio .visual").find(".tit").attr("tabindex","0");
   /* portfolio [E] */

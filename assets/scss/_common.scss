@@ -1,8 +1,8 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
+* PostCSS:v8.4.14,
+* Autoprefixer:v10.4.7
+* Browsers:last 4 version
 */
 
 @charset "UTF-8";
@@ -13,430 +13,338 @@ html{
 }
 
 @font-face {
-    font-family: "NotoSansKR";
-    font-weight: 100;
-    src: local("NotoSansKR"), url("../font/NotoSansKR-Thin.otf") format("opentype");
+    font-family:"NotoSansKR";
+    font-weight:100;
+    src:local("NotoSansKR"), url("../font/NotoSansKR-Thin.otf") format("opentype");
 }
 
 @font-face {
-    font-family: "NotoSansKR";
-    font-weight: 300;
-    src: local("NotoSansKR"), url("../font/NotoSansKR-Light.otf") format("opentype");
+    font-family:"NotoSansKR";
+    font-weight:300;
+    src:local("NotoSansKR"), url("../font/NotoSansKR-Light.otf") format("opentype");
 }
 
 @font-face {
-    font-family: "NotoSansKR";
-    font-weight: 400;
-    src: local("NotoSansKR"), url("../font/NotoSansKR-Regular.otf") format("opentype");
+    font-family:"NotoSansKR";
+    font-weight:400;
+    src:local("NotoSansKR"), url("../font/NotoSansKR-Regular.otf") format("opentype");
 }
 @font-face {
-    font-family: "NotoSansKR";
-    font-weight: 700;
-    src: local("NotoSansKR"), url("../font/NotoSansKR-Bold.otf") format("opentype");
+    font-family:"NotoSansKR";
+    font-weight:700;
+    src:local("NotoSansKR"), url("../font/NotoSansKR-Bold.otf") format("opentype");
 }
 @font-face {
-    font-family: "NotoSansKR-Black";
-    font-weight: 900;
-    src: local("NotoSansKR-Black"), url("../font/NotoSansKR-Black.otf") format("opentype");
-}
-
-@font-face {
-    font-family: "Hahmlet";
-    font-weight: 100;
-    src: local("Hahmlet"), url("../font/Hahmlet-Thin.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Hahmlet";
-    font-weight: 300;
-    src: local("Hahmlet"), url("../font/Hahmlet-Light.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Hahmlet";
-    font-weight: 400;
-    src: local("Hahmlet"), url("../font/Hahmlet-Regular.ttf") format("truetype");
+    font-family:"NotoSansKR-Black";
+    font-weight:900;
+    src:local("NotoSansKR-Black"), url("../font/NotoSansKR-Black.otf") format("opentype");
 }
 @font-face {
-    font-family: "Hahmlet";
-    font-weight: 700;
-    src: local("Hahmlet"), url("../font/Hahmlet-Bold.ttf") format("truetype");
+    font-family:"Hahmlet";
+    font-weight:100;
+    src:local("Hahmlet"), url("../font/Hahmlet-Thin.ttf") format("truetype");
 }
 @font-face {
-    font-family: "Hahmlet";
-    font-weight: 900;
-    src: local("Hahmlet"), url("../font/Hahmlet-Black.ttf") format("truetype");
+    font-family:"Hahmlet";
+    font-weight:300;
+    src:local("Hahmlet"), url("../font/Hahmlet-Light.ttf") format("truetype");
+}
+@font-face {
+    font-family:"Hahmlet";
+    font-weight:400;
+    src:local("Hahmlet"), url("../font/Hahmlet-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family:"Hahmlet";
+    font-weight:700;
+    src:local("Hahmlet"), url("../font/Hahmlet-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family:"Hahmlet";
+    font-weight:900;
+    src:local("Hahmlet"), url("../font/Hahmlet-Black.ttf") format("truetype");
 }
 /* layout 정의 [S] */
-
 br{ 
     &.br-pc{
         @include tabletRow{
-            display: none;
+            display:none;
         }
         @include tablet{
-            display: none;
+            display:none;
         }
         @include mobile{
-            display: none;
+            display:none;
         }
         @include pc1920{
-            display: block!important;
+            display:block!important;
         }
     }
     &.br-mo{
-        display: none;
+        display:none;
         @include tabletRow{
-            display: none;
+            display:none;
         }
         @include tablet{
-            display: none;
+            display:none;
         }
         @include mobile{
-            display: block!important;
+            display:block!important;
         }
     }
-    
-
     &.br-tab{
-        display: none;
+        display:none;
         @include tabletRow{
-            display: none;
+            display:none;
         }
         @include tablet{
-            display: block!important;
+            display:block!important;
         }
         @include mobile{
-            display: none;
+            display:none;
         }
     }
-    
-
     &.br-tabR{
-        display: none;
+        display:none;
         @include tablet{
-            display: none;
+            display:none;
         }
         @include mobile{
-            display: none;
+            display:none;
         }
         @include tabletRow{
-            display: block!important;
-        }
-    }
-    
-}
-
-.flex{
-    &-row{
-        &-cen{
-            &-cen{
-                @include flex(row,cen,cen);
-            }
-
-            &-str{
-                @include flex(row,cen,str);
-            }
-        }
-
-        &-bet{
-            &-cen{
-                @include flex(row,bet,cen);
-            }
-
-            &-str{
-                @include flex(row,bet,str);
-            }
-        }
-
-        &-str{
-            &-cen{
-                @include flex(row,str,cen);
-            }
-
-            &-str{
-                @include flex(row,str,str);
-            }
-        }
-    }
-
-    &-col{
-        &-cen{
-            &-cen{
-                @include flex(col,cen,cen);
-            }
-
-            &-str{
-                @include flex(col,cen,str);
-            }
-        }
-
-        &-bet{
-            &-cen{
-                @include flex(col,bet,cen);
-            }
-
-            &-str{
-                @include flex(col,bet,str);
-            }
-        }
-
-        &-str{
-            &-cen{
-                @include flex(col,str,cen);
-            }
-
-            &-str{
-                @include flex(col,str,str);
-            }
+            display:block!important;
         }
     }
 }
-
 .blind{
     @include blind;
 }
-
 .dot-list li{
-    position: relative;
-    padding-left: 1.7rem;
+    position:relative;
+    padding-left:1.7rem;
     @include tablet{
-        padding-left: 2.7rem;
+        padding-left:2.7rem;
     }
     @include mobile{
-        padding-left: 9.5rem;
+        padding-left:9.5rem;
     }
     &::before{
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    line-height: 1.3;
-        content: "-";
-    font-size: 1.8rem;
-        
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    line-height:1.3;
+        content:"-";
+    font-size:1.8rem;
         @include tablet{
-            line-height: 1.4;
-            font-size: 4.5rem;
+            line-height:1.4;
+            font-size:4.5rem;
         }
         @include mobile{
-            line-height: 1.4;
-            font-size: 12rem;
+            line-height:1.4;
+            font-size:12rem;
         }
         @include tabletRow{
-            font-size: 2.8rem;
+            font-size:2.8rem;
         }
     }
 }
 /* layout 정의 [E] */
-
 html{
-    font-size: 0.520833vw;
-    /* font-size: 62.25%; */
-    scroll-behavior: smooth;
-
+    font-size:.520833vw;
+    /* font-size:62.25%; */
+    scroll-behavior:smooth;
     @include tablet{
-        font-size: 0.6vw;
+        font-size:.6vw;
     }
     @include mobile{
-        font-size: 0.266666666666667vw;
+        font-size:.266666666666667vw;
     }
-    @media (orientation: landscape) and (max-width: 767px){
-        font-size: 0.5vw;
+    @media (orientation:landscape) and (max-width:767px){
+        font-size:.5vw;
     }
 }
-
 /* header 정의 [S] */
 .header-wrap{
     @include flex(row,bet,cen);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    width: 100%;
-    padding: 2rem 2rem;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    -webkit-transition: 0.2s;
-    -o-transition: 0.2s;
-    transition: 0.2s;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:2;
+    width:100%;
+    padding:2rem 2rem;
+    -webkit-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
+    -webkit-transition:.2s;
+    -o-transition:.2s;
+    transition:.2s;
     &.bgWhite{
-        background-color: rgba(250, 250, 250,0.8);
-        
+        background-color:rgba(250, 250, 250,.8);
     }
     &.bgBeige{
-        background-color: rgba(239, 237, 203,0.7);
+        background-color:rgba(239, 237, 203,.7);
     }
     &>.header-logo{
         @include set-size(5rem, 5rem);
         &>a{
-            display: block;
+            display:block;
             @include set-size(100%, 100%);
             &>img{
-                display: block;
+                display:block;
                 @include set-size(100%, 100%);
             }
         }
     }
-    
     &>.header-list{
         @include flex(row,bet,cen);
         &>li{
-            margin-right: 2.0rem;
-            margin-left: 2.0rem;
+            margin-right:2.0rem;
+            margin-left:2.0rem;
            &>a{
             @include font(1.6rem,$Bold,1,$Indigo);
-            position: relative;
-            mix-blend-mode: luminosity;
+            position:relative;
+            mix-blend-mode:luminosity;
             &.active::after{
-                display: block;
-                position: absolute;
-                top: -3.0rem;
-                left: 50%;
-                -webkit-transform: translateX(-50%);
-                    -ms-transform: translateX(-50%);
-                        transform: translateX(-50%);
-                border-radius: 100%;
-                background: #ff7d7d;
-                animation: jump 1s infinite;
-                -webkit-animation: jump 1s infinite;
-                content: '';
+                display:block;
+                position:absolute;
+                top:-3.0rem;
+                left:50%;
+                -webkit-transform:translateX(-50%);
+                    -ms-transform:translateX(-50%);
+                        transform:translateX(-50%);
+                border-radius:100%;
+                background:#ff7d7d;
+                animation:jump 1s infinite;
+                -webkit-animation:jump 1s infinite;
+                content:'';
                 -webkit-transform-origin:center;
                     -ms-transform-origin:center;
                         transform-origin:center;
                 @include set-size(1.4rem,1.4rem);
             }
-           }
         }
     }
 }
-
+}
 /* header 정의 [E] */
-
 /* section 정의 [S] */
-
-
-
     .section{
-        overflow: hidden;
+        overflow:hidden;
         /* @include set-color($Beige, $Black); */
-        height: 100vh;
-        background-color: $White;
-        -webkit-transition: background-color 1.4s;
-        -o-transition: background-color 1.4s;
-        transition: background-color 1.4s;
-        scroll-behavior: smooth;
+        height:100vh;
+        background-color:$White;
+        -webkit-transition:background-color 1.4s;
+        -o-transition:background-color 1.4s;
+        transition:background-color 1.4s;
+        scroll-behavior:smooth;
         @include set-size(100%, calc(var(--vh, 1vh) * 100));
-         article{
-            padding: 5rem 10rem;
-            scroll-behavior: smooth;
+        article{
+            padding:5rem 10rem;
+            scroll-behavior:smooth;
             @include tablet{
-                padding: 15rem 10rem;
+                padding:15rem 10rem;
             }
             @include mobile{
-                padding: 30rem 20rem;
+                padding:30rem 20rem;
             }
             @include tabletRow{
-                padding: 10rem 10rem;
+                padding:10rem 10rem;
             }
         }
          *::-moz-selection{
-            background: $SkyBlue;
-            text-shadow: none;
+            background:$SkyBlue;
+            text-shadow:none;
         }
          *::selection{
-            background: $SkyBlue;
-            text-shadow: none;
+            background:$SkyBlue;
+            text-shadow:none;
         }
         &.fixed{
-            top: 0!important;
+            top:0!important;
         }
     }
-
 /* section 정의 [E] */
-
 /* button 정의 [S] */
 .btn {
-    display: block;
-    min-width: 12.8rem;
-    padding: 1rem;
-    border: 1px solid $Black;
-    border-radius: 3rem;
-    background-color: $White;
-    text-align: center;
-    cursor: pointer;
+    display:block;
+    min-width:12.8rem;
+    padding:1rem;
+    border:1px solid $Black;
+    border-radius:3rem;
+    background-color:$White;
+    text-align:center;
+    cursor:pointer;
     @include font(2rem,$Normal,1,$Black);
     
     @include tablet {
-        min-width: 45rem;
-        padding: 3rem;
-        border-radius: 6rem;
-        font-size: 4.5rem;
+        min-width:45rem;
+        padding:3rem;
+        border-radius:6rem;
+        font-size:4.5rem;
     }
     @include mobile {
-        min-width: 45rem;
-        padding: 9rem;
-        border-radius: 16rem;
-        font-size: 13rem;
+        min-width:45rem;
+        padding:9rem;
+        border-radius:16rem;
+        font-size:13rem;
     }
     @include tabletRow {
-        min-width: 20rem;
-        padding: 2rem;
-        border-radius: 4rem;
-        font-size: 2.5rem;
+        min-width:20rem;
+        padding:2rem;
+        border-radius:4rem;
+        font-size:2.5rem;
     }
     &.disable{
-        background-color: #999;
+        background-color:#999;
     }
 }
-
 .button-ham {
-    display: inline-block;
+    display:inline-block;
     &>span {
-        display: block;
-        margin: 3px;
-        background-color: $Black;
-        -webkit-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-        @include set-size(2.5rem, 0.3rem);
+        display:block;
+        margin:3px;
+        background-color:$Black;
+        -webkit-transition:all .5s ease;
+        -o-transition:all .5s ease;
+        transition:all .5s ease;
+        @include set-size(2.5rem, .3rem);
     }
     &.active>span {
         &:nth-child(1) {
-            -webkit-transform: rotate(-45deg) translate(-3px, 6px);
-                -ms-transform: rotate(-45deg) translate(-3px, 6px);
-                    transform: rotate(-45deg) translate(-3px, 6px);
+            -webkit-transform:rotate(-45deg) translate(-3px, 6px);
+                -ms-transform:rotate(-45deg) translate(-3px, 6px);
+                    transform:rotate(-45deg) translate(-3px, 6px);
         }
         &:nth-child(2) {
-            opacity: 0;
+            opacity:0;
         }
         &:nth-child(3) {
-            -webkit-transform: rotate(45deg) translate(-3px, -6px);
-                -ms-transform: rotate(45deg) translate(-3px, -6px);
-                    transform: rotate(45deg) translate(-3px, -6px);
+            -webkit-transform:rotate(45deg) translate(-3px, -6px);
+                -ms-transform:rotate(45deg) translate(-3px, -6px);
+                    transform:rotate(45deg) translate(-3px, -6px);
         }
     }
 }
-
 .button-top {
-    position: fixed;
-    right: 2rem;
-    bottom: 2rem;
-    width: 4.5rem;
-    height: 4.5rem;
-    background-color: $BlackOpa;
-    color: $White;
+    position:fixed;
+    right:2rem;
+    bottom:2rem;
+    width:4.5rem;
+    height:4.5rem;
+    background-color:$BlackOpa;
+    color:$White;
     &>a,&>i{
         color:$White;
-        line-height: 1;
-        font-size: 2rem;
-        -webkit-transition: color 0.2s;
-        -o-transition: color 0.2s;
-        transition: color 0.2s;
+        line-height:1;
+        font-size:2rem;
+        -webkit-transition:color .2s;
+        -o-transition:color .2s;
+        transition:color .2s;
        
     }
     &:hover i{
-        color: #ed1a60;
+        color:#ed1a60;
     }
 }
     
@@ -448,7 +356,6 @@ h {
     &1 {
         @include font(7rem,$Bold,1,$Black);
     }
-
     &2 {
         @include font(6rem,$Bold,1.3,$Black);
         
@@ -462,7 +369,6 @@ h {
             @include font(9rem,$Bold,1.3,$Black);
         }
     }
-
     &3 {
         @include font(3rem,$Bold,1.3,$Black);
         
@@ -476,114 +382,103 @@ h {
             @include font(4rem,$Bold,1.3,$Black);
         }
     }
-
     &4{
         
     }
 }
-
 p,dt,dd { 
     @include font(1.8rem,$Normal,1.2,$Black);
 }
-
 /* font 정의 [E] */
-
 /* animation */
 @-webkit-keyframes jump {
     0% {
-      -webkit-transform: scale3d(1, 1, 1);
-              transform: scale3d(1, 1, 1);
-      border-radius: 100%;
-      -webkit-animation-timing-function: ease-in;
-              animation-timing-function: ease-in;
+      -webkit-transform:scale3d(1, 1, 1);
+              transform:scale3d(1, 1, 1);
+      border-radius:100%;
+      -webkit-animation-timing-function:ease-in;
+              animation-timing-function:ease-in;
     }
     30%, 48% {
-      -webkit-transform: scale3d(0.95, 1.05, 1);
-              transform: scale3d(0.95, 1.05, 1);
+      -webkit-transform:scale3d(.95, 1.05, 1);
+              transform:scale3d(.95, 1.05, 1);
     }
     55% {
-      top: -1.2rem;
-      -webkit-transform: scale3d(1.3, 0.6, 1);
-              transform: scale3d(1.3, 0.6, 1);
+      top:-1.2rem;
+      -webkit-transform:scale3d(1.3, .6, 1);
+              transform:scale3d(1.3, .6, 1);
     }
     60%, 80% {
-      -webkit-transform: scale3d(0.95, 1.05, 1);
-              transform: scale3d(0.95, 1.05, 1);
+      -webkit-transform:scale3d(.95, 1.05, 1);
+              transform:scale3d(.95, 1.05, 1);
     }
     100% {
-      bottom: 34px;
-      -webkit-transform: scale3d(1, 1, 1);
-              transform: scale3d(1, 1, 1);
-      border-radius: 100%;
+      bottom:34px;
+      -webkit-transform:scale3d(1, 1, 1);
+              transform:scale3d(1, 1, 1);
+      border-radius:100%;
     }
   }
 
   @-webkit-keyframes smoke {
-    0%, 100% { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
-    20%, 60% { -webkit-transform: translate(1px, 0); transform: translate(1px, 0); }
-    40%, 80% { -webkit-transform: translate(-1px, 0); transform: translate(-1px, 0); }
+    0%, 100% { -webkit-transform:translate(0, 0); transform:translate(0, 0); }
+    20%, 60% { -webkit-transform:translate(1px, 0); transform:translate(1px, 0); }
+    40%, 80% { -webkit-transform:translate(-1px, 0); transform:translate(-1px, 0); }
   }
-
   @keyframes smoke {
-    0%, 100% { -webkit-transform: translate(0, 0); transform: translate(0, 0); }
-    20%, 60% { -webkit-transform: translate(1px, 0); transform: translate(1px, 0); }
-    40%, 80% { -webkit-transform: translate(-1px, 0); transform: translate(-1px, 0); }
+    0%, 100% { -webkit-transform:translate(0, 0); transform:translate(0, 0); }
+    20%, 60% { -webkit-transform:translate(1px, 0); transform:translate(1px, 0); }
+    40%, 80% { -webkit-transform:translate(-1px, 0); transform:translate(-1px, 0); }
   }
-  
   @-webkit-keyframes lighting {
-      0%, 10% {opacity: .75}
-    20%, 100% {opacity: .5}
+      0%, 10% {opacity:.75}
+    20%, 100% {opacity:.5}
   }
-  
   @keyframes lighting {
-      0%, 10% {opacity: .75}
-    20%, 100% {opacity: .5}
+      0%, 10% {opacity:.75}
+    20%, 100% {opacity:.5}
   }
-
   @-webkit-keyframes marquee {
-	0% { left: 0; }
-  100% { left: -100%; }
+	0% { left:0; }
+  100% { left:-100%; }
 	}
-
   @keyframes marquee {
-	0% { left: 0; }
-  100% { left: -100%; }
+	0% { left:0; }
+  100% { left:-100%; }
 	}
-
     @-webkit-keyframes stroke {
         0%   {
             stroke:$White;
-            stroke-width: 3px;
-            stroke-dashoffset: 326px;
+            stroke-width:3px;
+            stroke-dashoffset:326px;
         }
         70% {
-            fill: transparent;
+            fill:transparent;
         }
         98% {
             stroke:$White;
-            stroke-width: 3px;
+            stroke-width:3px;
         }
         100% {
             stroke:$White;
-            stroke-dashoffset: 0px;
+            stroke-dashoffset:0px;
         }
     }
-
     @keyframes stroke {
         0%   {
             stroke:$White;
-            stroke-width: 3px;
-            stroke-dashoffset: 326px;
+            stroke-width:3px;
+            stroke-dashoffset:326px;
         }
         70% {
-            fill: transparent;
+            fill:transparent;
         }
         98% {
             stroke:$White;
-            stroke-width: 3px;
+            stroke-width:3px;
         }
         100% {
             stroke:$White;
-            stroke-dashoffset: 0px;
+            stroke-dashoffset:0px;
         }
     }

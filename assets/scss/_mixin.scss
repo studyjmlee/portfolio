@@ -1,173 +1,179 @@
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
+* PostCSS:v8.4.14,
+* Autoprefixer:v10.4.7
+* Browsers:last 4 version
 */
 
 @charset "UTF-8";
 
-$Beige: #FBF6EB;
-$Black: #000000;
-$White: #ffffff;
-$Indigo : #1A343F;
-$SkyBlue: #b3d4fc;
-$BlackOpa: rgba(0,0,0,0.6);
-$Gray : #989898;
-$Bold : 700;
-$Normal : 500;
-$Light: 100;
+$Beige:#FBF6EB;
+$Black:#000000;
+$White:#ffffff;
+$Indigo :#1A343F;
+$SkyBlue:#b3d4fc;
+$BlackOpa:rgba(0,0,0,.6);
+$Gray :#989898;
+$Bold :700;
+$Normal :500;
+$Light:100;
 
 
 @mixin set-color($bg-color, $color) {
-    background-color: $bg-color;
-    color: $color;
+    background-color:$bg-color;
+    color:$color;
 }
 
 @mixin set-size($width, $height) {
-    width: $width;
-    height: $height;
+    width:$width;
+    height:$height;
 }
 	
 @mixin blind {
-    overflow: hidden;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    white-space: nowrap;
-    clip: rect(0, 0, 0, 0);
+    overflow:hidden;
+    position:absolute;
+    width:1px;
+    height:1px;
+    margin:-1px;
+    padding:0;
+    border:0;
+    white-space:nowrap;
+    clip:rect(0, 0, 0, 0);
   }
 
-@mixin textEffect($default: 1) {
+@mixin textEffect($default:1) {
     @if ($default==1){
-        -webkit-transform: translate(0,0) rotate(.001deg);
-            -ms-transform: translate(0,0) rotate(.001deg);
-                transform: translate(0,0) rotate(.001deg);
-                -webkit-transform: translate(0, 100%);
-                -ms-transform: translate(0, 100%);
-                transform: translate(0, 100%);
-                -webkit-transition: opacity 1s cubic-bezier(.32,.94,.6,1),-webkit-transform 1s cubic-bezier(.15,.85,.45,1);
-                transition: opacity 1s cubic-bezier(.32,.94,.6,1),-webkit-transform 1s cubic-bezier(.15,.85,.45,1);
-                -o-transition: transform 1s cubic-bezier(.15,.85,.45,1),opacity 1s cubic-bezier(.32,.94,.6,1);
-                transition: transform 1s cubic-bezier(.15,.85,.45,1),opacity 1s cubic-bezier(.32,.94,.6,1);
-                transition: transform 1s cubic-bezier(.15,.85,.45,1),opacity 1s cubic-bezier(.32,.94,.6,1),-webkit-transform 1s cubic-bezier(.15,.85,.45,1);
-                -webkit-transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-                transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-                -o-transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-                transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-                transition: opacity 0.7s cubic-bezier(0.19, 1, 0.22, 1), transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
-                opacity: 0;
+        -webkit-transform:translate(0,0) rotate(.001deg);
+            -ms-transform:translate(0,0) rotate(.001deg);
+                transform:translate(0,0) rotate(.001deg);
+                -webkit-transform:translate(0, 100%);
+                -ms-transform:translate(0, 100%);
+                transform:translate(0, 100%);
+                -webkit-transition:opacity 1s cubic-bezier(.32,.94,.6,1),-webkit-transform 1s cubic-bezier(.15,.85,.45,1);
+                transition:opacity 1s cubic-bezier(.32,.94,.6,1),-webkit-transform 1s cubic-bezier(.15,.85,.45,1);
+                -o-transition:transform 1s cubic-bezier(.15,.85,.45,1),opacity 1s cubic-bezier(.32,.94,.6,1);
+                transition:transform 1s cubic-bezier(.15,.85,.45,1),opacity 1s cubic-bezier(.32,.94,.6,1);
+                transition:transform 1s cubic-bezier(.15,.85,.45,1),opacity 1s cubic-bezier(.32,.94,.6,1),-webkit-transform 1s cubic-bezier(.15,.85,.45,1);
+                -webkit-transition:opacity .7s cubic-bezier(.19, 1, .22, 1), -webkit-transform .7s cubic-bezier(.19, 1, .22, 1);
+                transition:opacity .7s cubic-bezier(.19, 1, .22, 1), -webkit-transform .7s cubic-bezier(.19, 1, .22, 1);
+                -o-transition:opacity .7s cubic-bezier(.19, 1, .22, 1), transform .7s cubic-bezier(.19, 1, .22, 1);
+                transition:opacity .7s cubic-bezier(.19, 1, .22, 1), transform .7s cubic-bezier(.19, 1, .22, 1);
+                transition:opacity .7s cubic-bezier(.19, 1, .22, 1), transform .7s cubic-bezier(.19, 1, .22, 1), -webkit-transform .7s cubic-bezier(.19, 1, .22, 1);
+                opacity:0;
 
         
     }
 
     @else {
-        -webkit-transform: translate(0, 0) rotate(0.001deg);
-        -ms-transform: translate(0, 0) rotate(0.001deg);
-        transform: translate(0, 0) rotate(0.001deg);
-        opacity: 1;
-        -webkit-transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
-        transition: opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
-       -o-transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
-       transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1);
-       transition: transform 1s cubic-bezier(0.15, 0.85, 0.45, 1), opacity 1s cubic-bezier(0.32, 0.94, 0.6, 1), -webkit-transform 1s cubic-bezier(0.15, 0.85, 0.45, 1);
+        -webkit-transform:translate(0, 0) rotate(.001deg);
+        -ms-transform:translate(0, 0) rotate(.001deg);
+        transform:translate(0, 0) rotate(.001deg);
+        opacity:1;
+        -webkit-transition:opacity 1s cubic-bezier(.32, .94, .6, 1), -webkit-transform 1s cubic-bezier(.15, .85, .45, 1);
+        transition:opacity 1s cubic-bezier(.32, .94, .6, 1), -webkit-transform 1s cubic-bezier(.15, .85, .45, 1);
+       -o-transition:transform 1s cubic-bezier(.15, .85, .45, 1), opacity 1s cubic-bezier(.32, .94, .6, 1);
+       transition:transform 1s cubic-bezier(.15, .85, .45, 1), opacity 1s cubic-bezier(.32, .94, .6, 1);
+       transition:transform 1s cubic-bezier(.15, .85, .45, 1), opacity 1s cubic-bezier(.32, .94, .6, 1), -webkit-transform 1s cubic-bezier(.15, .85, .45, 1);
     }
     
 }
 
-@mixin ellipsis($lines: 1) {
+@mixin ellipsis($lines:1) {
     @if ($lines==1) {
-      overflow: hidden;
-      white-space: nowrap;
-      -o-text-overflow: ellipsis;
-         text-overflow: ellipsis;
+      overflow:hidden;
+      white-space:nowrap;
+      -o-text-overflow:ellipsis;
+         text-overflow:ellipsis;
     }
     @else {
-      display: -webkit-box;
-      overflow: hidden;
-      -o-text-overflow: ellipsis;
-         text-overflow: ellipsis;
-      -webkit-line-clamp: $lines;
-      -webkit-box-orient: vertical;
+      display:-webkit-box;
+      overflow:hidden;
+      -o-text-overflow:ellipsis;
+         text-overflow:ellipsis;
+      -webkit-line-clamp:$lines;
+      -webkit-box-orient:vertical;
     }
   }
 
-@mixin flex($dir: 'row', $justify: 'cen' ,$align: 'cen') {
-    display: flex;
+@mixin flex($dir:'row', $justify:'cen' ,$align:'cen') {
+    display:flex;
     @if ($dir=='row'){
 
     }
 
     @else {
-                flex-direction: column;
+        flex-direction:column;
     }
 
     @if ($justify=='cen') {
-                justify-content: center;
+        justify-content:center;
     }
 
     @else if ($justify== 'bet') {
-                justify-content: space-between;
+        justify-content:space-between;
     }
 
     @else if ($justify=='str') {
     }
 
     @else if ($justify=='end') {
-                justify-content: flex-end;
+        justify-content:flex-end;
     }
 
     @else if ($justify=='aro') {
-            justify-content: space-around;
+        justify-content:space-around;
     }
 
     @if ($align== 'cen') {
-                align-items: center;
+        align-items:center;
     }
 
     @else if ($align== 'str'){
-                align-items: flex-start;
+                align-items:flex-start;
     }
 
     @else if ($align== 'end'){
-                align-items: flex-end;
+                align-items:flex-end;
     }
 }
 
 @mixin font($size, $weight ,$lineH, $color) {
-    font-weight: $weight;
-    color: $color;
-    line-height: $lineH;
-    font-size: $size;
+    font-weight:$weight;
+    color:$color;
+    line-height:$lineH;
+    font-size:$size;
+}
+
+@mixin translate($transX,$transY) {
+    transform:translate($transX,$transY);
+    -webkit-transform:translate($transX,$transY);
+    -ms-transform:translate($transX,$transY);
 }
 
 @mixin mobile {
-    @media (orientation: portrait) and (max-width: 767px){ 
+    @media (orientation:portrait) and (max-width:767px){ 
         @content;
     }
   }
   
 @mixin tablet {
-   @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px){
+   @media (orientation:portrait) and (min-width:768px) and (max-width:1024px){
         @content;
     }
 }
 
 @mixin tabletRow {
-    @media (orientation: landscape) and (min-width: 1025px) and (max-width: 1280px){
+    @media (orientation:landscape) and (min-width:1025px) and (max-width:1280px){
          @content;
      }
 
-    @media (orientation: landscape) and (max-width: 767px){
+    @media (orientation:landscape) and (max-width:767px){
         @content;
     }
  }
 
 @mixin pc1920 {
-    @media screen and (min-width: 1280px){
+    @media screen and (min-width:1280px){
          @content;
      }
  }

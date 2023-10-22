@@ -1,15 +1,15 @@
 @charset "UTF-8";
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
+* PostCSS:v8.4.14,
+* Autoprefixer:v10.4.7
+* Browsers:last 4 version
 */
 /*
 * Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
+* PostCSS:v8.4.14,
+* Autoprefixer:v10.4.7
+* Browsers:last 4 version
 */
 @font-face {
   font-family: "NotoSansKR";
@@ -157,69 +157,6 @@ br.br-tabR {
   }
 }
 
-.flex-row-cen-cen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.flex-row-cen-str {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.flex-row-bet-cen {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.flex-row-bet-str {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.flex-row-str-cen {
-  display: flex;
-  align-items: center;
-}
-.flex-row-str-str {
-  display: flex;
-  align-items: flex-start;
-}
-.flex-col-cen-cen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.flex-col-cen-str {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.flex-col-bet-cen {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.flex-col-bet-str {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.flex-col-str-cen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.flex-col-str-str {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .blind {
   overflow: hidden;
   position: absolute;
@@ -281,7 +218,7 @@ br.br-tabR {
 /* layout 정의 [E] */
 html {
   font-size: 0.520833vw;
-  /* font-size: 62.25%; */
+  /* font-size:62.25%; */
   scroll-behavior: smooth;
 }
 @media (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
